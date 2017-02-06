@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="xconfig_tcpEcho" version="" producerId="undefined">
+    <units>
+    </units>
+    <sources>
+        <srcFile name="package/cfg/tcpEcho_pm4fg.c"/>
+    </sources>
+    <configscripts>
+        <srcFile name="C:/Users/D-1/Desktop/Kurian/tcpEcho_newtry_kurian/tcpEcho.cfg"/>
+    </configscripts>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/cfg/tcpEcho_pm4fg.mak" src="package.bld"/>
+        <srcFile name="package/cfg/tcpEcho_pm4fg.om4fg.dep" src="package/cfg/tcpEcho_pm4fg.c"/>
+        <srcFile name="package/cfg/tcpEcho_pm4fg.dep" src="package/cfg/tcpEcho_pm4fg.cfg"/>
+        <srcFile name="package/cfg/tcpEcho.xm4fg.mak" src="package.bld"/>
+        <srcFile name="package/rel/xconfig_tcpEcho.tar.dep" src="package/rel/xconfig_tcpEcho.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="gnu.targets.arm.M4F"
+            version="gnu.targets.arm.M4F{1,0,4.9,3"
+            rawVersion="4.9.3"
+            platform="ti.platforms.tiva:TM4C1294NCPDT"
+            isa="v7M4"
+            suffix="m4fg"
+            rootDir="C:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3"
+            os="undefined"
+            rts="gnu.targets.arm.rtsv7M">
+            <model endian="little"
+                codeModel="thumb2"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    </libraries>
+    <configurations>
+    <configuration name="tcpEcho"
+        pname="tcpEcho.pm4fg"
+        target="gnu.targets.arm.M4F"
+        platform="ti.platforms.tiva:TM4C1294NCPDT"
+        profile="release"
+        isPartial="false"
+        xCfgScript="package/cfg/tcpEcho_pm4fg.cfg"
+        xCfgPrefix="package/cfg/tcpEcho_pm4fg"
+        cfgScript="C:/Users/D-1/Desktop/Kurian/tcpEcho_newtry_kurian/tcpEcho.cfg"
+        cfgArgs="null"
+        />
+    </configurations>
+    <executables>
+    <executable name="tcpEcho"
+        pname="tcpEcho.xm4fg"
+        target="gnu.targets.arm.M4F"
+        platform="ti.platforms.tiva:TM4C1294NCPDT"
+        profile="release"
+        xCfgScript="package/cfg/tcpEcho_pm4fg.cfg"
+        xCfgPrefix="package/cfg/tcpEcho_pm4fg"
+        cfgScript="C:/Users/D-1/Desktop/Kurian/tcpEcho_newtry_kurian/tcpEcho.cfg"
+        cfgArgs="null"
+        />
+    </executables>
+    <tests>
+    <test exeName="tcpEcho.xm4fg"
+        args=""
+        groupName="tcpEcho.xm4fg"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="xconfig_tcpEcho"
+        pname="xconfig_tcpEcho.tar"
+        label="default"
+    >
+        <file name="package/package.bld.xml"/>
+        <file name="package/build.cfg"/>
+        <file name="package/package.xdc.inc"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>
