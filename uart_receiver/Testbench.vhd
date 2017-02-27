@@ -15,9 +15,9 @@ architecture Behave of Testbench is
   );
   end component;
 
-  signal clk: std_logic := '0';
+  signal clk, clk2: std_logic := '0';
   signal reset: std_logic := '1';
-  signal data_in: std_logic := '0';
+  signal data_in: std_logic := '1';
   signal data_out: std_logic_vector(7 downto 0) := (others => '0');
 
   function to_string(x: string) return string is
@@ -54,15 +54,24 @@ architecture Behave of Testbench is
   end to_std_logic;
 
 begin
-  clk <= not clk after 104166.66 ns; -- assume 10ns clock.
-
+  clk2 <= not clk2 after 52083.33 ns; -- assume 10ns clock.
+  clk <= not clk after 10 ns;
   process
+    File INFILE: text open read_mode is "UART_Test.txt";
+    variable input_vector1: bit_vector (0 downto 0) := "0";
+    variable INPUT_LINE: Line;
     variable err_flag : boolean := false;
 
   begin
-    wait until clk = '1';
+    wait until clk2 = '1';
     reset <= '0';
-    wait;
+     while not endfile(INFILE) loop
+      wait until clk2 = '1';
+      readLine (INFILE, INPUT_LINE);
+      read (INPUT_LINE, input_vector1);
+      data_in <= to_stdlogicvector(input_vector1)(0);
+      wait until clk2 = '0';
+    end loop;
   end process;
 
   dut: UARTReceiver

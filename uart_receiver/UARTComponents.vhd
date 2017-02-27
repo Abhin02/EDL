@@ -15,6 +15,7 @@ package UARTComponents is
   port (
     clk, reset: in std_logic;
     tick: out std_logic;
+    tick_reset: in std_logic;
     tick_half: out std_logic
   );
   end component;
@@ -33,7 +34,8 @@ package UARTComponents is
       -- These signals are from the datapath
       limit1, limit2: in std_logic;
       clk, reset: in std_logic;
-      tick: out std_logic
+      tick: out std_logic;
+      tick_reset: in std_logic
     );
   end component;
 

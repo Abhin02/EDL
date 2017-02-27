@@ -6,7 +6,8 @@ entity UARTTicker is
   port (
     clk, reset: in std_logic;
     tick: out std_logic;
-    tick_half: out std_logic
+    tick_half: out std_logic;
+    tick_reset: in std_logic
   );
 end entity UARTTicker;
 
@@ -14,14 +15,13 @@ architecture Struct of UARTTicker is
   signal limit1, limit2, increment: std_logic;
 begin
 
-  tick <= (not reset) and (not increment);
-
   CP: UARTTickerControl
   port map (
     limit1 => limit1,
     limit2 => limit2,
     increment => increment,
     tick => tick,
+    tick_reset => tick_reset,
     reset => reset,
     clk => clk
   );
@@ -46,49 +46,64 @@ entity UARTTickerControl is
     -- These signals are from the datapath
     limit1, limit2: in std_logic;
     clk, reset: in std_logic;
+    tick_reset: in std_logic;
     tick: out std_logic
   );
 end entity;
 architecture Behave of UARTTickerControl is
-  type FsmState is (S0, S1, S2, S3);
+  type FsmState is (S0, S1, S2, S3, S4);
   signal state : FsmState;
 begin
   -- This process decides the control signals
   process(state, limit1, limit2, reset)
     variable nincrement: std_logic;
+    variable ntick: std_logic;
   begin
     nincrement := '0';
+    ntick := '0';
     case state is
       when S0 =>
         nincrement := '1';
+        ntick := '0';
       when S1 =>
         if limit1 = '1' then
           nincrement := '0';
+          ntick := '1';
         else
           nincrement := '1';
+          ntick := '0';
         end if;
       when S2 =>
         if limit1 = '1' then
           nincrement := '0';
+          ntick := '1';
         else
           nincrement := '1';
+          ntick := '0';
         end if;
       when S3 =>
         if limit2 = '1' then
           nincrement := '0';
+          ntick := '1';
         else
           nincrement := '1';
+          ntick := '0';
         end if;
+      when S4 =>
+        nincrement := '0';
+        ntick := '0';
     end case;
 
     if reset = '1' then
       increment <= '0';
+      tick <= '0';
     else
       increment <= nincrement;
+      tick <= ntick;
     end if;
   end process;
   -- This process decides the next state of FSM
-  process(state, clk, reset, limit1, limit2)
+  process(state, clk, reset, limit1, limit2, tick_reset)
     variable nstate: FsmState;
   begin
     nstate := S0;
@@ -117,7 +132,13 @@ begin
         else
           nstate := S3;
         end if;
+      when S4 =>
+        -- tick reset stage
+        nstate := S0;
     end case;
+    if tick_reset = '1' then
+      nstate := S4;
+    end if;
     -- Creating the latch
     if (clk'event and clk = '1') then
       if (reset = '1') then

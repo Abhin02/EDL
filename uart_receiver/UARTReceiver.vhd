@@ -198,9 +198,10 @@ begin
   tc: UARTTicker
       port map (
         clk => clk,
-        reset => tick_reset,
+        reset => reset,
         tick => tick,
-        tick_half => tick_half
+        tick_half => tick_half,
+        tick_reset => tick_reset
       );
 
   incr: Increment4 port map (input => COUNT, output => INC_OUT);
