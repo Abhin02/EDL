@@ -9,7 +9,7 @@
 #include <xdc/runtime/Error.h>
 #include <xdc/runtime/System.h>
 
-#include<C:\ti\TivaWare_C_Series-2.1.2.111\driverlib\gpio.c>
+#include</home/kalpesh/ti/tirex-content/TivaWare_C_Series-2.1.3.156/>
 
 
 #include <ti/sysbios/BIOS.h>
