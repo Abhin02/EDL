@@ -11,7 +11,8 @@ architecture Behave of Testbench is
   port (
     clk, reset: in std_logic;
     data_in: in std_logic;
-    data_out: out std_logic_vector(7 downto 0)
+    data_out: out std_logic_vector(7 downto 0);
+    debug: out std_logic_vector(7 downto 0)
   );
   end component;
 
@@ -19,6 +20,7 @@ architecture Behave of Testbench is
   signal reset: std_logic := '1';
   signal data_in: std_logic := '1';
   signal data_out: std_logic_vector(7 downto 0) := (others => '0');
+  signal debug: std_logic_vector(7 downto 0) := (others => '0');
 
   function to_string(x: string) return string is
       variable ret_val: string(1 to x'length);
@@ -79,6 +81,7 @@ begin
     clk => clk,
     reset => reset,
     data_in => data_in,
-    data_out => data_out
+    data_out => data_out,
+    debug => debug
   );
 end Behave;

@@ -7,14 +7,14 @@ entity UARTReceiver is
   port (
     clk, reset: in std_logic;
     data_in: in std_logic;
-    data_out: out std_logic_vector(7 downto 0)
+    data_out: out std_logic_vector(7 downto 0);
+    debug: out std_logic_vector(7 downto 0)
   );
 end entity UARTReceiver;
 
 architecture Struct of UARTReceiver is
   signal shift_in, data_ready, tick_reset, tick_half, tick, received: std_logic;
 begin
-
   CP: UARTReceiverControl
   port map (
     data_in => data_in,
@@ -31,6 +31,7 @@ begin
   DP: UARTReceiverData
   port map (
     reset => reset,
+    debug => debug,
     tick_half => tick_half,
     tick => tick,
     clk => clk,
@@ -60,7 +61,7 @@ entity UARTReceiverControl is
   );
 end entity;
 architecture Behave of UARTReceiverControl is
-  type FsmState is (S0, S1, S2, S3);
+  type FsmState is (S0, S1, S2, S3, S4);
   signal state : FsmState;
 begin
   -- This process decides the control signals
@@ -97,7 +98,7 @@ begin
         end if;
       when S3 =>
         if received = '1' and tick = '1' then
-          ndata_ready := '1';
+          ndata_ready := '0';
           nshift_in := '1';
           ntick_reset := '1';
         elsif received = '0' and tick = '1' then
@@ -109,6 +110,10 @@ begin
           nshift_in := '0';
           ntick_reset := '0';
         end if;
+      when S4 =>
+        ndata_ready := '1';
+        nshift_in := '0';
+        ntick_reset := '1';
     end case;
 
     if reset = '1' then
@@ -151,10 +156,12 @@ begin
       when S3 =>
         -- In this state, the counter samples every T seconds
         if tick = '1' and received = '1' then
-          nstate := S1;
+          nstate := S4;
         else
           nstate := S3;
         end if;
+      when S4 =>
+        nstate := S1;
     end case;
     -- Creating the latch
     if (clk'event and clk = '1') then
@@ -174,6 +181,7 @@ entity UARTReceiverData is
   port (
     data_in: in std_logic;
     tick_half: out std_logic;
+    debug: out std_logic_vector(7 downto 0);
     tick: out std_logic;
     received: out std_logic;
     clk, reset: in std_logic;
@@ -215,7 +223,7 @@ begin
                      Enable => shift_in,
                      reset => reset,
                      clk => clk);
-
+  debug(7 downto 0) <= SHIFT_OUT(8 downto 1);
   shift_r: DataRegister
            generic map (data_width => 10)
            port map (Din => SHIFT,
@@ -226,7 +234,7 @@ begin
 
   dout: DataRegister
         generic map (data_width => 8)
-        port map (Din => SHIFT(8 downto 1),
+        port map (Din => SHIFT_OUT(8 downto 1),
                   Dout => data_out,
                   Enable => data_ready,
                   reset => reset,

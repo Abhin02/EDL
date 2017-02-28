@@ -1,0 +1,369 @@
+m255
+K3
+13
+cModel Technology
+Z0 d/home/kalpesh/Projects/EDL/uart_receiver/Quartus/simulation/modelsim
+Edataregister
+Z1 w1488298868
+Z2 DPx3 std 6 textio 0 22 G^o2zK;Vh4eVdKTVo98653
+Z3 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z4 d/home/kalpesh/Projects/EDL/uart_receiver/Quartus/simulation/modelsim
+Z5 8/home/kalpesh/Projects/EDL/uart_receiver/UARTComponents.vhd
+Z6 F/home/kalpesh/Projects/EDL/uart_receiver/UARTComponents.vhd
+l0
+L98
+V`IDeDo`:=WPY::bPn;fhM2
+Z7 OV;C;10.0d;49
+31
+Z8 !s108 1488303968.746975
+Z9 !s90 -reportprogress|300|-93|-work|work|/home/kalpesh/Projects/EDL/uart_receiver/UARTComponents.vhd|
+Z10 !s107 /home/kalpesh/Projects/EDL/uart_receiver/UARTComponents.vhd|
+Z11 o-93 -work work -O0
+Z12 tExplicit 1
+!s100 <D_OOz>f67YC?;Ibk5GEY0
+Abehave
+R2
+R3
+DEx4 work 12 dataregister 0 22 `IDeDo`:=WPY::bPn;fhM2
+l105
+L104
+V>OQ]:ARXZoS`QR:Zd@6h41
+R7
+31
+R8
+R9
+R10
+R11
+R12
+!s100 WC]oIBHG@fb_=KZ6]Q9_G3
+Eincrement13
+R1
+Z13 DPx4 ieee 11 numeric_std 0 22 k7B<7GmYYYmX;0X]XHFD10
+R2
+R3
+R4
+R5
+R6
+l0
+L121
+V:4][b8:n?_C0AO<EI4?d>0
+R7
+31
+R8
+R9
+R10
+R11
+R12
+!s100 IQ>B5l>LGhA@?b=Hgc?[z2
+Abehave
+R13
+R2
+R3
+DEx4 work 11 increment13 0 22 :4][b8:n?_C0AO<EI4?d>0
+l128
+L127
+VUDEVT7<?P2T:5nldF9e2L1
+R7
+31
+R8
+R9
+R10
+R11
+R12
+!s100 h^1YVL0iN`QdziTBiX0d02
+Eincrement4
+R1
+R13
+R2
+R3
+R4
+R5
+R6
+l0
+L135
+V4cR?3BXE`ICUQD?<AfI@:1
+R7
+31
+R8
+R9
+R10
+R11
+R12
+!s100 ;B[YQ6I?Nm>Aa:N3oH5m41
+Abehave
+R13
+R2
+R3
+DEx4 work 10 increment4 0 22 4cR?3BXE`ICUQD?<AfI@:1
+l142
+L141
+VWKZ_nHCJ;j4^=MkFbZ4@b1
+R7
+31
+R8
+R9
+R10
+R11
+R12
+!s100 `Z6AZag:`fc7OH];f:N>k2
+Etestbench
+Z14 w1488301724
+R13
+R2
+R3
+R4
+Z15 8/home/kalpesh/Projects/EDL/uart_receiver/Quartus/../Testbench.vhd
+Z16 F/home/kalpesh/Projects/EDL/uart_receiver/Quartus/../Testbench.vhd
+l0
+L7
+V@09f_<35b3<DbfG]0:_i21
+!s100 A<9<NdXLF]OBJGmVGbY8n2
+R7
+31
+Z17 !s108 1488303968.814817
+Z18 !s90 -reportprogress|300|-93|-work|work|/home/kalpesh/Projects/EDL/uart_receiver/Quartus/../Testbench.vhd|
+Z19 !s107 /home/kalpesh/Projects/EDL/uart_receiver/Quartus/../Testbench.vhd|
+R11
+R12
+Abehave
+R13
+R2
+R3
+DEx4 work 9 testbench 0 22 @09f_<35b3<DbfG]0:_i21
+l58
+L9
+VGVV>5kIMXPYlo>@Lg8I^:2
+!s100 NOSG@6[c4DddL[YcX_7WM2
+R7
+31
+R17
+R18
+R19
+R11
+R12
+Puartcomponents
+R2
+R3
+R1
+R4
+R5
+R6
+l0
+L5
+VdjTc5NAiDZGMm7nB:I6`l2
+R7
+31
+R8
+R9
+R10
+R11
+R12
+!s100 LMk>R:NJC0Y8W=CP[RQiJ1
+Euartreceiver
+Z20 w1488302815
+Z21 DPx4 work 14 uartcomponents 0 22 djTc5NAiDZGMm7nB:I6`l2
+R2
+R3
+R4
+Z22 8/home/kalpesh/Projects/EDL/uart_receiver/UARTReceiver.vhd
+Z23 F/home/kalpesh/Projects/EDL/uart_receiver/UARTReceiver.vhd
+l0
+L6
+V;S>PLV@ITif;B[P9CUik[0
+R7
+31
+Z24 !s108 1488303968.769717
+Z25 !s90 -reportprogress|300|-93|-work|work|/home/kalpesh/Projects/EDL/uart_receiver/UARTReceiver.vhd|
+Z26 !s107 /home/kalpesh/Projects/EDL/uart_receiver/UARTReceiver.vhd|
+R11
+R12
+!s100 PJ8Ieh1Bz1V^L_G?YRR>X3
+Astruct
+R21
+R2
+R3
+DEx4 work 12 uartreceiver 0 22 ;S>PLV@ITif;B[P9CUik[0
+l17
+L15
+V]W?ZHY9RZHg=`ROYOELO81
+R7
+31
+R24
+R25
+R26
+R11
+R12
+!s100 06KNam<7d@EEIjcFY=lQR1
+Euartreceivercontrol
+R20
+R21
+R2
+R3
+R4
+R22
+R23
+l0
+L51
+Vf8k?iOWaianOM0ZTFm5Ej3
+R7
+31
+R24
+R25
+R26
+R11
+R12
+!s100 >kBb^39SU=_90iR2d7D]P1
+Abehave
+R21
+R2
+R3
+DEx4 work 19 uartreceivercontrol 0 22 f8k?iOWaianOM0ZTFm5Ej3
+l66
+L63
+V8b21m0kMzbe`nV7429G@;2
+R7
+31
+R24
+R25
+R26
+R11
+R12
+!s100 he1^4W[_zY3b]CkQcElY]1
+Euartreceiverdata
+R20
+R21
+R2
+R3
+R4
+R22
+R23
+l0
+L174
+V;n6JgmCjfXo]4ZgVg<2S;0
+R7
+31
+R24
+R25
+R26
+R11
+R12
+!s100 ?cKnXknnUn81N73QPaTfn2
+Amixed
+R21
+R2
+R3
+DEx4 work 16 uartreceiverdata 0 22 ;n6JgmCjfXo]4ZgVg<2S;0
+l199
+L189
+V<lYWME>SI_J4KocGl:VR91
+R7
+31
+R24
+R25
+R26
+R11
+R12
+!s100 1]HL6g1A`aR^Rk3dfilL;2
+Euartticker
+Z27 w1488226077
+R21
+R2
+R3
+R4
+Z28 8/home/kalpesh/Projects/EDL/uart_receiver/UARTTicker.vhd
+Z29 F/home/kalpesh/Projects/EDL/uart_receiver/UARTTicker.vhd
+l0
+L5
+Vl5_ibXbL?]=ndfi@JaVNK0
+R7
+31
+Z30 !s108 1488303968.790501
+Z31 !s90 -reportprogress|300|-93|-work|work|/home/kalpesh/Projects/EDL/uart_receiver/UARTTicker.vhd|
+Z32 !s107 /home/kalpesh/Projects/EDL/uart_receiver/UARTTicker.vhd|
+R11
+R12
+!s100 jVXcUi?3_4[LzOoL`V4R_0
+Astruct
+R21
+R2
+R3
+DEx4 work 10 uartticker 0 22 l5_ibXbL?]=ndfi@JaVNK0
+l16
+L14
+VHR[kPMVTWgk<C@OzVbg=H2
+R7
+31
+R30
+R31
+R32
+R11
+R12
+!s100 Z]91ib2A0[CG=h:]hmiCT2
+Euarttickercontrol
+R27
+R2
+R3
+R4
+R28
+R29
+l0
+L42
+VMT]ggaF^95Rzo;8=<5GZ=3
+R7
+31
+R30
+R31
+R32
+R11
+R12
+!s100 ;fgLjmiZX^7;DMHHCzXFm1
+Abehave
+R2
+R3
+DEx4 work 17 uarttickercontrol 0 22 MT]ggaF^95Rzo;8=<5GZ=3
+l56
+L53
+V;[zc3<aTR^XJcgHgmfH2F0
+R7
+31
+R30
+R31
+R32
+R11
+R12
+!s100 ?e[Y;?EmOT^5W;ZXdRSXI1
+Euarttickerdata
+R27
+R21
+R2
+R3
+R4
+R28
+R29
+l0
+L157
+Vok5PD^kj^_?aTG6>I0Tei3
+R7
+31
+R30
+R31
+R32
+R11
+R12
+!s100 idd7O_RS^`VC`YT7kbHPE0
+Amixed
+R21
+R2
+R3
+DEx4 work 14 uarttickerdata 0 22 ok5PD^kj^_?aTG6>I0Tei3
+l178
+L166
+VzAUdm^cgkUazK`]^>SYJh2
+R7
+31
+R30
+R31
+R32
+R11
+R12
+!s100 >912jbELTo:UT97ALd3nK3

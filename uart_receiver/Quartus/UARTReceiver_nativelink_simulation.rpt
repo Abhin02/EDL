@@ -1,0 +1,22 @@
+Info: Start Nativelink Simulation process
+
+========= EDA Simulation Settings =====================
+
+Sim Mode              :  Gate
+Family                :  maxv
+Quartus root          :  /opt/quartus/linux/
+Quartus sim root      :  /opt/quartus/eda/sim_lib
+Simulation Tool       :  modelsim-altera
+Simulation Language   :  vhdl
+Version               :  93
+Simulation Mode       :  GUI
+Sim Output File       :  UARTReceiver.vho
+Sim SDF File       :  UARTReceiver_vhd.sdo
+Sim dir               :  simulation/modelsim
+
+=======================================================
+
+Info: Starting NativeLink simulation with ModelSim-Altera software
+Sourced NativeLink script /opt/quartus/common/tcl/internal/nativelink/modelsim.tcl
+Warning: File UARTReceiver_run_msim_gate_vhdl.do already exists - backing up current file as UARTReceiver_run_msim_gate_vhdl.do.bak6
+Info: Spawning ModelSim-Altera Simulation software 

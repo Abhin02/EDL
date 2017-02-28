@@ -1,0 +1,373 @@
+|UARTReceiver
+clk => UARTReceiverControl:CP.clk
+clk => UARTReceiverData:DP.clk
+reset => UARTReceiverControl:CP.reset
+reset => UARTReceiverData:DP.reset
+data_in => UARTReceiverControl:CP.data_in
+data_in => UARTReceiverData:DP.data_in
+data_out[0] <= UARTReceiverData:DP.data_out[0]
+data_out[1] <= UARTReceiverData:DP.data_out[1]
+data_out[2] <= UARTReceiverData:DP.data_out[2]
+data_out[3] <= UARTReceiverData:DP.data_out[3]
+data_out[4] <= UARTReceiverData:DP.data_out[4]
+data_out[5] <= UARTReceiverData:DP.data_out[5]
+data_out[6] <= UARTReceiverData:DP.data_out[6]
+data_out[7] <= UARTReceiverData:DP.data_out[7]
+debug[0] <= UARTReceiverData:DP.debug[0]
+debug[1] <= UARTReceiverData:DP.debug[1]
+debug[2] <= UARTReceiverData:DP.debug[2]
+debug[3] <= UARTReceiverData:DP.debug[3]
+debug[4] <= UARTReceiverData:DP.debug[4]
+debug[5] <= UARTReceiverData:DP.debug[5]
+debug[6] <= UARTReceiverData:DP.debug[6]
+debug[7] <= UARTReceiverData:DP.debug[7]
+
+
+|UARTReceiver|UARTReceiverControl:CP
+data_in => Selector1.IN3
+data_in => Selector2.IN4
+data_in => Selector3.IN1
+tick_half => Selector0.IN3
+tick_half => Selector1.IN4
+tick_half => Selector4.IN3
+tick_half => Selector3.IN2
+tick => process_0.IN0
+tick => process_0.IN0
+received => process_0.IN1
+received => process_0.IN1
+clk => state~1.DATAIN
+reset => shift_in.OUTPUTSELECT
+reset => data_ready.OUTPUTSELECT
+reset => tick_reset.OUTPUTSELECT
+reset => state.OUTPUTSELECT
+reset => state.OUTPUTSELECT
+reset => state.OUTPUTSELECT
+reset => state.OUTPUTSELECT
+reset => state.S0.DATAIN
+shift_in <= shift_in.DB_MAX_OUTPUT_PORT_TYPE
+data_ready <= data_ready.DB_MAX_OUTPUT_PORT_TYPE
+tick_reset <= tick_reset.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|UARTReceiver|UARTReceiverData:DP
+data_in => DataRegister:shift_r.Din[9]
+tick_half <= UARTTicker:tc.tick_half
+debug[0] <= DataRegister:shift_r.Dout[1]
+debug[1] <= DataRegister:shift_r.Dout[2]
+debug[2] <= DataRegister:shift_r.Dout[3]
+debug[3] <= DataRegister:shift_r.Dout[4]
+debug[4] <= DataRegister:shift_r.Dout[5]
+debug[5] <= DataRegister:shift_r.Dout[6]
+debug[6] <= DataRegister:shift_r.Dout[7]
+debug[7] <= DataRegister:shift_r.Dout[8]
+tick <= UARTTicker:tc.tick
+received <= Equal1.DB_MAX_OUTPUT_PORT_TYPE
+clk => UARTTicker:tc.clk
+clk => DataRegister:count1.clk
+clk => DataRegister:shift_r.clk
+clk => DataRegister:dout.clk
+reset => UARTTicker:tc.reset
+reset => DataRegister:count1.reset
+reset => DataRegister:shift_r.reset
+reset => DataRegister:dout.reset
+shift_in => DataRegister:count1.enable
+shift_in => DataRegister:shift_r.enable
+data_ready => DataRegister:dout.enable
+tick_reset => UARTTicker:tc.tick_reset
+data_out[0] <= DataRegister:dout.Dout[0]
+data_out[1] <= DataRegister:dout.Dout[1]
+data_out[2] <= DataRegister:dout.Dout[2]
+data_out[3] <= DataRegister:dout.Dout[3]
+data_out[4] <= DataRegister:dout.Dout[4]
+data_out[5] <= DataRegister:dout.Dout[5]
+data_out[6] <= DataRegister:dout.Dout[6]
+data_out[7] <= DataRegister:dout.Dout[7]
+
+
+|UARTReceiver|UARTReceiverData:DP|UARTTicker:tc
+clk => UARTTickerControl:CP.clk
+clk => UARTTickerData:DP.clk
+reset => UARTTickerControl:CP.reset
+reset => UARTTickerData:DP.reset
+tick <= UARTTickerControl:CP.tick
+tick_half <= UARTTickerData:DP.tick_half
+tick_reset => UARTTickerControl:CP.tick_reset
+
+
+|UARTReceiver|UARTReceiverData:DP|UARTTicker:tc|UARTTickerControl:CP
+increment <= increment.DB_MAX_OUTPUT_PORT_TYPE
+limit1 => Selector1.IN3
+limit1 => Selector4.IN3
+limit1 => Selector5.IN3
+limit1 => Selector0.IN2
+limit1 => Selector0.IN3
+limit1 => Selector3.IN2
+limit1 => Selector4.IN1
+limit2 => Selector1.IN4
+limit2 => Selector2.IN3
+limit2 => Selector0.IN4
+limit2 => Selector5.IN1
+clk => state~1.DATAIN
+reset => increment.OUTPUTSELECT
+reset => tick.OUTPUTSELECT
+reset => state.OUTPUTSELECT
+reset => state.OUTPUTSELECT
+reset => state.OUTPUTSELECT
+reset => state.OUTPUTSELECT
+reset => state.OUTPUTSELECT
+tick_reset => nstate.S0.OUTPUTSELECT
+tick_reset => nstate.S1.OUTPUTSELECT
+tick_reset => nstate.S2.OUTPUTSELECT
+tick_reset => nstate.S3.OUTPUTSELECT
+tick_reset => state.DATAA
+tick <= tick.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|UARTReceiver|UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP
+increment => COUNT_in[12].OUTPUTSELECT
+increment => COUNT_in[11].OUTPUTSELECT
+increment => COUNT_in[10].OUTPUTSELECT
+increment => COUNT_in[9].OUTPUTSELECT
+increment => COUNT_in[8].OUTPUTSELECT
+increment => COUNT_in[7].OUTPUTSELECT
+increment => COUNT_in[6].OUTPUTSELECT
+increment => COUNT_in[5].OUTPUTSELECT
+increment => COUNT_in[4].OUTPUTSELECT
+increment => COUNT_in[3].OUTPUTSELECT
+increment => COUNT_in[2].OUTPUTSELECT
+increment => COUNT_in[1].OUTPUTSELECT
+increment => COUNT_in[0].OUTPUTSELECT
+limit1 <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+limit2 <= Equal1.DB_MAX_OUTPUT_PORT_TYPE
+tick_half <= Equal2.DB_MAX_OUTPUT_PORT_TYPE
+clk => DataRegister:count_reg.clk
+reset => DataRegister:count_reg.reset
+
+
+|UARTReceiver|UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|Increment13:incr
+input[0] => Add0.IN26
+input[1] => Add0.IN25
+input[2] => Add0.IN24
+input[3] => Add0.IN23
+input[4] => Add0.IN22
+input[5] => Add0.IN21
+input[6] => Add0.IN20
+input[7] => Add0.IN19
+input[8] => Add0.IN18
+input[9] => Add0.IN17
+input[10] => Add0.IN16
+input[11] => Add0.IN15
+input[12] => Add0.IN14
+output[0] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+output[1] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+output[2] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+output[3] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+output[4] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+output[5] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+output[6] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+output[7] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+output[8] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+output[9] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+output[10] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+output[11] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+output[12] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|UARTReceiver|UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg
+Din[0] => Dout.DATAB
+Din[1] => Dout.DATAB
+Din[2] => Dout.DATAB
+Din[3] => Dout.DATAB
+Din[4] => Dout.DATAB
+Din[5] => Dout.DATAB
+Din[6] => Dout.DATAB
+Din[7] => Dout.DATAB
+Din[8] => Dout.DATAB
+Din[9] => Dout.DATAB
+Din[10] => Dout.DATAB
+Din[11] => Dout.DATAB
+Din[12] => Dout.DATAB
+Dout[0] <= Dout[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Dout[1] <= Dout[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Dout[2] <= Dout[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Dout[3] <= Dout[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Dout[4] <= Dout[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Dout[5] <= Dout[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Dout[6] <= Dout[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Dout[7] <= Dout[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Dout[8] <= Dout[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Dout[9] <= Dout[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Dout[10] <= Dout[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Dout[11] <= Dout[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Dout[12] <= Dout[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+clk => Dout[0]~reg0.CLK
+clk => Dout[1]~reg0.CLK
+clk => Dout[2]~reg0.CLK
+clk => Dout[3]~reg0.CLK
+clk => Dout[4]~reg0.CLK
+clk => Dout[5]~reg0.CLK
+clk => Dout[6]~reg0.CLK
+clk => Dout[7]~reg0.CLK
+clk => Dout[8]~reg0.CLK
+clk => Dout[9]~reg0.CLK
+clk => Dout[10]~reg0.CLK
+clk => Dout[11]~reg0.CLK
+clk => Dout[12]~reg0.CLK
+enable => Dout.OUTPUTSELECT
+enable => Dout.OUTPUTSELECT
+enable => Dout.OUTPUTSELECT
+enable => Dout.OUTPUTSELECT
+enable => Dout.OUTPUTSELECT
+enable => Dout.OUTPUTSELECT
+enable => Dout.OUTPUTSELECT
+enable => Dout.OUTPUTSELECT
+enable => Dout.OUTPUTSELECT
+enable => Dout.OUTPUTSELECT
+enable => Dout.OUTPUTSELECT
+enable => Dout.OUTPUTSELECT
+enable => Dout.OUTPUTSELECT
+reset => Dout.OUTPUTSELECT
+reset => Dout.OUTPUTSELECT
+reset => Dout.OUTPUTSELECT
+reset => Dout.OUTPUTSELECT
+reset => Dout.OUTPUTSELECT
+reset => Dout.OUTPUTSELECT
+reset => Dout.OUTPUTSELECT
+reset => Dout.OUTPUTSELECT
+reset => Dout.OUTPUTSELECT
+reset => Dout.OUTPUTSELECT
+reset => Dout.OUTPUTSELECT
+reset => Dout.OUTPUTSELECT
+reset => Dout.OUTPUTSELECT
+
+
+|UARTReceiver|UARTReceiverData:DP|Increment4:incr
+input[0] => Add0.IN8
+input[1] => Add0.IN7
+input[2] => Add0.IN6
+input[3] => Add0.IN5
+output[0] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+output[1] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+output[2] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+output[3] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|UARTReceiver|UARTReceiverData:DP|DataRegister:count1
+Din[0] => Dout.DATAB
+Din[1] => Dout.DATAB
+Din[2] => Dout.DATAB
+Din[3] => Dout.DATAB
+Dout[0] <= Dout[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Dout[1] <= Dout[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Dout[2] <= Dout[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Dout[3] <= Dout[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+clk => Dout[0]~reg0.CLK
+clk => Dout[1]~reg0.CLK
+clk => Dout[2]~reg0.CLK
+clk => Dout[3]~reg0.CLK
+enable => Dout.OUTPUTSELECT
+enable => Dout.OUTPUTSELECT
+enable => Dout.OUTPUTSELECT
+enable => Dout.OUTPUTSELECT
+reset => Dout.OUTPUTSELECT
+reset => Dout.OUTPUTSELECT
+reset => Dout.OUTPUTSELECT
+reset => Dout.OUTPUTSELECT
+
+
+|UARTReceiver|UARTReceiverData:DP|DataRegister:shift_r
+Din[0] => Dout.DATAB
+Din[1] => Dout.DATAB
+Din[2] => Dout.DATAB
+Din[3] => Dout.DATAB
+Din[4] => Dout.DATAB
+Din[5] => Dout.DATAB
+Din[6] => Dout.DATAB
+Din[7] => Dout.DATAB
+Din[8] => Dout.DATAB
+Din[9] => Dout.DATAB
+Dout[0] <= Dout[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Dout[1] <= Dout[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Dout[2] <= Dout[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Dout[3] <= Dout[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Dout[4] <= Dout[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Dout[5] <= Dout[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Dout[6] <= Dout[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Dout[7] <= Dout[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Dout[8] <= Dout[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Dout[9] <= Dout[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+clk => Dout[0]~reg0.CLK
+clk => Dout[1]~reg0.CLK
+clk => Dout[2]~reg0.CLK
+clk => Dout[3]~reg0.CLK
+clk => Dout[4]~reg0.CLK
+clk => Dout[5]~reg0.CLK
+clk => Dout[6]~reg0.CLK
+clk => Dout[7]~reg0.CLK
+clk => Dout[8]~reg0.CLK
+clk => Dout[9]~reg0.CLK
+enable => Dout.OUTPUTSELECT
+enable => Dout.OUTPUTSELECT
+enable => Dout.OUTPUTSELECT
+enable => Dout.OUTPUTSELECT
+enable => Dout.OUTPUTSELECT
+enable => Dout.OUTPUTSELECT
+enable => Dout.OUTPUTSELECT
+enable => Dout.OUTPUTSELECT
+enable => Dout.OUTPUTSELECT
+enable => Dout.OUTPUTSELECT
+reset => Dout.OUTPUTSELECT
+reset => Dout.OUTPUTSELECT
+reset => Dout.OUTPUTSELECT
+reset => Dout.OUTPUTSELECT
+reset => Dout.OUTPUTSELECT
+reset => Dout.OUTPUTSELECT
+reset => Dout.OUTPUTSELECT
+reset => Dout.OUTPUTSELECT
+reset => Dout.OUTPUTSELECT
+reset => Dout.OUTPUTSELECT
+
+
+|UARTReceiver|UARTReceiverData:DP|DataRegister:dout
+Din[0] => Dout.DATAB
+Din[1] => Dout.DATAB
+Din[2] => Dout.DATAB
+Din[3] => Dout.DATAB
+Din[4] => Dout.DATAB
+Din[5] => Dout.DATAB
+Din[6] => Dout.DATAB
+Din[7] => Dout.DATAB
+Dout[0] <= Dout[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Dout[1] <= Dout[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Dout[2] <= Dout[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Dout[3] <= Dout[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Dout[4] <= Dout[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Dout[5] <= Dout[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Dout[6] <= Dout[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Dout[7] <= Dout[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+clk => Dout[0]~reg0.CLK
+clk => Dout[1]~reg0.CLK
+clk => Dout[2]~reg0.CLK
+clk => Dout[3]~reg0.CLK
+clk => Dout[4]~reg0.CLK
+clk => Dout[5]~reg0.CLK
+clk => Dout[6]~reg0.CLK
+clk => Dout[7]~reg0.CLK
+enable => Dout.OUTPUTSELECT
+enable => Dout.OUTPUTSELECT
+enable => Dout.OUTPUTSELECT
+enable => Dout.OUTPUTSELECT
+enable => Dout.OUTPUTSELECT
+enable => Dout.OUTPUTSELECT
+enable => Dout.OUTPUTSELECT
+enable => Dout.OUTPUTSELECT
+reset => Dout.OUTPUTSELECT
+reset => Dout.OUTPUTSELECT
+reset => Dout.OUTPUTSELECT
+reset => Dout.OUTPUTSELECT
+reset => Dout.OUTPUTSELECT
+reset => Dout.OUTPUTSELECT
+reset => Dout.OUTPUTSELECT
+reset => Dout.OUTPUTSELECT
+
+

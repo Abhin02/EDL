@@ -57,7 +57,8 @@ package UARTComponents is
   port (
     clk, reset: in std_logic;
     data_in: in std_logic;
-    data_out: out std_logic_vector(7 downto 0)
+    data_out: out std_logic_vector(7 downto 0);
+    debug: out std_logic_vector(7 downto 0)
   );
   end component UARTReceiver;
 
@@ -79,6 +80,7 @@ package UARTComponents is
     data_in: in std_logic;
     tick_half: out std_logic;
     tick: out std_logic;
+    debug: out std_logic_vector(7 downto 0);
     received: out std_logic;
     clk, reset: in std_logic;
     shift_in: in std_logic;

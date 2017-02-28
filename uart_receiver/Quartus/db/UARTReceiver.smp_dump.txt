@@ -1,0 +1,16 @@
+
+State Machine - |UARTReceiver|UARTReceiverData:DP|UARTTicker:tc|UARTTickerControl:CP|state
+Name state.S4 state.S3 state.S2 state.S1 state.S0 
+state.S0 0 0 0 0 0 
+state.S1 0 0 0 1 1 
+state.S2 0 0 1 0 1 
+state.S3 0 1 0 0 1 
+state.S4 1 0 0 0 1 
+
+State Machine - |UARTReceiver|UARTReceiverControl:CP|state
+Name state.S4 state.S3 state.S2 state.S1 state.S0 
+state.S0 0 0 0 0 0 
+state.S1 0 0 0 1 1 
+state.S2 0 0 1 0 1 
+state.S3 0 1 0 0 1 
+state.S4 1 0 0 0 1 
