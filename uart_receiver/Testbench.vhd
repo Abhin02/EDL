@@ -7,18 +7,30 @@ use std.textio.all;
 entity Testbench is
 end entity;
 architecture Behave of Testbench is
-  component UARTReceiver is
+  component TopLevel is
   port (
     clk, reset: in std_logic;
     data_in: in std_logic;
-    data_out: out std_logic_vector(7 downto 0);
-    debug: out std_logic_vector(7 downto 0)
+    debug: out std_logic_vector(7 downto 0);
+    CS, WE, OE: out std_logic;
+    address: out std_logic_vector(14 downto 0);
+    io: inout std_logic_vector(7 downto 0);
+    output_data: out std_logic_vector(7 downto 0);
+    read_data: in std_logic
   );
-  end component;
+  end component TopLevel;
 
   signal clk, clk2: std_logic := '0';
   signal reset: std_logic := '1';
   signal data_in: std_logic := '1';
+  signal CS: std_logic := '1';
+  signal WE: std_logic := '1';
+  signal OE: std_logic := '1';
+  signal read_data: std_logic := '0';
+  signal address: std_logic_vector(14 downto 0) := (others => '0');
+  signal io: std_logic_vector(7 downto 0) := (others => 'Z');
+  signal output_data: std_logic_vector(7 downto 0) := (others => '0');
+
   signal data_out: std_logic_vector(7 downto 0) := (others => '0');
   signal debug: std_logic_vector(7 downto 0) := (others => '0');
 
@@ -76,12 +88,18 @@ begin
     end loop;
   end process;
 
-  dut: UARTReceiver
+  dut: TopLevel
   port map (
     clk => clk,
     reset => reset,
     data_in => data_in,
-    data_out => data_out,
-    debug => debug
+    CS => CS,
+    OE => OE,
+    WE => WE,
+    debug => debug,
+    address => address,
+    io => io,
+    output_data => output_data,
+    read_data => read_data
   );
 end Behave;

@@ -1,26 +1,44 @@
 v 3
-file . "UARTReceiver.vhd" "20170228175331.000" "20170228232333.238":
-  entity uartreceiver at 1( 0) + 0 on 1557;
-  architecture struct of uartreceiver at 15( 298) + 0 on 1558;
-  entity uartreceivercontrol at 48( 1004) + 0 on 1559;
-  architecture behave of uartreceivercontrol at 63( 1360) + 0 on 1560;
-  entity uartreceiverdata at 177( 4357) + 0 on 1561;
-  architecture mixed of uartreceiverdata at 195( 4804) + 0 on 1562;
-file . "UARTComponents.vhd" "20170228162108.000" "20170228232333.194":
-  package uartcomponents at 1( 0) + 0 on 1550;
-  entity dataregister at 96( 2253) + 0 on 1551;
-  architecture behave of dataregister at 104( 2522) + 0 on 1552;
-  entity increment13 at 118( 2797) + 0 on 1553;
-  architecture behave of increment13 at 127( 3009) + 0 on 1554;
-  entity increment4 at 132( 3117) + 0 on 1555;
-  architecture behave of increment4 at 141( 3325) + 0 on 1556;
-file . "UARTTicker.vhd" "20170227200757.000" "20170228232333.309":
-  entity uartticker at 1( 0) + 0 on 1563;
-  architecture struct of uartticker at 14( 259) + 0 on 1564;
-  entity uarttickercontrol at 40( 735) + 0 on 1565;
-  architecture behave of uarttickercontrol at 53( 1064) + 0 on 1566;
-  entity uarttickerdata at 153( 3406) + 0 on 1567;
-  architecture mixed of uarttickerdata at 166( 3667) + 0 on 1568;
-file . "Testbench.vhd" "20170228170844.000" "20170228232333.153":
-  entity testbench at 1( 0) + 0 on 1548;
-  architecture behave of testbench at 9( 135) + 0 on 1549;
+file . "SMC.vhd" "20170302115950.000" "20170302173000.180":
+  entity smc at 1( 0) + 0 on 2548;
+  architecture struct of smc at 19( 454) + 0 on 2549;
+  entity smccontrol at 68( 1678) + 0 on 2550;
+  architecture mixed of smccontrol at 85( 2142) + 0 on 2551;
+  entity smcdata at 181( 4570) + 0 on 2552;
+  architecture mixed of smcdata at 202( 5219) + 0 on 2553;
+  entity clockdivider at 282( 7548) + 0 on 2554;
+  architecture struct of clockdivider at 294( 7768) + 0 on 2555;
+  entity clockdividercontrol at 318( 8182) + 0 on 2556;
+  architecture behave of clockdividercontrol at 332( 8432) + 0 on 2557;
+  entity clockdividerdata at 380( 9478) + 0 on 2558;
+  architecture mixed of clockdividerdata at 392( 9694) + 0 on 2559;
+file . "Testbench.vhd" "20170302113639.000" "20170302172959.848":
+  entity testbench at 1( 0) + 0 on 2521;
+  architecture behave of testbench at 9( 135) + 0 on 2522;
+file . "UARTTicker.vhd" "20170227200757.000" "20170302173000.037":
+  entity uartticker at 1( 0) + 0 on 2540;
+  architecture struct of uartticker at 14( 259) + 0 on 2541;
+  entity uarttickercontrol at 40( 735) + 0 on 2542;
+  architecture behave of uarttickercontrol at 53( 1064) + 0 on 2543;
+  entity uarttickerdata at 153( 3406) + 0 on 2544;
+  architecture mixed of uarttickerdata at 166( 3667) + 0 on 2545;
+file . "UARTComponents.vhd" "20170302113324.000" "20170302172959.915":
+  package uartcomponents at 1( 0) + 0 on 2525;
+  entity dataregister at 181( 4558) + 0 on 2526;
+  architecture behave of dataregister at 189( 4827) + 0 on 2527;
+  entity increment13 at 203( 5102) + 0 on 2528;
+  architecture behave of increment13 at 212( 5314) + 0 on 2529;
+  entity increment4 at 217( 5422) + 0 on 2530;
+  architecture behave of increment4 at 226( 5630) + 0 on 2531;
+  entity increment15 at 231( 5737) + 0 on 2532;
+  architecture behave of increment15 at 240( 5949) + 0 on 2533;
+file . "UARTReceiver.vhd" "20170302113821.000" "20170302172959.964":
+  entity uartreceiver at 1( 0) + 0 on 2534;
+  architecture struct of uartreceiver at 16( 342) + 0 on 2535;
+  entity uartreceivercontrol at 58( 1252) + 0 on 2536;
+  architecture behave of uartreceivercontrol at 73( 1608) + 0 on 2537;
+  entity uartreceiverdata at 187( 4605) + 0 on 2538;
+  architecture mixed of uartreceiverdata at 205( 5052) + 0 on 2539;
+file . "TopLevel.vhd" "20170302113249.000" "20170302173000.152":
+  entity toplevel at 1( 0) + 0 on 2546;
+  architecture mixed of toplevel at 19( 458) + 0 on 2547;

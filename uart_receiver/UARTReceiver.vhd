@@ -1,20 +1,30 @@
 library std;
 library ieee;
 use ieee.std_logic_1164.all;
-
+library work;
 use work.UARTComponents.all;
 entity UARTReceiver is
   port (
     clk, reset: in std_logic;
     data_in: in std_logic;
     data_out: out std_logic_vector(7 downto 0);
-    debug: out std_logic_vector(7 downto 0)
+    debug: out std_logic_vector(7 downto 0);
+    data_ready: out std_logic
   );
 end entity UARTReceiver;
 
 architecture Struct of UARTReceiver is
-  signal shift_in, data_ready, tick_reset, tick_half, tick, received: std_logic;
+  signal shift_in, tick_reset, tick_half, tick, received: std_logic;
+  signal data_ready_signal: std_logic;
+  signal clk_slow: std_logic;
 begin
+  data_ready <= data_ready_signal;
+  cl: ClockDivider
+  port map (
+    clk => clk,
+    reset => reset,
+    clk_slow => clk_slow
+  );
   CP: UARTReceiverControl
   port map (
     data_in => data_in,
@@ -23,7 +33,7 @@ begin
     reset => reset,
     clk => clk,
     shift_in => shift_in,
-    data_ready => data_ready,
+    data_ready => data_ready_signal,
     tick_reset => tick_reset,
     received => received
   );
@@ -36,7 +46,7 @@ begin
     tick => tick,
     clk => clk,
     shift_in => shift_in,
-    data_ready => data_ready,
+    data_ready => data_ready_signal,
     tick_reset => tick_reset,
     data_out => data_out,
     data_in => data_in,
