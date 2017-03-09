@@ -109,3 +109,4 @@ set_location_assignment PIN_72 -to output_data[4]
 set_location_assignment PIN_74 -to output_data[5]
 set_location_assignment PIN_76 -to output_data[6]
 set_location_assignment PIN_80 -to output_data[7]
+set_location_assignment PIN_84 -to sync_pulse

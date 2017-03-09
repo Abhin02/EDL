@@ -17,7 +17,8 @@ architecture Behave of Testbench2 is
     io: inout std_logic_vector(7 downto 0);
     output_data: out std_logic_vector(7 downto 0);
     read_data: in std_logic;
-    sample_rate: in std_logic
+    sample_rate: in std_logic;
+    sync_pulse: out std_logic
   );
   end component TopLevel;
 
@@ -32,6 +33,7 @@ architecture Behave of Testbench2 is
   signal address: std_logic_vector(14 downto 0) := (others => '0');
   signal io: std_logic_vector(7 downto 0) := (others => 'Z');
   signal output_data: std_logic_vector(7 downto 0) := (others => '0');
+  signal sync_pulse: std_logic := '0';
 
   signal data_out: std_logic_vector(7 downto 0) := (others => '0');
   signal debug: std_logic_vector(7 downto 0) := (others => '0');
@@ -116,6 +118,7 @@ begin
     io => io,
     output_data => output_data,
     read_data => read_data,
-    sample_rate => sample_rate
+    sample_rate => sample_rate,
+    sync_pulse => sync_pulse
   );
 end Behave;

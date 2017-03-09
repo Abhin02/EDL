@@ -1,5 +1,5 @@
 Analysis & Synthesis report for TopLevel
-Thu Mar  9 23:06:35 2017
+Fri Mar 10 01:00:04 2017
 Quartus II 32-bit Version 12.0 Build 178 05/31/2012 SJ Web Edition
 
 
@@ -66,13 +66,13 @@ applicable agreement for further details.
 +------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                           ;
 +-----------------------------+------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Thu Mar  9 23:06:35 2017    ;
+; Analysis & Synthesis Status ; Successful - Fri Mar 10 01:00:04 2017    ;
 ; Quartus II 32-bit Version   ; 12.0 Build 178 05/31/2012 SJ Web Edition ;
 ; Revision Name               ; TopLevel                                 ;
 ; Top-level Entity Name       ; TopLevel                                 ;
 ; Family                      ; MAX V                                    ;
-; Total logic elements        ; 347                                      ;
-; Total pins                  ; 55                                       ;
+; Total logic elements        ; 363                                      ;
+; Total pins                  ; 56                                       ;
 ; Total virtual pins          ; 0                                        ;
 ; UFM blocks                  ; 0 / 1 ( 0 % )                            ;
 +-----------------------------+------------------------------------------+
@@ -179,33 +179,33 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Total logic elements                        ; 347   ;
-;     -- Combinational with no register       ; 134   ;
+; Total logic elements                        ; 363   ;
+;     -- Combinational with no register       ; 140   ;
 ;     -- Register only                        ; 49    ;
-;     -- Combinational with a register        ; 164   ;
+;     -- Combinational with a register        ; 174   ;
 ;                                             ;       ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 123   ;
-;     -- 3 input functions                    ; 23    ;
-;     -- 2 input functions                    ; 146   ;
-;     -- 1 input functions                    ; 6     ;
+;     -- 4 input functions                    ; 128   ;
+;     -- 3 input functions                    ; 22    ;
+;     -- 2 input functions                    ; 157   ;
+;     -- 1 input functions                    ; 7     ;
 ;     -- 0 input functions                    ; 0     ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 245   ;
+;     -- normal mode                          ; 261   ;
 ;     -- arithmetic mode                      ; 102   ;
 ;     -- qfbk mode                            ; 0     ;
 ;     -- register cascade mode                ; 0     ;
 ;     -- synchronous clear/load mode          ; 111   ;
 ;     -- asynchronous clear/load mode         ; 0     ;
 ;                                             ;       ;
-; Total registers                             ; 213   ;
+; Total registers                             ; 223   ;
 ; Total logic cells in carry chains           ; 107   ;
-; I/O pins                                    ; 55    ;
+; I/O pins                                    ; 56    ;
 ; Maximum fan-out node                        ; clk   ;
-; Maximum fan-out                             ; 213   ;
-; Total fan-out                               ; 1400  ;
-; Average fan-out                             ; 3.48  ;
+; Maximum fan-out                             ; 223   ;
+; Total fan-out                               ; 1453  ;
+; Average fan-out                             ; 3.47  ;
 +---------------------------------------------+-------+
 
 
@@ -214,7 +214,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-----------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+--------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node              ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                                                                    ; Library Name ;
 +-----------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+--------------------------------------------------------------------------------------------------------+--------------+
-; |TopLevel                               ; 347 (0)     ; 213          ; 0          ; 55   ; 0            ; 134 (0)      ; 49 (0)            ; 164 (0)          ; 107 (0)         ; 0 (0)      ; |TopLevel                                                                                              ; work         ;
+; |TopLevel                               ; 363 (16)    ; 223          ; 0          ; 56   ; 0            ; 140 (6)      ; 49 (0)            ; 174 (10)         ; 107 (0)         ; 0 (0)      ; |TopLevel                                                                                              ; work         ;
 ;    |SMC:ram|                            ; 189 (0)     ; 135          ; 0          ; 0    ; 0            ; 54 (0)       ; 35 (0)            ; 100 (0)          ; 62 (0)          ; 0 (0)      ; |TopLevel|SMC:ram                                                                                      ; work         ;
 ;       |SMCControl:cntrl|                ; 17 (17)     ; 11           ; 0          ; 0    ; 0            ; 6 (6)        ; 0 (0)             ; 11 (11)          ; 0 (0)           ; 0 (0)      ; |TopLevel|SMC:ram|SMCControl:cntrl                                                                     ; work         ;
 ;       |SMCData:data|                    ; 172 (24)    ; 124          ; 0          ; 0    ; 0            ; 48 (24)      ; 35 (0)            ; 89 (0)           ; 62 (0)          ; 0 (0)      ; |TopLevel|SMC:ram|SMCData:data                                                                         ; work         ;
@@ -233,10 +233,10 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;    |UARTReceiver:uart|                  ; 158 (0)     ; 78           ; 0          ; 0    ; 0            ; 80 (0)       ; 14 (0)            ; 64 (0)           ; 45 (0)          ; 0 (0)      ; |TopLevel|UARTReceiver:uart                                                                            ; work         ;
 ;       |UARTReceiverControl:CP|          ; 90 (90)     ; 39           ; 0          ; 0    ; 0            ; 51 (51)      ; 0 (0)             ; 39 (39)          ; 32 (32)         ; 0 (0)      ; |TopLevel|UARTReceiver:uart|UARTReceiverControl:CP                                                     ; work         ;
 ;       |UARTReceiverData:DP|             ; 68 (0)      ; 39           ; 0          ; 0    ; 0            ; 29 (0)       ; 14 (0)            ; 25 (0)           ; 13 (0)          ; 0 (0)      ; |TopLevel|UARTReceiver:uart|UARTReceiverData:DP                                                        ; work         ;
-;          |DataRegister:count1|          ; 4 (4)       ; 4            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |TopLevel|UARTReceiver:uart|UARTReceiverData:DP|DataRegister:count1                                    ; work         ;
+;          |DataRegister:count1|          ; 5 (5)       ; 4            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |TopLevel|UARTReceiver:uart|UARTReceiverData:DP|DataRegister:count1                                    ; work         ;
 ;          |DataRegister:dout|            ; 9 (9)       ; 8            ; 0          ; 0    ; 0            ; 1 (1)        ; 7 (7)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |TopLevel|UARTReceiver:uart|UARTReceiverData:DP|DataRegister:dout                                      ; work         ;
 ;          |DataRegister:shift_r|         ; 17 (17)     ; 9            ; 0          ; 0    ; 0            ; 8 (8)        ; 7 (7)             ; 2 (2)            ; 0 (0)           ; 0 (0)      ; |TopLevel|UARTReceiver:uart|UARTReceiverData:DP|DataRegister:shift_r                                   ; work         ;
-;          |Increment4:incr|              ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|UARTReceiver:uart|UARTReceiverData:DP|Increment4:incr                                        ; work         ;
+;          |Increment4:incr|              ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|UARTReceiver:uart|UARTReceiverData:DP|Increment4:incr                                        ; work         ;
 ;          |UARTTicker:tc|                ; 36 (0)      ; 18           ; 0          ; 0    ; 0            ; 18 (0)       ; 0 (0)             ; 18 (0)           ; 13 (0)          ; 0 (0)      ; |TopLevel|UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc                                          ; work         ;
 ;             |UARTTickerControl:CP|      ; 12 (12)     ; 5            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 5 (5)            ; 0 (0)           ; 0 (0)      ; |TopLevel|UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerControl:CP                     ; work         ;
 ;             |UARTTickerData:DP|         ; 24 (11)     ; 13           ; 0          ; 0    ; 0            ; 11 (11)      ; 0 (0)             ; 13 (0)           ; 13 (0)          ; 0 (0)      ; |TopLevel|UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP                        ; work         ;
@@ -297,12 +297,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 213   ;
+; Total registers                              ; 223   ;
 ; Number of registers using Synchronous Clear  ; 111   ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 110   ;
+; Number of registers using Clock Enable       ; 112   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -323,20 +323,20 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------------------------------------------------------------------------------------+----------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered                                                                               ; Example Multiplexer Output ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------------------------------------------------------------------------------------+----------------------------+
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; |TopLevel|SMC:ram|SMCData:data|DataRegister:output|Dout[0]                               ;                            ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; |TopLevel|SMC:ram|SMCData:data|DataRegister:rw|Dout[15]                                  ;                            ;
-; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; |TopLevel|SMC:ram|SMCData:data|DataRegister:waddr|Dout[9]                                ;                            ;
-; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; |TopLevel|SMC:ram|SMCData:data|DataRegister:raddr|Dout[0]                                ;                            ;
-; 3:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; |TopLevel|UARTReceiver:uart|UARTReceiverData:DP|DataRegister:shift_r|Dout[6]             ;                            ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; |TopLevel|SMC:ram|SMCData:data|DataRegister:rw_limit3|Dout[6]                            ;                            ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; |TopLevel|SMC:ram|SMCData:data|DataRegister:rw_limit2|Dout[5]                            ;                            ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; |TopLevel|SMC:ram|SMCData:data|DataRegister:rw_limit1|Dout[5]                            ;                            ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; |TopLevel|SMC:ram|SMCData:data|DataRegister:rw_limit0|Dout[6]                            ;                            ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; |TopLevel|UARTReceiver:uart|UARTReceiverData:DP|DataRegister:count1|Dout[0]              ;                            ;
-; 5:1                ; 15 bits   ; 45 LEs        ; 30 LEs               ; 15 LEs                 ; |TopLevel|SMC:ram|SMCData:data|DataRegister:addr|Dout[8]                                 ;                            ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; |TopLevel|SMC:ram|SMCData:data|DataRegister:output|Dout[7]                               ;                            ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; |TopLevel|SMC:ram|SMCData:data|DataRegister:rw|Dout[28]                                  ;                            ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; |TopLevel|SMC:ram|SMCData:data|DataRegister:waddr|Dout[0]                                ;                            ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; |TopLevel|SMC:ram|SMCData:data|DataRegister:raddr|Dout[4]                                ;                            ;
+; 3:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; |TopLevel|UARTReceiver:uart|UARTReceiverData:DP|DataRegister:shift_r|Dout[4]             ;                            ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; |TopLevel|SMC:ram|SMCData:data|DataRegister:rw_limit3|Dout[1]                            ;                            ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; |TopLevel|SMC:ram|SMCData:data|DataRegister:rw_limit2|Dout[3]                            ;                            ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; |TopLevel|SMC:ram|SMCData:data|DataRegister:rw_limit1|Dout[4]                            ;                            ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; |TopLevel|SMC:ram|SMCData:data|DataRegister:rw_limit0|Dout[4]                            ;                            ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; |TopLevel|UARTReceiver:uart|UARTReceiverData:DP|DataRegister:count1|Dout[1]              ;                            ;
+; 5:1                ; 15 bits   ; 45 LEs        ; 30 LEs               ; 15 LEs                 ; |TopLevel|SMC:ram|SMCData:data|DataRegister:addr|Dout[0]                                 ;                            ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; |TopLevel|SMC:ram|SMCControl:cntrl|count_sig[1]                                          ;                            ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; |TopLevel|UARTReceiver:uart|UARTReceiverData:DP|DataRegister:dout|Dout[0]                ;                            ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; |TopLevel|SMC:ram|SMCControl:cntrl|state                                                 ;                            ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; |TopLevel|UARTReceiver:uart|UARTReceiverData:DP|DataRegister:dout|Dout[7]                ;                            ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; |TopLevel|SMC:ram|SMCControl:cntrl|limit_control[0]                                      ;                            ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; |TopLevel|UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerControl:CP|state ;                            ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------------------------------------------------------------------------------------+----------------------------+
 
@@ -551,7 +551,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 12.0 Build 178 05/31/2012 SJ Web Edition
-    Info: Processing started: Thu Mar  9 23:06:30 2017
+    Info: Processing started: Fri Mar 10 01:00:00 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off TopLevel -c TopLevel
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 6 design units, including 3 entities, in source file /home/kalpesh/Projects/EDL/uart_receiver/UARTTicker.vhd
@@ -595,7 +595,8 @@ Info (12021): Found 6 design units, including 3 entities, in source file /home/k
     Info (12023): Found entity 2: SMCControl
     Info (12023): Found entity 3: SMCData
 Info (12127): Elaborating entity "TopLevel" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at TopLevel.vhd(23): object "clk_slow" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at TopLevel.vhd(24): object "clk_slow" assigned a value but never read
+Warning (10492): VHDL Process Statement warning at TopLevel.vhd(40): signal "old_output" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Info (12128): Elaborating entity "ClockDivider" for hierarchy "ClockDivider:clk_div"
 Info (12128): Elaborating entity "SMC" for hierarchy "SMC:ram"
 Info (12128): Elaborating entity "SMCControl" for hierarchy "SMC:ram|SMCControl:cntrl"
@@ -624,15 +625,15 @@ Warning (10540): VHDL Signal Declaration warning at UARTTicker.vhd(174): used ex
 Info (12128): Elaborating entity "Increment13" for hierarchy "UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|Increment13:incr"
 Info (12128): Elaborating entity "DataRegister" for hierarchy "UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg"
 Info (12128): Elaborating entity "DataRegister" for hierarchy "UARTReceiver:uart|UARTReceiverData:DP|DataRegister:shift_r"
-Info (21057): Implemented 402 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 419 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 5 input pins
-    Info (21059): Implemented 42 output pins
+    Info (21059): Implemented 43 output pins
     Info (21060): Implemented 8 bidirectional pins
-    Info (21061): Implemented 347 logic cells
-Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 9 warnings
+    Info (21061): Implemented 363 logic cells
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 10 warnings
     Info: Peak virtual memory: 358 megabytes
-    Info: Processing ended: Thu Mar  9 23:06:35 2017
-    Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:03
+    Info: Processing ended: Fri Mar 10 01:00:04 2017
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:02
 
 

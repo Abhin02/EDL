@@ -14,7 +14,8 @@ entity TopLevel is
     io: inout std_logic_vector(7 downto 0);
     output_data: out std_logic_vector(7 downto 0);
     read_data: in std_logic;
-    sample_rate: in std_logic
+    sample_rate: in std_logic;
+    sync_pulse: out std_logic
   );
 end entity TopLevel;
 
@@ -22,7 +23,45 @@ architecture Mixed of TopLevel is
   signal data_ready: std_logic;
   signal clk_slow: std_logic := '0';
   signal uart_out: std_logic_vector(7 downto 0);
+  signal output_signal: std_logic_vector(7 downto 0);
+  signal old_output: std_logic_vector(7 downto 0);
+  signal done: std_logic;
+  signal sync_pulse_signal: std_logic;
 begin
+    output_data <= output_signal;
+    sync_pulse <= sync_pulse_signal;
+    -- The process given below is used to output the synchronization pulse
+    process(clk, output_signal, reset, done, sync_pulse_signal)
+      variable nsync_pulse: std_logic;
+      variable ndone: std_logic;
+    begin
+      nsync_pulse := sync_pulse_signal;
+      ndone := done;
+      if (old_output /= output_signal) then
+        if done = '0' then
+          nsync_pulse := '1';
+          ndone := '1';
+        else
+          nsync_pulse := '0';
+          ndone := '1';
+        end if;
+      else
+        ndone := done;
+        nsync_pulse := sync_pulse_signal;
+      end if;
+      if (clk'event and clk = '1') then
+        if (reset = '1') then
+          sync_pulse_signal <= '0';
+          old_output <= (others => '0');
+          done <= '0';
+        else
+          sync_pulse_signal <= nsync_pulse;
+          old_output <= output_signal;
+          done <= ndone;
+        end if;
+      end if;
+    end process;
+
     clk_div: ClockDivider
     port map (
       reset => reset,
@@ -33,7 +72,7 @@ begin
     ram: SMC
     port map (
       io => io,
-      output_data => output_data,
+      output_data => output_signal,
       input_data => uart_out,
       OE => OE,
       WE => WE,

@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for TopLevel
-Thu Mar  9 23:06:56 2017
+Fri Mar 10 01:00:23 2017
 Quartus II 32-bit Version 12.0 Build 178 05/31/2012 SJ Web Edition
 
 
@@ -95,7 +95,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-----------+-----------------+------------+------+
 ; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
 +-----------+-----------------+------------+------+
-; 69.16 MHz ; 69.16 MHz       ; clk        ;      ;
+; 74.02 MHz ; 74.02 MHz       ; clk        ;      ;
 +-----------+-----------------+------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -105,7 +105,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------+---------+---------------+
 ; Clock ; Slack   ; End Point TNS ;
 +-------+---------+---------------+
-; clk   ; -13.459 ; -1727.955     ;
+; clk   ; -12.509 ; -1721.521     ;
 +-------+---------+---------------+
 
 
@@ -114,7 +114,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------+-------+---------------+
 ; Clock ; Slack ; End Point TNS ;
 +-------+-------+---------------+
-; clk   ; 1.639 ; 0.000         ;
+; clk   ; 1.650 ; 0.000         ;
 +-------+-------+---------------+
 
 
@@ -144,215 +144,215 @@ No paths to report.
 +---------+-----------------------------------------------+-----------------------------------------------+--------------+-------------+--------------+------------+------------+
 ; Slack   ; From Node                                     ; To Node                                       ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +---------+-----------------------------------------------+-----------------------------------------------+--------------+-------------+--------------+------------+------------+
-; -13.459 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[20] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 14.126     ;
-; -13.459 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[20] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[0]  ; clk          ; clk         ; 1.000        ; 0.000      ; 14.126     ;
-; -13.459 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[20] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[3]  ; clk          ; clk         ; 1.000        ; 0.000      ; 14.126     ;
-; -13.459 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[20] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[2]  ; clk          ; clk         ; 1.000        ; 0.000      ; 14.126     ;
-; -13.459 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[20] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 14.126     ;
-; -13.459 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[20] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[4]  ; clk          ; clk         ; 1.000        ; 0.000      ; 14.126     ;
-; -13.416 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[20] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[17] ; clk          ; clk         ; 1.000        ; 0.000      ; 14.083     ;
-; -13.416 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[20] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[16] ; clk          ; clk         ; 1.000        ; 0.000      ; 14.083     ;
-; -13.416 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[20] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[19] ; clk          ; clk         ; 1.000        ; 0.000      ; 14.083     ;
-; -13.416 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[20] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[18] ; clk          ; clk         ; 1.000        ; 0.000      ; 14.083     ;
-; -13.416 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[20] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[21] ; clk          ; clk         ; 1.000        ; 0.000      ; 14.083     ;
-; -13.416 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[20] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[20] ; clk          ; clk         ; 1.000        ; 0.000      ; 14.083     ;
-; -13.416 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[20] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[23] ; clk          ; clk         ; 1.000        ; 0.000      ; 14.083     ;
-; -13.416 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[20] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[22] ; clk          ; clk         ; 1.000        ; 0.000      ; 14.083     ;
-; -13.416 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[20] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[25] ; clk          ; clk         ; 1.000        ; 0.000      ; 14.083     ;
-; -13.416 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[20] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[24] ; clk          ; clk         ; 1.000        ; 0.000      ; 14.083     ;
-; -13.416 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[20] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[27] ; clk          ; clk         ; 1.000        ; 0.000      ; 14.083     ;
-; -13.416 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[20] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[26] ; clk          ; clk         ; 1.000        ; 0.000      ; 14.083     ;
-; -13.416 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[20] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[29] ; clk          ; clk         ; 1.000        ; 0.000      ; 14.083     ;
-; -13.416 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[20] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[28] ; clk          ; clk         ; 1.000        ; 0.000      ; 14.083     ;
-; -13.416 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[20] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[31] ; clk          ; clk         ; 1.000        ; 0.000      ; 14.083     ;
-; -13.416 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[20] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[30] ; clk          ; clk         ; 1.000        ; 0.000      ; 14.083     ;
-; -13.387 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[8]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 14.054     ;
-; -13.387 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[8]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[0]  ; clk          ; clk         ; 1.000        ; 0.000      ; 14.054     ;
-; -13.387 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[8]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[3]  ; clk          ; clk         ; 1.000        ; 0.000      ; 14.054     ;
-; -13.387 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[8]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[2]  ; clk          ; clk         ; 1.000        ; 0.000      ; 14.054     ;
-; -13.387 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[8]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 14.054     ;
-; -13.387 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[8]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[4]  ; clk          ; clk         ; 1.000        ; 0.000      ; 14.054     ;
-; -13.380 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[20] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 14.047     ;
-; -13.380 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[20] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[6]  ; clk          ; clk         ; 1.000        ; 0.000      ; 14.047     ;
-; -13.380 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[20] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 14.047     ;
-; -13.380 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[20] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 14.047     ;
-; -13.380 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[20] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 14.047     ;
-; -13.380 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[20] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 14.047     ;
-; -13.380 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[20] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 14.047     ;
-; -13.380 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[20] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 14.047     ;
-; -13.380 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[20] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[15] ; clk          ; clk         ; 1.000        ; 0.000      ; 14.047     ;
-; -13.380 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[20] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[14] ; clk          ; clk         ; 1.000        ; 0.000      ; 14.047     ;
-; -13.367 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[5]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 14.034     ;
-; -13.367 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[5]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[0]  ; clk          ; clk         ; 1.000        ; 0.000      ; 14.034     ;
-; -13.367 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[5]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[3]  ; clk          ; clk         ; 1.000        ; 0.000      ; 14.034     ;
-; -13.367 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[5]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[2]  ; clk          ; clk         ; 1.000        ; 0.000      ; 14.034     ;
-; -13.367 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[5]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 14.034     ;
-; -13.367 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[5]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[4]  ; clk          ; clk         ; 1.000        ; 0.000      ; 14.034     ;
-; -13.344 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[8]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[17] ; clk          ; clk         ; 1.000        ; 0.000      ; 14.011     ;
-; -13.344 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[8]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[16] ; clk          ; clk         ; 1.000        ; 0.000      ; 14.011     ;
-; -13.344 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[8]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[19] ; clk          ; clk         ; 1.000        ; 0.000      ; 14.011     ;
-; -13.344 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[8]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[18] ; clk          ; clk         ; 1.000        ; 0.000      ; 14.011     ;
-; -13.344 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[8]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[21] ; clk          ; clk         ; 1.000        ; 0.000      ; 14.011     ;
-; -13.344 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[8]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[20] ; clk          ; clk         ; 1.000        ; 0.000      ; 14.011     ;
-; -13.344 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[8]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[23] ; clk          ; clk         ; 1.000        ; 0.000      ; 14.011     ;
-; -13.344 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[8]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[22] ; clk          ; clk         ; 1.000        ; 0.000      ; 14.011     ;
-; -13.344 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[8]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[25] ; clk          ; clk         ; 1.000        ; 0.000      ; 14.011     ;
-; -13.344 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[8]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[24] ; clk          ; clk         ; 1.000        ; 0.000      ; 14.011     ;
-; -13.344 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[8]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[27] ; clk          ; clk         ; 1.000        ; 0.000      ; 14.011     ;
-; -13.344 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[8]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[26] ; clk          ; clk         ; 1.000        ; 0.000      ; 14.011     ;
-; -13.344 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[8]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[29] ; clk          ; clk         ; 1.000        ; 0.000      ; 14.011     ;
-; -13.344 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[8]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[28] ; clk          ; clk         ; 1.000        ; 0.000      ; 14.011     ;
-; -13.344 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[8]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[31] ; clk          ; clk         ; 1.000        ; 0.000      ; 14.011     ;
-; -13.344 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[8]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[30] ; clk          ; clk         ; 1.000        ; 0.000      ; 14.011     ;
-; -13.324 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[5]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[17] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.991     ;
-; -13.324 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[5]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[16] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.991     ;
-; -13.324 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[5]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[19] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.991     ;
-; -13.324 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[5]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[18] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.991     ;
-; -13.324 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[5]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[21] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.991     ;
-; -13.324 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[5]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[20] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.991     ;
-; -13.324 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[5]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[23] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.991     ;
-; -13.324 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[5]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[22] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.991     ;
-; -13.324 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[5]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[25] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.991     ;
-; -13.324 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[5]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[24] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.991     ;
-; -13.324 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[5]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[27] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.991     ;
-; -13.324 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[5]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[26] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.991     ;
-; -13.324 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[5]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[29] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.991     ;
-; -13.324 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[5]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[28] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.991     ;
-; -13.324 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[5]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[31] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.991     ;
-; -13.324 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[5]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[30] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.991     ;
-; -13.308 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[8]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 13.975     ;
-; -13.308 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[8]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[6]  ; clk          ; clk         ; 1.000        ; 0.000      ; 13.975     ;
-; -13.308 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[8]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 13.975     ;
-; -13.308 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[8]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 13.975     ;
-; -13.308 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[8]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.975     ;
-; -13.308 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[8]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.975     ;
-; -13.308 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[8]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.975     ;
-; -13.308 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[8]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.975     ;
-; -13.308 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[8]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[15] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.975     ;
-; -13.308 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[8]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[14] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.975     ;
-; -13.288 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[5]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 13.955     ;
-; -13.288 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[5]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[6]  ; clk          ; clk         ; 1.000        ; 0.000      ; 13.955     ;
-; -13.288 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[5]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 13.955     ;
-; -13.288 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[5]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 13.955     ;
-; -13.288 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[5]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.955     ;
-; -13.288 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[5]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.955     ;
-; -13.288 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[5]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.955     ;
-; -13.288 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[5]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.955     ;
-; -13.288 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[5]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[15] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.955     ;
-; -13.288 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[5]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[14] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.955     ;
-; -13.272 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[22] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 13.939     ;
-; -13.272 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[22] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[0]  ; clk          ; clk         ; 1.000        ; 0.000      ; 13.939     ;
-; -13.272 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[22] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[3]  ; clk          ; clk         ; 1.000        ; 0.000      ; 13.939     ;
-; -13.272 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[22] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[2]  ; clk          ; clk         ; 1.000        ; 0.000      ; 13.939     ;
+; -12.509 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[17] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[27] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.176     ;
+; -12.509 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[17] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[26] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.176     ;
+; -12.509 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[17] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[29] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.176     ;
+; -12.509 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[17] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[28] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.176     ;
+; -12.509 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[17] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[31] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.176     ;
+; -12.509 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[17] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[30] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.176     ;
+; -12.504 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[17] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[17] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.171     ;
+; -12.504 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[17] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[16] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.171     ;
+; -12.504 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[17] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[19] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.171     ;
+; -12.504 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[17] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[18] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.171     ;
+; -12.504 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[17] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[21] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.171     ;
+; -12.504 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[17] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[20] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.171     ;
+; -12.504 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[17] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[23] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.171     ;
+; -12.504 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[17] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[22] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.171     ;
+; -12.504 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[17] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[25] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.171     ;
+; -12.504 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[17] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[24] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.171     ;
+; -12.496 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[17] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 13.163     ;
+; -12.496 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[17] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[6]  ; clk          ; clk         ; 1.000        ; 0.000      ; 13.163     ;
+; -12.496 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[17] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 13.163     ;
+; -12.496 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[17] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 13.163     ;
+; -12.496 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[17] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.163     ;
+; -12.496 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[17] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.163     ;
+; -12.496 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[17] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.163     ;
+; -12.496 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[17] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.163     ;
+; -12.496 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[17] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[15] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.163     ;
+; -12.496 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[17] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[14] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.163     ;
+; -12.444 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[22] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[27] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.111     ;
+; -12.444 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[22] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[26] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.111     ;
+; -12.444 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[22] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[29] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.111     ;
+; -12.444 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[22] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[28] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.111     ;
+; -12.444 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[22] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[31] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.111     ;
+; -12.444 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[22] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[30] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.111     ;
+; -12.439 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[22] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[17] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.106     ;
+; -12.439 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[22] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[16] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.106     ;
+; -12.439 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[22] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[19] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.106     ;
+; -12.439 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[22] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[18] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.106     ;
+; -12.439 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[22] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[21] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.106     ;
+; -12.439 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[22] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[20] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.106     ;
+; -12.439 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[22] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[23] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.106     ;
+; -12.439 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[22] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[22] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.106     ;
+; -12.439 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[22] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[25] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.106     ;
+; -12.439 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[22] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[24] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.106     ;
+; -12.431 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[22] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 13.098     ;
+; -12.431 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[22] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[6]  ; clk          ; clk         ; 1.000        ; 0.000      ; 13.098     ;
+; -12.431 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[22] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 13.098     ;
+; -12.431 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[22] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 13.098     ;
+; -12.431 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[22] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.098     ;
+; -12.431 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[22] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.098     ;
+; -12.431 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[22] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.098     ;
+; -12.431 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[22] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.098     ;
+; -12.431 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[22] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[15] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.098     ;
+; -12.431 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[22] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[14] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.098     ;
+; -12.423 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[19] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[27] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.090     ;
+; -12.423 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[19] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[26] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.090     ;
+; -12.423 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[19] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[29] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.090     ;
+; -12.423 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[19] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[28] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.090     ;
+; -12.423 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[19] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[31] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.090     ;
+; -12.423 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[19] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[30] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.090     ;
+; -12.418 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[19] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[17] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.085     ;
+; -12.418 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[19] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[16] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.085     ;
+; -12.418 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[19] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[19] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.085     ;
+; -12.418 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[19] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[18] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.085     ;
+; -12.418 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[19] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[21] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.085     ;
+; -12.418 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[19] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[20] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.085     ;
+; -12.418 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[19] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[23] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.085     ;
+; -12.418 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[19] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[22] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.085     ;
+; -12.418 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[19] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[25] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.085     ;
+; -12.418 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[19] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[24] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.085     ;
+; -12.410 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[19] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 13.077     ;
+; -12.410 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[19] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[6]  ; clk          ; clk         ; 1.000        ; 0.000      ; 13.077     ;
+; -12.410 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[19] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 13.077     ;
+; -12.410 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[19] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 13.077     ;
+; -12.410 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[19] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.077     ;
+; -12.410 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[19] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.077     ;
+; -12.410 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[19] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.077     ;
+; -12.410 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[19] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.077     ;
+; -12.410 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[19] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[15] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.077     ;
+; -12.410 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[19] ; SMC:ram|SMCData:data|DataRegister:rw|Dout[14] ; clk          ; clk         ; 1.000        ; 0.000      ; 13.077     ;
+; -12.261 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[7]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[27] ; clk          ; clk         ; 1.000        ; 0.000      ; 12.928     ;
+; -12.261 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[7]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[26] ; clk          ; clk         ; 1.000        ; 0.000      ; 12.928     ;
+; -12.261 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[7]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[29] ; clk          ; clk         ; 1.000        ; 0.000      ; 12.928     ;
+; -12.261 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[7]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[28] ; clk          ; clk         ; 1.000        ; 0.000      ; 12.928     ;
+; -12.261 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[7]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[31] ; clk          ; clk         ; 1.000        ; 0.000      ; 12.928     ;
+; -12.261 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[7]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[30] ; clk          ; clk         ; 1.000        ; 0.000      ; 12.928     ;
+; -12.256 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[7]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[17] ; clk          ; clk         ; 1.000        ; 0.000      ; 12.923     ;
+; -12.256 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[7]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[16] ; clk          ; clk         ; 1.000        ; 0.000      ; 12.923     ;
+; -12.256 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[7]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[19] ; clk          ; clk         ; 1.000        ; 0.000      ; 12.923     ;
+; -12.256 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[7]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[18] ; clk          ; clk         ; 1.000        ; 0.000      ; 12.923     ;
+; -12.256 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[7]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[21] ; clk          ; clk         ; 1.000        ; 0.000      ; 12.923     ;
+; -12.256 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[7]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[20] ; clk          ; clk         ; 1.000        ; 0.000      ; 12.923     ;
+; -12.256 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[7]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[23] ; clk          ; clk         ; 1.000        ; 0.000      ; 12.923     ;
+; -12.256 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[7]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[22] ; clk          ; clk         ; 1.000        ; 0.000      ; 12.923     ;
+; -12.256 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[7]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[25] ; clk          ; clk         ; 1.000        ; 0.000      ; 12.923     ;
+; -12.256 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[7]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[24] ; clk          ; clk         ; 1.000        ; 0.000      ; 12.923     ;
+; -12.248 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[7]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.915     ;
+; -12.248 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[7]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[6]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.915     ;
+; -12.248 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[7]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.915     ;
+; -12.248 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[7]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.915     ;
+; -12.248 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[7]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 12.915     ;
+; -12.248 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[7]  ; SMC:ram|SMCData:data|DataRegister:rw|Dout[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 12.915     ;
 +---------+-----------------------------------------------+-----------------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Hold: 'clk'                                                                                                                                                                                                                                                                                 ;
-+-------+-------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
-; Slack ; From Node                                                                                             ; To Node                                                                                               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+-------+-------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
-; 1.639 ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[6]                                                 ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[6]                                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.860      ;
-; 1.649 ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[2]                                                 ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[2]                                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.870      ;
-; 1.649 ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[8]                                                 ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[8]                                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.870      ;
-; 1.649 ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[16]                                                ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[16]                                                ; clk          ; clk         ; 0.000        ; 0.000      ; 1.870      ;
-; 1.649 ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[29]                                                ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[29]                                                ; clk          ; clk         ; 0.000        ; 0.000      ; 1.870      ;
-; 1.650 ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[18]                                                ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[18]                                                ; clk          ; clk         ; 0.000        ; 0.000      ; 1.871      ;
-; 1.652 ; UARTReceiver:uart|UARTReceiverData:DP|DataRegister:shift_r|Dout[2]                                    ; UARTReceiver:uart|UARTReceiverData:DP|DataRegister:shift_r|Dout[1]                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.873      ;
-; 1.652 ; UARTReceiver:uart|UARTReceiverData:DP|DataRegister:shift_r|Dout[7]                                    ; UARTReceiver:uart|UARTReceiverData:DP|DataRegister:shift_r|Dout[6]                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.873      ;
-; 1.661 ; UARTReceiver:uart|UARTReceiverData:DP|DataRegister:shift_r|Dout[6]                                    ; UARTReceiver:uart|UARTReceiverData:DP|DataRegister:shift_r|Dout[5]                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.882      ;
-; 1.665 ; UARTReceiver:uart|UARTReceiverData:DP|DataRegister:shift_r|Dout[3]                                    ; UARTReceiver:uart|UARTReceiverData:DP|DataRegister:shift_r|Dout[2]                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.886      ;
-; 1.669 ; SMC:ram|SMCControl:cntrl|count_sig[0]                                                                 ; SMC:ram|SMCControl:cntrl|count_sig[0]                                                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.890      ;
-; 1.675 ; UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerControl:CP|state.S2                     ; UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerControl:CP|state.S3                     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.896      ;
-; 1.675 ; SMC:ram|SMCControl:cntrl|count_sig[0]                                                                 ; SMC:ram|SMCControl:cntrl|count_sig[1]                                                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.896      ;
-; 1.676 ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[0]                                                 ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[0]                                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.897      ;
-; 1.688 ; SMC:ram|SMCControl:cntrl|state.S8                                                                     ; SMC:ram|SMCControl:cntrl|state.S0                                                                     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.909      ;
-; 1.734 ; SMC:ram|SMCControl:cntrl|state.S3                                                                     ; SMC:ram|SMCData:data|DataRegister:ww|Dout[0]                                                          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.955      ;
-; 1.737 ; SMC:ram|SMCControl:cntrl|state.S3                                                                     ; SMC:ram|SMCControl:cntrl|state.S4                                                                     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.958      ;
-; 1.746 ; UARTReceiver:uart|UARTReceiverData:DP|DataRegister:count1|Dout[0]                                     ; UARTReceiver:uart|UARTReceiverData:DP|DataRegister:count1|Dout[0]                                     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.967      ;
-; 1.907 ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[28]                                                ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[28]                                                ; clk          ; clk         ; 0.000        ; 0.000      ; 2.128      ;
-; 1.909 ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[11]                                                ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[11]                                                ; clk          ; clk         ; 0.000        ; 0.000      ; 2.130      ;
-; 1.910 ; UARTReceiver:uart|UARTReceiverData:DP|DataRegister:shift_r|Dout[5]                                    ; UARTReceiver:uart|UARTReceiverData:DP|DataRegister:shift_r|Dout[4]                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.131      ;
-; 1.916 ; UARTReceiver:uart|UARTReceiverData:DP|DataRegister:shift_r|Dout[9]                                    ; UARTReceiver:uart|UARTReceiverData:DP|DataRegister:shift_r|Dout[8]                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.137      ;
-; 1.916 ; UARTReceiver:uart|UARTReceiverData:DP|DataRegister:shift_r|Dout[4]                                    ; UARTReceiver:uart|UARTReceiverData:DP|DataRegister:shift_r|Dout[3]                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.137      ;
-; 1.918 ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[26]                                                ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[26]                                                ; clk          ; clk         ; 0.000        ; 0.000      ; 2.139      ;
-; 1.925 ; SMC:ram|SMCData:data|DataRegister:raddr|Dout[4]                                                       ; SMC:ram|SMCData:data|DataRegister:addr|Dout[4]                                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.146      ;
-; 1.941 ; SMC:ram|SMCData:data|DataRegister:raddr|Dout[13]                                                      ; SMC:ram|SMCData:data|DataRegister:addr|Dout[13]                                                       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.162      ;
-; 1.942 ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[20]                                                ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[20]                                                ; clk          ; clk         ; 0.000        ; 0.000      ; 2.163      ;
-; 1.958 ; SMC:ram|SMCData:data|DataRegister:waddr|Dout[1]                                                       ; SMC:ram|SMCData:data|DataRegister:addr|Dout[1]                                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.179      ;
-; 1.965 ; SMC:ram|SMCData:data|DataRegister:waddr|Dout[2]                                                       ; SMC:ram|SMCData:data|DataRegister:addr|Dout[2]                                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.186      ;
-; 1.966 ; SMC:ram|SMCData:data|DataRegister:waddr|Dout[3]                                                       ; SMC:ram|SMCData:data|DataRegister:addr|Dout[3]                                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.187      ;
-; 1.986 ; SMC:ram|SMCData:data|DataRegister:ww|Dout[2]                                                          ; SMC:ram|SMCData:data|DataRegister:ww|Dout[2]                                                          ; clk          ; clk         ; 0.000        ; 0.000      ; 2.207      ;
-; 1.990 ; SMC:ram|SMCData:data|DataRegister:ww|Dout[2]                                                          ; SMC:ram|SMCData:data|DataRegister:ww|Dout[3]                                                          ; clk          ; clk         ; 0.000        ; 0.000      ; 2.211      ;
-; 2.013 ; UARTReceiver:uart|UARTReceiverControl:CP|state.S3                                                     ; UARTReceiver:uart|UARTReceiverControl:CP|state.S3                                                     ; clk          ; clk         ; 0.000        ; 0.000      ; 2.234      ;
-; 2.021 ; UARTReceiver:uart|UARTReceiverControl:CP|state.S3                                                     ; UARTReceiver:uart|UARTReceiverControl:CP|state.S4                                                     ; clk          ; clk         ; 0.000        ; 0.000      ; 2.242      ;
-; 2.022 ; SMC:ram|SMCData:data|DataRegister:ww|Dout[0]                                                          ; SMC:ram|SMCData:data|DataRegister:ww|Dout[1]                                                          ; clk          ; clk         ; 0.000        ; 0.000      ; 2.243      ;
-; 2.061 ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[30]                                                ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[30]                                                ; clk          ; clk         ; 0.000        ; 0.000      ; 2.282      ;
-; 2.072 ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[5]                                                 ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[5]                                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 2.293      ;
-; 2.080 ; UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg|Dout[12] ; UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg|Dout[12] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.301      ;
-; 2.087 ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[27]                                                ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[27]                                                ; clk          ; clk         ; 0.000        ; 0.000      ; 2.308      ;
-; 2.107 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[5]                                                          ; SMC:ram|SMCData:data|DataRegister:rw|Dout[5]                                                          ; clk          ; clk         ; 0.000        ; 0.000      ; 2.328      ;
-; 2.107 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[26]                                                         ; SMC:ram|SMCData:data|DataRegister:rw|Dout[26]                                                         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.328      ;
-; 2.107 ; SMC:ram|SMCData:data|DataRegister:waddr|Dout[6]                                                       ; SMC:ram|SMCData:data|DataRegister:waddr|Dout[6]                                                       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.328      ;
-; 2.107 ; SMC:ram|SMCData:data|DataRegister:raddr|Dout[6]                                                       ; SMC:ram|SMCData:data|DataRegister:raddr|Dout[6]                                                       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.328      ;
-; 2.107 ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[15]                                                ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[15]                                                ; clk          ; clk         ; 0.000        ; 0.000      ; 2.328      ;
-; 2.108 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[3]                                                          ; SMC:ram|SMCData:data|DataRegister:rw|Dout[3]                                                          ; clk          ; clk         ; 0.000        ; 0.000      ; 2.329      ;
-; 2.108 ; SMC:ram|SMCData:data|DataRegister:waddr|Dout[4]                                                       ; SMC:ram|SMCData:data|DataRegister:waddr|Dout[4]                                                       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.329      ;
-; 2.108 ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[3]                                                 ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[3]                                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 2.329      ;
-; 2.108 ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[12]                                                ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[12]                                                ; clk          ; clk         ; 0.000        ; 0.000      ; 2.329      ;
-; 2.116 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[6]                                                          ; SMC:ram|SMCData:data|DataRegister:rw|Dout[6]                                                          ; clk          ; clk         ; 0.000        ; 0.000      ; 2.337      ;
-; 2.116 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[16]                                                         ; SMC:ram|SMCData:data|DataRegister:rw|Dout[16]                                                         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.337      ;
-; 2.116 ; SMC:ram|SMCData:data|DataRegister:waddr|Dout[7]                                                       ; SMC:ram|SMCData:data|DataRegister:waddr|Dout[7]                                                       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.337      ;
-; 2.116 ; SMC:ram|SMCData:data|DataRegister:raddr|Dout[7]                                                       ; SMC:ram|SMCData:data|DataRegister:raddr|Dout[7]                                                       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.337      ;
-; 2.117 ; UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg|Dout[7]  ; UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg|Dout[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.338      ;
-; 2.117 ; UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg|Dout[8]  ; UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg|Dout[8]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.338      ;
-; 2.117 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[13]                                                         ; SMC:ram|SMCData:data|DataRegister:rw|Dout[13]                                                         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.338      ;
-; 2.117 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[23]                                                         ; SMC:ram|SMCData:data|DataRegister:rw|Dout[23]                                                         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.338      ;
-; 2.117 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[27]                                                         ; SMC:ram|SMCData:data|DataRegister:rw|Dout[27]                                                         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.338      ;
-; 2.117 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[28]                                                         ; SMC:ram|SMCData:data|DataRegister:rw|Dout[28]                                                         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.338      ;
-; 2.117 ; SMC:ram|SMCData:data|DataRegister:waddr|Dout[8]                                                       ; SMC:ram|SMCData:data|DataRegister:waddr|Dout[8]                                                       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.338      ;
-; 2.117 ; SMC:ram|SMCData:data|DataRegister:raddr|Dout[8]                                                       ; SMC:ram|SMCData:data|DataRegister:raddr|Dout[8]                                                       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.338      ;
-; 2.117 ; SMC:ram|SMCData:data|DataRegister:waddr|Dout[9]                                                       ; SMC:ram|SMCData:data|DataRegister:waddr|Dout[9]                                                       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.338      ;
-; 2.117 ; SMC:ram|SMCData:data|DataRegister:raddr|Dout[9]                                                       ; SMC:ram|SMCData:data|DataRegister:raddr|Dout[9]                                                       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.338      ;
-; 2.117 ; SMC:ram|SMCData:data|DataRegister:waddr|Dout[14]                                                      ; SMC:ram|SMCData:data|DataRegister:waddr|Dout[14]                                                      ; clk          ; clk         ; 0.000        ; 0.000      ; 2.338      ;
-; 2.117 ; SMC:ram|SMCData:data|DataRegister:raddr|Dout[14]                                                      ; SMC:ram|SMCData:data|DataRegister:raddr|Dout[14]                                                      ; clk          ; clk         ; 0.000        ; 0.000      ; 2.338      ;
-; 2.117 ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[23]                                                ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[23]                                                ; clk          ; clk         ; 0.000        ; 0.000      ; 2.338      ;
-; 2.117 ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[25]                                                ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[25]                                                ; clk          ; clk         ; 0.000        ; 0.000      ; 2.338      ;
-; 2.120 ; UARTReceiver:uart|UARTReceiverData:DP|DataRegister:shift_r|Dout[8]                                    ; UARTReceiver:uart|UARTReceiverData:DP|DataRegister:shift_r|Dout[7]                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.341      ;
-; 2.125 ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[1]                                                 ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[1]                                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 2.346      ;
-; 2.126 ; UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg|Dout[3]  ; UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg|Dout[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.347      ;
-; 2.126 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[7]                                                          ; SMC:ram|SMCData:data|DataRegister:rw|Dout[7]                                                          ; clk          ; clk         ; 0.000        ; 0.000      ; 2.347      ;
-; 2.126 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[8]                                                          ; SMC:ram|SMCData:data|DataRegister:rw|Dout[8]                                                          ; clk          ; clk         ; 0.000        ; 0.000      ; 2.347      ;
-; 2.126 ; SMC:ram|SMCControl:cntrl|count_sig[1]                                                                 ; SMC:ram|SMCControl:cntrl|count_sig[1]                                                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 2.347      ;
-; 2.126 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[15]                                                         ; SMC:ram|SMCData:data|DataRegister:rw|Dout[15]                                                         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.347      ;
-; 2.126 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[17]                                                         ; SMC:ram|SMCData:data|DataRegister:rw|Dout[17]                                                         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.347      ;
-; 2.126 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[18]                                                         ; SMC:ram|SMCData:data|DataRegister:rw|Dout[18]                                                         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.347      ;
-; 2.126 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[25]                                                         ; SMC:ram|SMCData:data|DataRegister:rw|Dout[25]                                                         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.347      ;
-; 2.126 ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[9]                                                 ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[9]                                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 2.347      ;
-; 2.126 ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[10]                                                ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[10]                                                ; clk          ; clk         ; 0.000        ; 0.000      ; 2.347      ;
-; 2.126 ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[17]                                                ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[17]                                                ; clk          ; clk         ; 0.000        ; 0.000      ; 2.347      ;
-; 2.127 ; SMC:ram|SMCData:data|DataRegister:raddr|Dout[4]                                                       ; SMC:ram|SMCData:data|DataRegister:raddr|Dout[4]                                                       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.348      ;
-; 2.130 ; UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerControl:CP|state.S4                     ; UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerControl:CP|state.S0                     ; clk          ; clk         ; 0.000        ; 0.000      ; 2.351      ;
-; 2.135 ; UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerControl:CP|state.S2                     ; UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerControl:CP|state.S2                     ; clk          ; clk         ; 0.000        ; 0.000      ; 2.356      ;
-; 2.135 ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[4]                                                 ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[4]                                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 2.356      ;
-; 2.135 ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[7]                                                 ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[7]                                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 2.356      ;
-; 2.141 ; SMC:ram|SMCData:data|DataRegister:ww|Dout[3]                                                          ; SMC:ram|SMCData:data|DataRegister:ww|Dout[3]                                                          ; clk          ; clk         ; 0.000        ; 0.000      ; 2.362      ;
-; 2.142 ; UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg|Dout[6]  ; UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg|Dout[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.363      ;
-; 2.144 ; UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg|Dout[5]  ; UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg|Dout[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.365      ;
-; 2.169 ; UARTReceiver:uart|UARTReceiverData:DP|DataRegister:count1|Dout[1]                                     ; UARTReceiver:uart|UARTReceiverData:DP|DataRegister:count1|Dout[1]                                     ; clk          ; clk         ; 0.000        ; 0.000      ; 2.390      ;
-; 2.193 ; SMC:ram|SMCData:data|DataRegister:ww|Dout[1]                                                          ; SMC:ram|SMCData:data|DataRegister:ww|Dout[1]                                                          ; clk          ; clk         ; 0.000        ; 0.000      ; 2.414      ;
-; 2.196 ; SMC:ram|SMCControl:cntrl|state.S3                                                                     ; SMC:ram|SMCControl:cntrl|state.S3                                                                     ; clk          ; clk         ; 0.000        ; 0.000      ; 2.417      ;
-; 2.198 ; SMC:ram|SMCData:data|DataRegister:ww|Dout[1]                                                          ; SMC:ram|SMCData:data|DataRegister:ww|Dout[2]                                                          ; clk          ; clk         ; 0.000        ; 0.000      ; 2.419      ;
-; 2.212 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[4]                                                          ; SMC:ram|SMCData:data|DataRegister:rw|Dout[4]                                                          ; clk          ; clk         ; 0.000        ; 0.000      ; 2.433      ;
-; 2.212 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[29]                                                         ; SMC:ram|SMCData:data|DataRegister:rw|Dout[29]                                                         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.433      ;
-; 2.212 ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[24]                                                ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[24]                                                ; clk          ; clk         ; 0.000        ; 0.000      ; 2.433      ;
-; 2.221 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[9]                                                          ; SMC:ram|SMCData:data|DataRegister:rw|Dout[9]                                                          ; clk          ; clk         ; 0.000        ; 0.000      ; 2.442      ;
-; 2.221 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[14]                                                         ; SMC:ram|SMCData:data|DataRegister:rw|Dout[14]                                                         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.442      ;
-; 2.221 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[19]                                                         ; SMC:ram|SMCData:data|DataRegister:rw|Dout[19]                                                         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.442      ;
-; 2.221 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[24]                                                         ; SMC:ram|SMCData:data|DataRegister:rw|Dout[24]                                                         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.442      ;
-; 2.221 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[31]                                                         ; SMC:ram|SMCData:data|DataRegister:rw|Dout[31]                                                         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.442      ;
-; 2.221 ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[21]                                                ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[21]                                                ; clk          ; clk         ; 0.000        ; 0.000      ; 2.442      ;
-+-------+-------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'clk'                                                                                                                                                                                                                                                                               ;
++-------+------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                                                            ; To Node                                                                                              ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 1.650 ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[17]                                               ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[17]                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 1.871      ;
+; 1.660 ; SMC:ram|SMCData:data|DataRegister:ww|Dout[1]                                                         ; SMC:ram|SMCData:data|DataRegister:ww|Dout[1]                                                         ; clk          ; clk         ; 0.000        ; 0.000      ; 1.881      ;
+; 1.678 ; UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerControl:CP|state.S2                    ; UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerControl:CP|state.S2                    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.899      ;
+; 1.703 ; UARTReceiver:uart|UARTReceiverData:DP|DataRegister:count1|Dout[0]                                    ; UARTReceiver:uart|UARTReceiverData:DP|DataRegister:count1|Dout[0]                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.924      ;
+; 1.706 ; SMC:ram|SMCData:data|DataRegister:ww|Dout[2]                                                         ; SMC:ram|SMCData:data|DataRegister:ww|Dout[3]                                                         ; clk          ; clk         ; 0.000        ; 0.000      ; 1.927      ;
+; 1.707 ; UARTReceiver:uart|UARTReceiverData:DP|DataRegister:count1|Dout[0]                                    ; UARTReceiver:uart|UARTReceiverData:DP|DataRegister:count1|Dout[1]                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.928      ;
+; 1.709 ; UARTReceiver:uart|UARTReceiverControl:CP|state.S1                                                    ; UARTReceiver:uart|UARTReceiverControl:CP|state.S5                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.930      ;
+; 1.898 ; UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerControl:CP|state.S4                    ; UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerControl:CP|state.S0                    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.119      ;
+; 1.898 ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[21]                                               ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[21]                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 2.119      ;
+; 1.898 ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[28]                                               ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[28]                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 2.119      ;
+; 1.900 ; UARTReceiver:uart|UARTReceiverData:DP|DataRegister:shift_r|Dout[2]                                   ; UARTReceiver:uart|UARTReceiverData:DP|DataRegister:shift_r|Dout[1]                                   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.121      ;
+; 1.902 ; UARTReceiver:uart|UARTReceiverData:DP|DataRegister:shift_r|Dout[3]                                   ; UARTReceiver:uart|UARTReceiverData:DP|DataRegister:shift_r|Dout[2]                                   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.123      ;
+; 1.907 ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[29]                                               ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[29]                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 2.128      ;
+; 1.908 ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[4]                                                ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[4]                                                ; clk          ; clk         ; 0.000        ; 0.000      ; 2.129      ;
+; 1.908 ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[23]                                               ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[23]                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 2.129      ;
+; 1.909 ; UARTReceiver:uart|UARTReceiverData:DP|DataRegister:shift_r|Dout[6]                                   ; UARTReceiver:uart|UARTReceiverData:DP|DataRegister:shift_r|Dout[5]                                   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.130      ;
+; 1.909 ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[25]                                               ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[25]                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 2.130      ;
+; 1.923 ; SMC:ram|SMCControl:cntrl|state.S6                                                                    ; SMC:ram|SMCControl:cntrl|state.S7                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.144      ;
+; 1.934 ; SMC:ram|SMCData:data|DataRegister:waddr|Dout[4]                                                      ; SMC:ram|SMCData:data|DataRegister:addr|Dout[4]                                                       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.155      ;
+; 1.947 ; SMC:ram|SMCData:data|DataRegister:waddr|Dout[3]                                                      ; SMC:ram|SMCData:data|DataRegister:addr|Dout[3]                                                       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.168      ;
+; 1.966 ; UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerControl:CP|state.S1                    ; UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerControl:CP|state.S2                    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.187      ;
+; 1.967 ; UARTReceiver:uart|UARTReceiverData:DP|DataRegister:count1|Dout[2]                                    ; UARTReceiver:uart|UARTReceiverData:DP|DataRegister:count1|Dout[3]                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.188      ;
+; 1.971 ; SMC:ram|SMCControl:cntrl|state.S2                                                                    ; SMC:ram|SMCControl:cntrl|state.S3                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.192      ;
+; 1.974 ; SMC:ram|SMCData:data|DataRegister:ww|Dout[0]                                                         ; SMC:ram|SMCData:data|DataRegister:ww|Dout[2]                                                         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.195      ;
+; 1.979 ; UARTReceiver:uart|UARTReceiverControl:CP|state.S3                                                    ; UARTReceiver:uart|UARTReceiverControl:CP|state.S4                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.200      ;
+; 1.987 ; SMC:ram|SMCControl:cntrl|state.S0                                                                    ; SMC:ram|SMCControl:cntrl|state.S5                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.208      ;
+; 2.002 ; SMC:ram|SMCControl:cntrl|state.S3                                                                    ; SMC:ram|SMCControl:cntrl|state.S4                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.223      ;
+; 2.003 ; SMC:ram|SMCControl:cntrl|state.S3                                                                    ; SMC:ram|SMCData:data|DataRegisterSp:contrl|Dout[1]                                                   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.224      ;
+; 2.068 ; SMC:ram|SMCData:data|DataRegister:ww|Dout[1]                                                         ; SMC:ram|SMCData:data|DataRegister:ww|Dout[2]                                                         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.289      ;
+; 2.107 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[5]                                                         ; SMC:ram|SMCData:data|DataRegister:rw|Dout[5]                                                         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.328      ;
+; 2.107 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[26]                                                        ; SMC:ram|SMCData:data|DataRegister:rw|Dout[26]                                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.328      ;
+; 2.107 ; SMC:ram|SMCData:data|DataRegister:raddr|Dout[6]                                                      ; SMC:ram|SMCData:data|DataRegister:raddr|Dout[6]                                                      ; clk          ; clk         ; 0.000        ; 0.000      ; 2.328      ;
+; 2.107 ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[3]                                                ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[3]                                                ; clk          ; clk         ; 0.000        ; 0.000      ; 2.328      ;
+; 2.107 ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[13]                                               ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[13]                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 2.328      ;
+; 2.107 ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[30]                                               ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[30]                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 2.328      ;
+; 2.108 ; UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg|Dout[3] ; UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg|Dout[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.329      ;
+; 2.109 ; UARTReceiver:uart|UARTReceiverData:DP|DataRegister:shift_r|Dout[4]                                   ; UARTReceiver:uart|UARTReceiverData:DP|DataRegister:shift_r|Dout[3]                                   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.330      ;
+; 2.116 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[6]                                                         ; SMC:ram|SMCData:data|DataRegister:rw|Dout[6]                                                         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.337      ;
+; 2.116 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[16]                                                        ; SMC:ram|SMCData:data|DataRegister:rw|Dout[16]                                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.337      ;
+; 2.116 ; SMC:ram|SMCData:data|DataRegister:waddr|Dout[7]                                                      ; SMC:ram|SMCData:data|DataRegister:waddr|Dout[7]                                                      ; clk          ; clk         ; 0.000        ; 0.000      ; 2.337      ;
+; 2.117 ; UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg|Dout[7] ; UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg|Dout[7] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.338      ;
+; 2.117 ; UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg|Dout[8] ; UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg|Dout[8] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.338      ;
+; 2.117 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[13]                                                        ; SMC:ram|SMCData:data|DataRegister:rw|Dout[13]                                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.338      ;
+; 2.117 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[23]                                                        ; SMC:ram|SMCData:data|DataRegister:rw|Dout[23]                                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.338      ;
+; 2.117 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[27]                                                        ; SMC:ram|SMCData:data|DataRegister:rw|Dout[27]                                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.338      ;
+; 2.117 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[28]                                                        ; SMC:ram|SMCData:data|DataRegister:rw|Dout[28]                                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.338      ;
+; 2.117 ; SMC:ram|SMCData:data|DataRegister:waddr|Dout[8]                                                      ; SMC:ram|SMCData:data|DataRegister:waddr|Dout[8]                                                      ; clk          ; clk         ; 0.000        ; 0.000      ; 2.338      ;
+; 2.117 ; SMC:ram|SMCData:data|DataRegister:raddr|Dout[8]                                                      ; SMC:ram|SMCData:data|DataRegister:raddr|Dout[8]                                                      ; clk          ; clk         ; 0.000        ; 0.000      ; 2.338      ;
+; 2.117 ; SMC:ram|SMCData:data|DataRegister:waddr|Dout[9]                                                      ; SMC:ram|SMCData:data|DataRegister:waddr|Dout[9]                                                      ; clk          ; clk         ; 0.000        ; 0.000      ; 2.338      ;
+; 2.117 ; SMC:ram|SMCData:data|DataRegister:raddr|Dout[9]                                                      ; SMC:ram|SMCData:data|DataRegister:raddr|Dout[9]                                                      ; clk          ; clk         ; 0.000        ; 0.000      ; 2.338      ;
+; 2.117 ; SMC:ram|SMCData:data|DataRegister:waddr|Dout[14]                                                     ; SMC:ram|SMCData:data|DataRegister:waddr|Dout[14]                                                     ; clk          ; clk         ; 0.000        ; 0.000      ; 2.338      ;
+; 2.117 ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[0]                                                ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[0]                                                ; clk          ; clk         ; 0.000        ; 0.000      ; 2.338      ;
+; 2.117 ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[7]                                                ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[7]                                                ; clk          ; clk         ; 0.000        ; 0.000      ; 2.338      ;
+; 2.118 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[3]                                                         ; SMC:ram|SMCData:data|DataRegister:rw|Dout[3]                                                         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.339      ;
+; 2.118 ; SMC:ram|SMCData:data|DataRegister:raddr|Dout[4]                                                      ; SMC:ram|SMCData:data|DataRegister:raddr|Dout[4]                                                      ; clk          ; clk         ; 0.000        ; 0.000      ; 2.339      ;
+; 2.123 ; UARTReceiver:uart|UARTReceiverData:DP|DataRegister:shift_r|Dout[7]                                   ; UARTReceiver:uart|UARTReceiverData:DP|DataRegister:shift_r|Dout[6]                                   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.344      ;
+; 2.126 ; SMC:ram|SMCControl:cntrl|state.S7                                                                    ; SMC:ram|SMCControl:cntrl|state.S7                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.347      ;
+; 2.126 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[7]                                                         ; SMC:ram|SMCData:data|DataRegister:rw|Dout[7]                                                         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.347      ;
+; 2.126 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[8]                                                         ; SMC:ram|SMCData:data|DataRegister:rw|Dout[8]                                                         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.347      ;
+; 2.126 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[15]                                                        ; SMC:ram|SMCData:data|DataRegister:rw|Dout[15]                                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.347      ;
+; 2.126 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[17]                                                        ; SMC:ram|SMCData:data|DataRegister:rw|Dout[17]                                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.347      ;
+; 2.126 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[18]                                                        ; SMC:ram|SMCData:data|DataRegister:rw|Dout[18]                                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.347      ;
+; 2.126 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[25]                                                        ; SMC:ram|SMCData:data|DataRegister:rw|Dout[25]                                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.347      ;
+; 2.126 ; SMC:ram|SMCData:data|DataRegister:waddr|Dout[6]                                                      ; SMC:ram|SMCData:data|DataRegister:waddr|Dout[6]                                                      ; clk          ; clk         ; 0.000        ; 0.000      ; 2.347      ;
+; 2.127 ; SMC:ram|SMCControl:cntrl|count_sig[1]                                                                ; SMC:ram|SMCControl:cntrl|count_sig[1]                                                                ; clk          ; clk         ; 0.000        ; 0.000      ; 2.348      ;
+; 2.128 ; done                                                                                                 ; sync_pulse_signal                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.349      ;
+; 2.132 ; SMC:ram|SMCData:data|DataRegister:waddr|Dout[6]                                                      ; SMC:ram|SMCData:data|DataRegister:addr|Dout[6]                                                       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.353      ;
+; 2.133 ; SMC:ram|SMCData:data|DataRegister:raddr|Dout[7]                                                      ; SMC:ram|SMCData:data|DataRegister:raddr|Dout[7]                                                      ; clk          ; clk         ; 0.000        ; 0.000      ; 2.354      ;
+; 2.135 ; SMC:ram|SMCData:data|DataRegister:waddr|Dout[4]                                                      ; SMC:ram|SMCData:data|DataRegister:waddr|Dout[4]                                                      ; clk          ; clk         ; 0.000        ; 0.000      ; 2.356      ;
+; 2.135 ; SMC:ram|SMCData:data|DataRegister:raddr|Dout[14]                                                     ; SMC:ram|SMCData:data|DataRegister:raddr|Dout[14]                                                     ; clk          ; clk         ; 0.000        ; 0.000      ; 2.356      ;
+; 2.142 ; UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg|Dout[6] ; UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg|Dout[6] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.363      ;
+; 2.151 ; SMC:ram|SMCData:data|DataRegister:ww|Dout[3]                                                         ; SMC:ram|SMCData:data|DataRegister:ww|Dout[3]                                                         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.372      ;
+; 2.152 ; UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerControl:CP|state.S2                    ; UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerControl:CP|state.S3                    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.373      ;
+; 2.153 ; UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg|Dout[5] ; UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg|Dout[5] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.374      ;
+; 2.172 ; UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerControl:CP|state.S1                    ; UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerControl:CP|state.S1                    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.393      ;
+; 2.175 ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[15]                                               ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[15]                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 2.396      ;
+; 2.193 ; UARTReceiver:uart|UARTReceiverControl:CP|state.S5                                                    ; UARTReceiver:uart|UARTReceiverControl:CP|state.S5                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.414      ;
+; 2.196 ; SMC:ram|SMCControl:cntrl|state.S3                                                                    ; SMC:ram|SMCControl:cntrl|state.S3                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.417      ;
+; 2.196 ; UARTReceiver:uart|UARTReceiverControl:CP|state.S5                                                    ; UARTReceiver:uart|UARTReceiverControl:CP|state.S2                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.417      ;
+; 2.198 ; SMC:ram|SMCControl:cntrl|state.S3                                                                    ; SMC:ram|SMCData:data|DataRegister:ww|Dout[0]                                                         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.419      ;
+; 2.198 ; UARTReceiver:uart|UARTReceiverControl:CP|state.S5                                                    ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[27]                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 2.419      ;
+; 2.198 ; UARTReceiver:uart|UARTReceiverControl:CP|state.S5                                                    ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[28]                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 2.419      ;
+; 2.211 ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[11]                                               ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[11]                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 2.432      ;
+; 2.212 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[4]                                                         ; SMC:ram|SMCData:data|DataRegister:rw|Dout[4]                                                         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.433      ;
+; 2.212 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[29]                                                        ; SMC:ram|SMCData:data|DataRegister:rw|Dout[29]                                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.433      ;
+; 2.212 ; SMC:ram|SMCData:data|DataRegister:waddr|Dout[10]                                                     ; SMC:ram|SMCData:data|DataRegister:waddr|Dout[10]                                                     ; clk          ; clk         ; 0.000        ; 0.000      ; 2.433      ;
+; 2.212 ; SMC:ram|SMCData:data|DataRegister:raddr|Dout[10]                                                     ; SMC:ram|SMCData:data|DataRegister:raddr|Dout[10]                                                     ; clk          ; clk         ; 0.000        ; 0.000      ; 2.433      ;
+; 2.212 ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[26]                                               ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[26]                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 2.433      ;
+; 2.216 ; UARTReceiver:uart|UARTReceiverData:DP|DataRegister:shift_r|Dout[8]                                   ; UARTReceiver:uart|UARTReceiverData:DP|DataRegister:shift_r|Dout[7]                                   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.437      ;
+; 2.221 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[9]                                                         ; SMC:ram|SMCData:data|DataRegister:rw|Dout[9]                                                         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.442      ;
+; 2.221 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[14]                                                        ; SMC:ram|SMCData:data|DataRegister:rw|Dout[14]                                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.442      ;
+; 2.221 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[19]                                                        ; SMC:ram|SMCData:data|DataRegister:rw|Dout[19]                                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.442      ;
+; 2.221 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[24]                                                        ; SMC:ram|SMCData:data|DataRegister:rw|Dout[24]                                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.442      ;
+; 2.221 ; SMC:ram|SMCData:data|DataRegister:rw|Dout[31]                                                        ; SMC:ram|SMCData:data|DataRegister:rw|Dout[31]                                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.442      ;
+; 2.221 ; SMC:ram|SMCData:data|DataRegister:waddr|Dout[0]                                                      ; SMC:ram|SMCData:data|DataRegister:waddr|Dout[0]                                                      ; clk          ; clk         ; 0.000        ; 0.000      ; 2.442      ;
+; 2.221 ; SMC:ram|SMCData:data|DataRegister:waddr|Dout[5]                                                      ; SMC:ram|SMCData:data|DataRegister:waddr|Dout[5]                                                      ; clk          ; clk         ; 0.000        ; 0.000      ; 2.442      ;
+; 2.221 ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[6]                                                ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[6]                                                ; clk          ; clk         ; 0.000        ; 0.000      ; 2.442      ;
+; 2.221 ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[8]                                                ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[8]                                                ; clk          ; clk         ; 0.000        ; 0.000      ; 2.442      ;
+; 2.221 ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[10]                                               ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[10]                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 2.442      ;
+; 2.221 ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[12]                                               ; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[12]                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 2.442      ;
++-------+------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------+
@@ -468,19 +468,19 @@ No paths to report.
 +-------------+------------+--------+--------+------------+-----------------+
 ; Data Port   ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-------------+------------+--------+--------+------------+-----------------+
-; data_in     ; clk        ; 5.262  ; 5.262  ; Rise       ; clk             ;
-; io[*]       ; clk        ; 2.862  ; 2.862  ; Rise       ; clk             ;
-;  io[0]      ; clk        ; 2.861  ; 2.861  ; Rise       ; clk             ;
-;  io[1]      ; clk        ; 2.310  ; 2.310  ; Rise       ; clk             ;
-;  io[2]      ; clk        ; 2.330  ; 2.330  ; Rise       ; clk             ;
-;  io[3]      ; clk        ; 2.288  ; 2.288  ; Rise       ; clk             ;
-;  io[4]      ; clk        ; 2.852  ; 2.852  ; Rise       ; clk             ;
-;  io[5]      ; clk        ; 2.835  ; 2.835  ; Rise       ; clk             ;
-;  io[6]      ; clk        ; 2.862  ; 2.862  ; Rise       ; clk             ;
-;  io[7]      ; clk        ; 2.334  ; 2.334  ; Rise       ; clk             ;
-; read_data   ; clk        ; 6.060  ; 6.060  ; Rise       ; clk             ;
-; reset       ; clk        ; 11.671 ; 11.671 ; Rise       ; clk             ;
-; sample_rate ; clk        ; 10.100 ; 10.100 ; Rise       ; clk             ;
+; data_in     ; clk        ; 6.445  ; 6.445  ; Rise       ; clk             ;
+; io[*]       ; clk        ; 3.625  ; 3.625  ; Rise       ; clk             ;
+;  io[0]      ; clk        ; 3.625  ; 3.625  ; Rise       ; clk             ;
+;  io[1]      ; clk        ; 3.574  ; 3.574  ; Rise       ; clk             ;
+;  io[2]      ; clk        ; 3.593  ; 3.593  ; Rise       ; clk             ;
+;  io[3]      ; clk        ; 2.891  ; 2.891  ; Rise       ; clk             ;
+;  io[4]      ; clk        ; 3.166  ; 3.166  ; Rise       ; clk             ;
+;  io[5]      ; clk        ; 3.380  ; 3.380  ; Rise       ; clk             ;
+;  io[6]      ; clk        ; 3.130  ; 3.130  ; Rise       ; clk             ;
+;  io[7]      ; clk        ; 2.933  ; 2.933  ; Rise       ; clk             ;
+; read_data   ; clk        ; 5.152  ; 5.152  ; Rise       ; clk             ;
+; reset       ; clk        ; 10.660 ; 10.660 ; Rise       ; clk             ;
+; sample_rate ; clk        ; 9.483  ; 9.483  ; Rise       ; clk             ;
 +-------------+------------+--------+--------+------------+-----------------+
 
 
@@ -489,19 +489,19 @@ No paths to report.
 +-------------+------------+--------+--------+------------+-----------------+
 ; Data Port   ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-------------+------------+--------+--------+------------+-----------------+
-; data_in     ; clk        ; -2.254 ; -2.254 ; Rise       ; clk             ;
-; io[*]       ; clk        ; -1.734 ; -1.734 ; Rise       ; clk             ;
-;  io[0]      ; clk        ; -2.307 ; -2.307 ; Rise       ; clk             ;
-;  io[1]      ; clk        ; -1.756 ; -1.756 ; Rise       ; clk             ;
-;  io[2]      ; clk        ; -1.776 ; -1.776 ; Rise       ; clk             ;
-;  io[3]      ; clk        ; -1.734 ; -1.734 ; Rise       ; clk             ;
-;  io[4]      ; clk        ; -2.298 ; -2.298 ; Rise       ; clk             ;
-;  io[5]      ; clk        ; -2.281 ; -2.281 ; Rise       ; clk             ;
-;  io[6]      ; clk        ; -2.308 ; -2.308 ; Rise       ; clk             ;
-;  io[7]      ; clk        ; -1.780 ; -1.780 ; Rise       ; clk             ;
-; read_data   ; clk        ; -2.912 ; -2.912 ; Rise       ; clk             ;
-; reset       ; clk        ; -2.410 ; -2.410 ; Rise       ; clk             ;
-; sample_rate ; clk        ; -3.213 ; -3.213 ; Rise       ; clk             ;
+; data_in     ; clk        ; -1.748 ; -1.748 ; Rise       ; clk             ;
+; io[*]       ; clk        ; -2.337 ; -2.337 ; Rise       ; clk             ;
+;  io[0]      ; clk        ; -3.071 ; -3.071 ; Rise       ; clk             ;
+;  io[1]      ; clk        ; -3.020 ; -3.020 ; Rise       ; clk             ;
+;  io[2]      ; clk        ; -3.039 ; -3.039 ; Rise       ; clk             ;
+;  io[3]      ; clk        ; -2.337 ; -2.337 ; Rise       ; clk             ;
+;  io[4]      ; clk        ; -2.612 ; -2.612 ; Rise       ; clk             ;
+;  io[5]      ; clk        ; -2.826 ; -2.826 ; Rise       ; clk             ;
+;  io[6]      ; clk        ; -2.576 ; -2.576 ; Rise       ; clk             ;
+;  io[7]      ; clk        ; -2.379 ; -2.379 ; Rise       ; clk             ;
+; read_data   ; clk        ; -3.127 ; -3.127 ; Rise       ; clk             ;
+; reset       ; clk        ; -2.537 ; -2.537 ; Rise       ; clk             ;
+; sample_rate ; clk        ; -2.856 ; -2.856 ; Rise       ; clk             ;
 +-------------+------------+--------+--------+------------+-----------------+
 
 
@@ -510,61 +510,62 @@ No paths to report.
 +-----------------+------------+--------+--------+------------+-----------------+
 ; Data Port       ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------------+------------+--------+--------+------------+-----------------+
-; CS              ; clk        ; 9.622  ; 9.622  ; Rise       ; clk             ;
-; OE              ; clk        ; 9.681  ; 9.681  ; Rise       ; clk             ;
-; WE              ; clk        ; 9.432  ; 9.432  ; Rise       ; clk             ;
-; address[*]      ; clk        ; 9.550  ; 9.550  ; Rise       ; clk             ;
-;  address[0]     ; clk        ; 8.893  ; 8.893  ; Rise       ; clk             ;
-;  address[1]     ; clk        ; 8.861  ; 8.861  ; Rise       ; clk             ;
-;  address[2]     ; clk        ; 8.964  ; 8.964  ; Rise       ; clk             ;
-;  address[3]     ; clk        ; 8.879  ; 8.879  ; Rise       ; clk             ;
-;  address[4]     ; clk        ; 8.365  ; 8.365  ; Rise       ; clk             ;
-;  address[5]     ; clk        ; 8.469  ; 8.469  ; Rise       ; clk             ;
-;  address[6]     ; clk        ; 7.198  ; 7.198  ; Rise       ; clk             ;
+; CS              ; clk        ; 8.525  ; 8.525  ; Rise       ; clk             ;
+; OE              ; clk        ; 9.076  ; 9.076  ; Rise       ; clk             ;
+; WE              ; clk        ; 8.817  ; 8.817  ; Rise       ; clk             ;
+; address[*]      ; clk        ; 9.577  ; 9.577  ; Rise       ; clk             ;
+;  address[0]     ; clk        ; 8.839  ; 8.839  ; Rise       ; clk             ;
+;  address[1]     ; clk        ; 9.577  ; 9.577  ; Rise       ; clk             ;
+;  address[2]     ; clk        ; 9.059  ; 9.059  ; Rise       ; clk             ;
+;  address[3]     ; clk        ; 8.958  ; 8.958  ; Rise       ; clk             ;
+;  address[4]     ; clk        ; 9.093  ; 9.093  ; Rise       ; clk             ;
+;  address[5]     ; clk        ; 8.896  ; 8.896  ; Rise       ; clk             ;
+;  address[6]     ; clk        ; 9.122  ; 9.122  ; Rise       ; clk             ;
 ;  address[7]     ; clk        ; 7.204  ; 7.204  ; Rise       ; clk             ;
 ;  address[8]     ; clk        ; 7.204  ; 7.204  ; Rise       ; clk             ;
-;  address[9]     ; clk        ; 8.287  ; 8.287  ; Rise       ; clk             ;
-;  address[10]    ; clk        ; 9.057  ; 9.057  ; Rise       ; clk             ;
-;  address[11]    ; clk        ; 8.291  ; 8.291  ; Rise       ; clk             ;
-;  address[12]    ; clk        ; 8.856  ; 8.856  ; Rise       ; clk             ;
-;  address[13]    ; clk        ; 9.510  ; 9.510  ; Rise       ; clk             ;
-;  address[14]    ; clk        ; 9.550  ; 9.550  ; Rise       ; clk             ;
-; debug[*]        ; clk        ; 9.545  ; 9.545  ; Rise       ; clk             ;
-;  debug[0]       ; clk        ; 8.435  ; 8.435  ; Rise       ; clk             ;
-;  debug[1]       ; clk        ; 8.350  ; 8.350  ; Rise       ; clk             ;
-;  debug[2]       ; clk        ; 8.937  ; 8.937  ; Rise       ; clk             ;
-;  debug[3]       ; clk        ; 9.131  ; 9.131  ; Rise       ; clk             ;
-;  debug[4]       ; clk        ; 9.099  ; 9.099  ; Rise       ; clk             ;
-;  debug[5]       ; clk        ; 9.084  ; 9.084  ; Rise       ; clk             ;
-;  debug[6]       ; clk        ; 9.545  ; 9.545  ; Rise       ; clk             ;
-;  debug[7]       ; clk        ; 8.586  ; 8.586  ; Rise       ; clk             ;
-; debug1[*]       ; clk        ; 9.828  ; 9.828  ; Rise       ; clk             ;
-;  debug1[0]      ; clk        ; 9.136  ; 9.136  ; Rise       ; clk             ;
-;  debug1[1]      ; clk        ; 9.747  ; 9.747  ; Rise       ; clk             ;
-;  debug1[2]      ; clk        ; 9.640  ; 9.640  ; Rise       ; clk             ;
-;  debug1[3]      ; clk        ; 9.768  ; 9.768  ; Rise       ; clk             ;
-;  debug1[4]      ; clk        ; 9.134  ; 9.134  ; Rise       ; clk             ;
-;  debug1[5]      ; clk        ; 9.630  ; 9.630  ; Rise       ; clk             ;
-;  debug1[6]      ; clk        ; 9.828  ; 9.828  ; Rise       ; clk             ;
-;  debug1[7]      ; clk        ; 9.664  ; 9.664  ; Rise       ; clk             ;
-; io[*]           ; clk        ; 9.703  ; 9.703  ; Rise       ; clk             ;
-;  io[0]          ; clk        ; 8.462  ; 8.462  ; Rise       ; clk             ;
-;  io[1]          ; clk        ; 8.361  ; 8.361  ; Rise       ; clk             ;
-;  io[2]          ; clk        ; 8.482  ; 8.482  ; Rise       ; clk             ;
-;  io[3]          ; clk        ; 9.703  ; 9.703  ; Rise       ; clk             ;
-;  io[4]          ; clk        ; 8.936  ; 8.936  ; Rise       ; clk             ;
-;  io[5]          ; clk        ; 8.336  ; 8.336  ; Rise       ; clk             ;
-;  io[6]          ; clk        ; 8.915  ; 8.915  ; Rise       ; clk             ;
-;  io[7]          ; clk        ; 8.346  ; 8.346  ; Rise       ; clk             ;
-; output_data[*]  ; clk        ; 10.412 ; 10.412 ; Rise       ; clk             ;
-;  output_data[0] ; clk        ; 9.136  ; 9.136  ; Rise       ; clk             ;
-;  output_data[1] ; clk        ; 10.014 ; 10.014 ; Rise       ; clk             ;
-;  output_data[2] ; clk        ; 9.829  ; 9.829  ; Rise       ; clk             ;
-;  output_data[3] ; clk        ; 10.349 ; 10.349 ; Rise       ; clk             ;
-;  output_data[4] ; clk        ; 10.239 ; 10.239 ; Rise       ; clk             ;
-;  output_data[5] ; clk        ; 10.412 ; 10.412 ; Rise       ; clk             ;
-;  output_data[6] ; clk        ; 10.403 ; 10.403 ; Rise       ; clk             ;
-;  output_data[7] ; clk        ; 9.967  ; 9.967  ; Rise       ; clk             ;
+;  address[9]     ; clk        ; 8.412  ; 8.412  ; Rise       ; clk             ;
+;  address[10]    ; clk        ; 8.404  ; 8.404  ; Rise       ; clk             ;
+;  address[11]    ; clk        ; 8.364  ; 8.364  ; Rise       ; clk             ;
+;  address[12]    ; clk        ; 8.880  ; 8.880  ; Rise       ; clk             ;
+;  address[13]    ; clk        ; 9.076  ; 9.076  ; Rise       ; clk             ;
+;  address[14]    ; clk        ; 8.852  ; 8.852  ; Rise       ; clk             ;
+; debug[*]        ; clk        ; 9.102  ; 9.102  ; Rise       ; clk             ;
+;  debug[0]       ; clk        ; 8.277  ; 8.277  ; Rise       ; clk             ;
+;  debug[1]       ; clk        ; 8.369  ; 8.369  ; Rise       ; clk             ;
+;  debug[2]       ; clk        ; 8.266  ; 8.266  ; Rise       ; clk             ;
+;  debug[3]       ; clk        ; 8.363  ; 8.363  ; Rise       ; clk             ;
+;  debug[4]       ; clk        ; 9.102  ; 9.102  ; Rise       ; clk             ;
+;  debug[5]       ; clk        ; 8.568  ; 8.568  ; Rise       ; clk             ;
+;  debug[6]       ; clk        ; 9.064  ; 9.064  ; Rise       ; clk             ;
+;  debug[7]       ; clk        ; 8.361  ; 8.361  ; Rise       ; clk             ;
+; debug1[*]       ; clk        ; 10.306 ; 10.306 ; Rise       ; clk             ;
+;  debug1[0]      ; clk        ; 8.922  ; 8.922  ; Rise       ; clk             ;
+;  debug1[1]      ; clk        ; 8.945  ; 8.945  ; Rise       ; clk             ;
+;  debug1[2]      ; clk        ; 8.895  ; 8.895  ; Rise       ; clk             ;
+;  debug1[3]      ; clk        ; 10.306 ; 10.306 ; Rise       ; clk             ;
+;  debug1[4]      ; clk        ; 10.235 ; 10.235 ; Rise       ; clk             ;
+;  debug1[5]      ; clk        ; 9.771  ; 9.771  ; Rise       ; clk             ;
+;  debug1[6]      ; clk        ; 9.631  ; 9.631  ; Rise       ; clk             ;
+;  debug1[7]      ; clk        ; 9.771  ; 9.771  ; Rise       ; clk             ;
+; io[*]           ; clk        ; 10.560 ; 10.560 ; Rise       ; clk             ;
+;  io[0]          ; clk        ; 10.097 ; 10.097 ; Rise       ; clk             ;
+;  io[1]          ; clk        ; 9.425  ; 9.425  ; Rise       ; clk             ;
+;  io[2]          ; clk        ; 9.409  ; 9.409  ; Rise       ; clk             ;
+;  io[3]          ; clk        ; 9.327  ; 9.327  ; Rise       ; clk             ;
+;  io[4]          ; clk        ; 8.802  ; 8.802  ; Rise       ; clk             ;
+;  io[5]          ; clk        ; 10.164 ; 10.164 ; Rise       ; clk             ;
+;  io[6]          ; clk        ; 10.560 ; 10.560 ; Rise       ; clk             ;
+;  io[7]          ; clk        ; 8.894  ; 8.894  ; Rise       ; clk             ;
+; output_data[*]  ; clk        ; 12.088 ; 12.088 ; Rise       ; clk             ;
+;  output_data[0] ; clk        ; 9.470  ; 9.470  ; Rise       ; clk             ;
+;  output_data[1] ; clk        ; 10.243 ; 10.243 ; Rise       ; clk             ;
+;  output_data[2] ; clk        ; 10.196 ; 10.196 ; Rise       ; clk             ;
+;  output_data[3] ; clk        ; 12.088 ; 12.088 ; Rise       ; clk             ;
+;  output_data[4] ; clk        ; 11.605 ; 11.605 ; Rise       ; clk             ;
+;  output_data[5] ; clk        ; 11.133 ; 11.133 ; Rise       ; clk             ;
+;  output_data[6] ; clk        ; 11.496 ; 11.496 ; Rise       ; clk             ;
+;  output_data[7] ; clk        ; 11.130 ; 11.130 ; Rise       ; clk             ;
+; sync_pulse      ; clk        ; 9.521  ; 9.521  ; Rise       ; clk             ;
 +-----------------+------------+--------+--------+------------+-----------------+
 
 
@@ -573,61 +574,62 @@ No paths to report.
 +-----------------+------------+--------+--------+------------+-----------------+
 ; Data Port       ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------------+------------+--------+--------+------------+-----------------+
-; CS              ; clk        ; 9.622  ; 9.622  ; Rise       ; clk             ;
-; OE              ; clk        ; 9.681  ; 9.681  ; Rise       ; clk             ;
-; WE              ; clk        ; 9.432  ; 9.432  ; Rise       ; clk             ;
-; address[*]      ; clk        ; 7.198  ; 7.198  ; Rise       ; clk             ;
-;  address[0]     ; clk        ; 8.893  ; 8.893  ; Rise       ; clk             ;
-;  address[1]     ; clk        ; 8.861  ; 8.861  ; Rise       ; clk             ;
-;  address[2]     ; clk        ; 8.964  ; 8.964  ; Rise       ; clk             ;
-;  address[3]     ; clk        ; 8.879  ; 8.879  ; Rise       ; clk             ;
-;  address[4]     ; clk        ; 8.365  ; 8.365  ; Rise       ; clk             ;
-;  address[5]     ; clk        ; 8.469  ; 8.469  ; Rise       ; clk             ;
-;  address[6]     ; clk        ; 7.198  ; 7.198  ; Rise       ; clk             ;
+; CS              ; clk        ; 8.525  ; 8.525  ; Rise       ; clk             ;
+; OE              ; clk        ; 9.076  ; 9.076  ; Rise       ; clk             ;
+; WE              ; clk        ; 8.817  ; 8.817  ; Rise       ; clk             ;
+; address[*]      ; clk        ; 7.204  ; 7.204  ; Rise       ; clk             ;
+;  address[0]     ; clk        ; 8.839  ; 8.839  ; Rise       ; clk             ;
+;  address[1]     ; clk        ; 9.577  ; 9.577  ; Rise       ; clk             ;
+;  address[2]     ; clk        ; 9.059  ; 9.059  ; Rise       ; clk             ;
+;  address[3]     ; clk        ; 8.958  ; 8.958  ; Rise       ; clk             ;
+;  address[4]     ; clk        ; 9.093  ; 9.093  ; Rise       ; clk             ;
+;  address[5]     ; clk        ; 8.896  ; 8.896  ; Rise       ; clk             ;
+;  address[6]     ; clk        ; 9.122  ; 9.122  ; Rise       ; clk             ;
 ;  address[7]     ; clk        ; 7.204  ; 7.204  ; Rise       ; clk             ;
 ;  address[8]     ; clk        ; 7.204  ; 7.204  ; Rise       ; clk             ;
-;  address[9]     ; clk        ; 8.287  ; 8.287  ; Rise       ; clk             ;
-;  address[10]    ; clk        ; 9.057  ; 9.057  ; Rise       ; clk             ;
-;  address[11]    ; clk        ; 8.291  ; 8.291  ; Rise       ; clk             ;
-;  address[12]    ; clk        ; 8.856  ; 8.856  ; Rise       ; clk             ;
-;  address[13]    ; clk        ; 9.510  ; 9.510  ; Rise       ; clk             ;
-;  address[14]    ; clk        ; 9.550  ; 9.550  ; Rise       ; clk             ;
-; debug[*]        ; clk        ; 8.350  ; 8.350  ; Rise       ; clk             ;
-;  debug[0]       ; clk        ; 8.435  ; 8.435  ; Rise       ; clk             ;
-;  debug[1]       ; clk        ; 8.350  ; 8.350  ; Rise       ; clk             ;
-;  debug[2]       ; clk        ; 8.937  ; 8.937  ; Rise       ; clk             ;
-;  debug[3]       ; clk        ; 9.131  ; 9.131  ; Rise       ; clk             ;
-;  debug[4]       ; clk        ; 9.099  ; 9.099  ; Rise       ; clk             ;
-;  debug[5]       ; clk        ; 9.084  ; 9.084  ; Rise       ; clk             ;
-;  debug[6]       ; clk        ; 9.545  ; 9.545  ; Rise       ; clk             ;
-;  debug[7]       ; clk        ; 8.586  ; 8.586  ; Rise       ; clk             ;
-; debug1[*]       ; clk        ; 9.134  ; 9.134  ; Rise       ; clk             ;
-;  debug1[0]      ; clk        ; 9.136  ; 9.136  ; Rise       ; clk             ;
-;  debug1[1]      ; clk        ; 9.747  ; 9.747  ; Rise       ; clk             ;
-;  debug1[2]      ; clk        ; 9.640  ; 9.640  ; Rise       ; clk             ;
-;  debug1[3]      ; clk        ; 9.768  ; 9.768  ; Rise       ; clk             ;
-;  debug1[4]      ; clk        ; 9.134  ; 9.134  ; Rise       ; clk             ;
-;  debug1[5]      ; clk        ; 9.630  ; 9.630  ; Rise       ; clk             ;
-;  debug1[6]      ; clk        ; 9.828  ; 9.828  ; Rise       ; clk             ;
-;  debug1[7]      ; clk        ; 9.664  ; 9.664  ; Rise       ; clk             ;
-; io[*]           ; clk        ; 8.336  ; 8.336  ; Rise       ; clk             ;
-;  io[0]          ; clk        ; 8.462  ; 8.462  ; Rise       ; clk             ;
-;  io[1]          ; clk        ; 8.361  ; 8.361  ; Rise       ; clk             ;
-;  io[2]          ; clk        ; 8.482  ; 8.482  ; Rise       ; clk             ;
-;  io[3]          ; clk        ; 9.703  ; 9.703  ; Rise       ; clk             ;
-;  io[4]          ; clk        ; 8.936  ; 8.936  ; Rise       ; clk             ;
-;  io[5]          ; clk        ; 8.336  ; 8.336  ; Rise       ; clk             ;
-;  io[6]          ; clk        ; 8.915  ; 8.915  ; Rise       ; clk             ;
-;  io[7]          ; clk        ; 8.346  ; 8.346  ; Rise       ; clk             ;
-; output_data[*]  ; clk        ; 9.136  ; 9.136  ; Rise       ; clk             ;
-;  output_data[0] ; clk        ; 9.136  ; 9.136  ; Rise       ; clk             ;
-;  output_data[1] ; clk        ; 10.014 ; 10.014 ; Rise       ; clk             ;
-;  output_data[2] ; clk        ; 9.829  ; 9.829  ; Rise       ; clk             ;
-;  output_data[3] ; clk        ; 10.349 ; 10.349 ; Rise       ; clk             ;
-;  output_data[4] ; clk        ; 10.239 ; 10.239 ; Rise       ; clk             ;
-;  output_data[5] ; clk        ; 10.412 ; 10.412 ; Rise       ; clk             ;
-;  output_data[6] ; clk        ; 10.403 ; 10.403 ; Rise       ; clk             ;
-;  output_data[7] ; clk        ; 9.967  ; 9.967  ; Rise       ; clk             ;
+;  address[9]     ; clk        ; 8.412  ; 8.412  ; Rise       ; clk             ;
+;  address[10]    ; clk        ; 8.404  ; 8.404  ; Rise       ; clk             ;
+;  address[11]    ; clk        ; 8.364  ; 8.364  ; Rise       ; clk             ;
+;  address[12]    ; clk        ; 8.880  ; 8.880  ; Rise       ; clk             ;
+;  address[13]    ; clk        ; 9.076  ; 9.076  ; Rise       ; clk             ;
+;  address[14]    ; clk        ; 8.852  ; 8.852  ; Rise       ; clk             ;
+; debug[*]        ; clk        ; 8.266  ; 8.266  ; Rise       ; clk             ;
+;  debug[0]       ; clk        ; 8.277  ; 8.277  ; Rise       ; clk             ;
+;  debug[1]       ; clk        ; 8.369  ; 8.369  ; Rise       ; clk             ;
+;  debug[2]       ; clk        ; 8.266  ; 8.266  ; Rise       ; clk             ;
+;  debug[3]       ; clk        ; 8.363  ; 8.363  ; Rise       ; clk             ;
+;  debug[4]       ; clk        ; 9.102  ; 9.102  ; Rise       ; clk             ;
+;  debug[5]       ; clk        ; 8.568  ; 8.568  ; Rise       ; clk             ;
+;  debug[6]       ; clk        ; 9.064  ; 9.064  ; Rise       ; clk             ;
+;  debug[7]       ; clk        ; 8.361  ; 8.361  ; Rise       ; clk             ;
+; debug1[*]       ; clk        ; 8.895  ; 8.895  ; Rise       ; clk             ;
+;  debug1[0]      ; clk        ; 8.922  ; 8.922  ; Rise       ; clk             ;
+;  debug1[1]      ; clk        ; 8.945  ; 8.945  ; Rise       ; clk             ;
+;  debug1[2]      ; clk        ; 8.895  ; 8.895  ; Rise       ; clk             ;
+;  debug1[3]      ; clk        ; 10.306 ; 10.306 ; Rise       ; clk             ;
+;  debug1[4]      ; clk        ; 10.235 ; 10.235 ; Rise       ; clk             ;
+;  debug1[5]      ; clk        ; 9.771  ; 9.771  ; Rise       ; clk             ;
+;  debug1[6]      ; clk        ; 9.631  ; 9.631  ; Rise       ; clk             ;
+;  debug1[7]      ; clk        ; 9.771  ; 9.771  ; Rise       ; clk             ;
+; io[*]           ; clk        ; 8.802  ; 8.802  ; Rise       ; clk             ;
+;  io[0]          ; clk        ; 10.097 ; 10.097 ; Rise       ; clk             ;
+;  io[1]          ; clk        ; 9.425  ; 9.425  ; Rise       ; clk             ;
+;  io[2]          ; clk        ; 9.409  ; 9.409  ; Rise       ; clk             ;
+;  io[3]          ; clk        ; 9.327  ; 9.327  ; Rise       ; clk             ;
+;  io[4]          ; clk        ; 8.802  ; 8.802  ; Rise       ; clk             ;
+;  io[5]          ; clk        ; 10.164 ; 10.164 ; Rise       ; clk             ;
+;  io[6]          ; clk        ; 10.560 ; 10.560 ; Rise       ; clk             ;
+;  io[7]          ; clk        ; 8.894  ; 8.894  ; Rise       ; clk             ;
+; output_data[*]  ; clk        ; 9.470  ; 9.470  ; Rise       ; clk             ;
+;  output_data[0] ; clk        ; 9.470  ; 9.470  ; Rise       ; clk             ;
+;  output_data[1] ; clk        ; 10.243 ; 10.243 ; Rise       ; clk             ;
+;  output_data[2] ; clk        ; 10.196 ; 10.196 ; Rise       ; clk             ;
+;  output_data[3] ; clk        ; 12.088 ; 12.088 ; Rise       ; clk             ;
+;  output_data[4] ; clk        ; 11.605 ; 11.605 ; Rise       ; clk             ;
+;  output_data[5] ; clk        ; 11.133 ; 11.133 ; Rise       ; clk             ;
+;  output_data[6] ; clk        ; 11.496 ; 11.496 ; Rise       ; clk             ;
+;  output_data[7] ; clk        ; 11.130 ; 11.130 ; Rise       ; clk             ;
+; sync_pulse      ; clk        ; 9.521  ; 9.521  ; Rise       ; clk             ;
 +-----------------+------------+--------+--------+------------+-----------------+
 
 
@@ -636,14 +638,14 @@ No paths to report.
 +------------+-------------+--------+----+----+--------+
 ; Input Port ; Output Port ; RR     ; RF ; FR ; FF     ;
 +------------+-------------+--------+----+----+--------+
-; reset      ; io[0]       ; 11.302 ;    ;    ; 11.302 ;
-; reset      ; io[1]       ; 11.302 ;    ;    ; 11.302 ;
-; reset      ; io[2]       ; 11.766 ;    ;    ; 11.766 ;
-; reset      ; io[3]       ; 11.302 ;    ;    ; 11.302 ;
-; reset      ; io[4]       ; 11.766 ;    ;    ; 11.766 ;
-; reset      ; io[5]       ; 11.766 ;    ;    ; 11.766 ;
-; reset      ; io[6]       ; 11.766 ;    ;    ; 11.766 ;
-; reset      ; io[7]       ; 11.766 ;    ;    ; 11.766 ;
+; reset      ; io[0]       ; 11.056 ;    ;    ; 11.056 ;
+; reset      ; io[1]       ; 11.056 ;    ;    ; 11.056 ;
+; reset      ; io[2]       ; 11.633 ;    ;    ; 11.633 ;
+; reset      ; io[3]       ; 11.056 ;    ;    ; 11.056 ;
+; reset      ; io[4]       ; 11.171 ;    ;    ; 11.171 ;
+; reset      ; io[5]       ; 11.633 ;    ;    ; 11.633 ;
+; reset      ; io[6]       ; 11.171 ;    ;    ; 11.171 ;
+; reset      ; io[7]       ; 11.633 ;    ;    ; 11.633 ;
 +------------+-------------+--------+----+----+--------+
 
 
@@ -652,32 +654,32 @@ No paths to report.
 +------------+-------------+--------+----+----+--------+
 ; Input Port ; Output Port ; RR     ; RF ; FR ; FF     ;
 +------------+-------------+--------+----+----+--------+
-; reset      ; io[0]       ; 11.302 ;    ;    ; 11.302 ;
-; reset      ; io[1]       ; 11.302 ;    ;    ; 11.302 ;
-; reset      ; io[2]       ; 11.766 ;    ;    ; 11.766 ;
-; reset      ; io[3]       ; 11.302 ;    ;    ; 11.302 ;
-; reset      ; io[4]       ; 11.766 ;    ;    ; 11.766 ;
-; reset      ; io[5]       ; 11.766 ;    ;    ; 11.766 ;
-; reset      ; io[6]       ; 11.766 ;    ;    ; 11.766 ;
-; reset      ; io[7]       ; 11.766 ;    ;    ; 11.766 ;
+; reset      ; io[0]       ; 11.056 ;    ;    ; 11.056 ;
+; reset      ; io[1]       ; 11.056 ;    ;    ; 11.056 ;
+; reset      ; io[2]       ; 11.633 ;    ;    ; 11.633 ;
+; reset      ; io[3]       ; 11.056 ;    ;    ; 11.056 ;
+; reset      ; io[4]       ; 11.171 ;    ;    ; 11.171 ;
+; reset      ; io[5]       ; 11.633 ;    ;    ; 11.633 ;
+; reset      ; io[6]       ; 11.171 ;    ;    ; 11.171 ;
+; reset      ; io[7]       ; 11.633 ;    ;    ; 11.633 ;
 +------------+-------------+--------+----+----+--------+
 
 
-+-----------------------------------------------------------------------+
-; Output Enable Times                                                   ;
-+-----------+------------+--------+------+------------+-----------------+
-; Data Port ; Clock Port ; Rise   ; Fall ; Clock Edge ; Clock Reference ;
-+-----------+------------+--------+------+------------+-----------------+
-; io[*]     ; clk        ; 9.881  ;      ; Rise       ; clk             ;
-;  io[0]    ; clk        ; 9.881  ;      ; Rise       ; clk             ;
-;  io[1]    ; clk        ; 9.881  ;      ; Rise       ; clk             ;
-;  io[2]    ; clk        ; 10.345 ;      ; Rise       ; clk             ;
-;  io[3]    ; clk        ; 9.881  ;      ; Rise       ; clk             ;
-;  io[4]    ; clk        ; 10.345 ;      ; Rise       ; clk             ;
-;  io[5]    ; clk        ; 10.345 ;      ; Rise       ; clk             ;
-;  io[6]    ; clk        ; 10.345 ;      ; Rise       ; clk             ;
-;  io[7]    ; clk        ; 10.345 ;      ; Rise       ; clk             ;
-+-----------+------------+--------+------+------------+-----------------+
++----------------------------------------------------------------------+
+; Output Enable Times                                                  ;
++-----------+------------+-------+------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+------+------------+-----------------+
+; io[*]     ; clk        ; 9.119 ;      ; Rise       ; clk             ;
+;  io[0]    ; clk        ; 9.119 ;      ; Rise       ; clk             ;
+;  io[1]    ; clk        ; 9.119 ;      ; Rise       ; clk             ;
+;  io[2]    ; clk        ; 9.696 ;      ; Rise       ; clk             ;
+;  io[3]    ; clk        ; 9.119 ;      ; Rise       ; clk             ;
+;  io[4]    ; clk        ; 9.234 ;      ; Rise       ; clk             ;
+;  io[5]    ; clk        ; 9.696 ;      ; Rise       ; clk             ;
+;  io[6]    ; clk        ; 9.234 ;      ; Rise       ; clk             ;
+;  io[7]    ; clk        ; 9.696 ;      ; Rise       ; clk             ;
++-----------+------------+-------+------+------------+-----------------+
 
 
 +----------------------------------------------------------------------+
@@ -685,15 +687,15 @@ No paths to report.
 +-----------+------------+-------+------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+------+------------+-----------------+
-; io[*]     ; clk        ; 8.464 ;      ; Rise       ; clk             ;
-;  io[0]    ; clk        ; 8.464 ;      ; Rise       ; clk             ;
-;  io[1]    ; clk        ; 8.464 ;      ; Rise       ; clk             ;
-;  io[2]    ; clk        ; 8.928 ;      ; Rise       ; clk             ;
-;  io[3]    ; clk        ; 8.464 ;      ; Rise       ; clk             ;
-;  io[4]    ; clk        ; 8.928 ;      ; Rise       ; clk             ;
-;  io[5]    ; clk        ; 8.928 ;      ; Rise       ; clk             ;
-;  io[6]    ; clk        ; 8.928 ;      ; Rise       ; clk             ;
-;  io[7]    ; clk        ; 8.928 ;      ; Rise       ; clk             ;
+; io[*]     ; clk        ; 8.723 ;      ; Rise       ; clk             ;
+;  io[0]    ; clk        ; 8.723 ;      ; Rise       ; clk             ;
+;  io[1]    ; clk        ; 8.723 ;      ; Rise       ; clk             ;
+;  io[2]    ; clk        ; 9.300 ;      ; Rise       ; clk             ;
+;  io[3]    ; clk        ; 8.723 ;      ; Rise       ; clk             ;
+;  io[4]    ; clk        ; 8.838 ;      ; Rise       ; clk             ;
+;  io[5]    ; clk        ; 9.300 ;      ; Rise       ; clk             ;
+;  io[6]    ; clk        ; 8.838 ;      ; Rise       ; clk             ;
+;  io[7]    ; clk        ; 9.300 ;      ; Rise       ; clk             ;
 +-----------+------------+-------+------+------------+-----------------+
 
 
@@ -702,15 +704,15 @@ No paths to report.
 +-----------+------------+-----------+-----------+------------+-----------------+
 ; Data Port ; Clock Port ; 0 to Hi-Z ; 1 to Hi-Z ; Clock Edge ; Clock Reference ;
 +-----------+------------+-----------+-----------+------------+-----------------+
-; io[*]     ; clk        ; 9.881     ;           ; Rise       ; clk             ;
-;  io[0]    ; clk        ; 9.881     ;           ; Rise       ; clk             ;
-;  io[1]    ; clk        ; 9.881     ;           ; Rise       ; clk             ;
-;  io[2]    ; clk        ; 10.345    ;           ; Rise       ; clk             ;
-;  io[3]    ; clk        ; 9.881     ;           ; Rise       ; clk             ;
-;  io[4]    ; clk        ; 10.345    ;           ; Rise       ; clk             ;
-;  io[5]    ; clk        ; 10.345    ;           ; Rise       ; clk             ;
-;  io[6]    ; clk        ; 10.345    ;           ; Rise       ; clk             ;
-;  io[7]    ; clk        ; 10.345    ;           ; Rise       ; clk             ;
+; io[*]     ; clk        ; 9.119     ;           ; Rise       ; clk             ;
+;  io[0]    ; clk        ; 9.119     ;           ; Rise       ; clk             ;
+;  io[1]    ; clk        ; 9.119     ;           ; Rise       ; clk             ;
+;  io[2]    ; clk        ; 9.696     ;           ; Rise       ; clk             ;
+;  io[3]    ; clk        ; 9.119     ;           ; Rise       ; clk             ;
+;  io[4]    ; clk        ; 9.234     ;           ; Rise       ; clk             ;
+;  io[5]    ; clk        ; 9.696     ;           ; Rise       ; clk             ;
+;  io[6]    ; clk        ; 9.234     ;           ; Rise       ; clk             ;
+;  io[7]    ; clk        ; 9.696     ;           ; Rise       ; clk             ;
 +-----------+------------+-----------+-----------+------------+-----------------+
 
 
@@ -719,15 +721,15 @@ No paths to report.
 +-----------+------------+-----------+-----------+------------+-----------------+
 ; Data Port ; Clock Port ; 0 to Hi-Z ; 1 to Hi-Z ; Clock Edge ; Clock Reference ;
 +-----------+------------+-----------+-----------+------------+-----------------+
-; io[*]     ; clk        ; 8.464     ;           ; Rise       ; clk             ;
-;  io[0]    ; clk        ; 8.464     ;           ; Rise       ; clk             ;
-;  io[1]    ; clk        ; 8.464     ;           ; Rise       ; clk             ;
-;  io[2]    ; clk        ; 8.928     ;           ; Rise       ; clk             ;
-;  io[3]    ; clk        ; 8.464     ;           ; Rise       ; clk             ;
-;  io[4]    ; clk        ; 8.928     ;           ; Rise       ; clk             ;
-;  io[5]    ; clk        ; 8.928     ;           ; Rise       ; clk             ;
-;  io[6]    ; clk        ; 8.928     ;           ; Rise       ; clk             ;
-;  io[7]    ; clk        ; 8.928     ;           ; Rise       ; clk             ;
+; io[*]     ; clk        ; 8.723     ;           ; Rise       ; clk             ;
+;  io[0]    ; clk        ; 8.723     ;           ; Rise       ; clk             ;
+;  io[1]    ; clk        ; 8.723     ;           ; Rise       ; clk             ;
+;  io[2]    ; clk        ; 9.300     ;           ; Rise       ; clk             ;
+;  io[3]    ; clk        ; 8.723     ;           ; Rise       ; clk             ;
+;  io[4]    ; clk        ; 8.838     ;           ; Rise       ; clk             ;
+;  io[5]    ; clk        ; 9.300     ;           ; Rise       ; clk             ;
+;  io[6]    ; clk        ; 8.838     ;           ; Rise       ; clk             ;
+;  io[7]    ; clk        ; 9.300     ;           ; Rise       ; clk             ;
 +-----------+------------+-----------+-----------+------------+-----------------+
 
 
@@ -736,7 +738,7 @@ No paths to report.
 +------------+----------+----------+----------+----------+----------+
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
-; clk        ; clk      ; 14630    ; 0        ; 0        ; 0        ;
+; clk        ; clk      ; 14671    ; 0        ; 0        ; 0        ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -746,7 +748,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +------------+----------+----------+----------+----------+----------+
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
-; clk        ; clk      ; 14630    ; 0        ; 0        ; 0        ;
+; clk        ; clk      ; 14671    ; 0        ; 0        ; 0        ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -771,9 +773,9 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
 ; Unconstrained Input Ports       ; 12    ; 12   ;
-; Unconstrained Input Port Paths  ; 272   ; 272  ;
-; Unconstrained Output Ports      ; 50    ; 50   ;
-; Unconstrained Output Port Paths ; 74    ; 74   ;
+; Unconstrained Input Port Paths  ; 282   ; 282  ;
+; Unconstrained Output Ports      ; 51    ; 51   ;
+; Unconstrained Output Port Paths ; 75    ; 75   ;
 +---------------------------------+-------+------+
 
 
@@ -783,7 +785,7 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 32-bit TimeQuest Timing Analyzer
     Info: Version 12.0 Build 178 05/31/2012 SJ Web Edition
-    Info: Processing started: Thu Mar  9 23:06:53 2017
+    Info: Processing started: Fri Mar 10 01:00:20 2017
 Info: Command: quartus_sta TopLevel -c TopLevel
 Info: qsta_default_script.tcl version: #4
 Warning (20028): Parallel compilation is not licensed and has been disabled
@@ -797,14 +799,14 @@ Info (332105): Deriving Clocks
     Info (332105): create_clock -period 1.000 -name clk clk
 Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -13.459
+Info (332146): Worst-case setup slack is -12.509
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):   -13.459     -1727.955 clk 
-Info (332146): Worst-case hold slack is 1.639
+    Info (332119):   -12.509     -1721.521 clk 
+Info (332146): Worst-case hold slack is 1.650
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):     1.639         0.000 clk 
+    Info (332119):     1.650         0.000 clk 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -2.289
@@ -815,8 +817,8 @@ Info (332001): The selected device family is not supported by the report_metasta
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 32-bit TimeQuest Timing Analyzer was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 299 megabytes
-    Info: Processing ended: Thu Mar  9 23:06:56 2017
+    Info: Peak virtual memory: 296 megabytes
+    Info: Processing ended: Fri Mar 10 01:00:23 2017
     Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:02
 

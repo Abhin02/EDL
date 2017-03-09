@@ -1,5 +1,5 @@
 EDA Netlist Writer report for TopLevel
-Thu Mar  9 23:07:05 2017
+Fri Mar 10 01:00:28 2017
 Quartus II 32-bit Version 12.0 Build 178 05/31/2012 SJ Web Edition
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Thu Mar  9 23:07:05 2017 ;
+; EDA Netlist Writer Status ; Successful - Fri Mar 10 01:00:28 2017 ;
 ; Revision Name             ; TopLevel                              ;
 ; Top-level Entity Name     ; TopLevel                              ;
 ; Family                    ; MAX V                                 ;
@@ -82,12 +82,12 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 32-bit EDA Netlist Writer
     Info: Version 12.0 Build 178 05/31/2012 SJ Web Edition
-    Info: Processing started: Thu Mar  9 23:07:04 2017
+    Info: Processing started: Fri Mar 10 01:00:27 2017
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off TopLevel -c TopLevel
 Info (204018): Generated files "TopLevel.vho" and "TopLevel_vhd.sdo" in directory "/home/kalpesh/Projects/EDL/uart_receiver/Quartus_Top/simulation/modelsim/" for EDA simulation tool
 Info: Quartus II 32-bit EDA Netlist Writer was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 313 megabytes
-    Info: Processing ended: Thu Mar  9 23:07:05 2017
+    Info: Processing ended: Fri Mar 10 01:00:28 2017
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 

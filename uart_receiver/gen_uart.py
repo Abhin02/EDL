@@ -1,7 +1,7 @@
 """This file generates test cases for UART."""
 
 data = ""
-for i in range(0, 128):
+for i in range(0, 3):
     data += chr(i)
 
 output = ""
