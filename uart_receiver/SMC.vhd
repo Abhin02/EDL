@@ -204,6 +204,9 @@ begin
         nio_select := '0';
         if read_wait = '1' then
           nCONTROL_IN := "010";
+          noutput_select := '0';
+          noutput_enable := '0';
+          nlimit_control := "0000";
         else
           nCONTROL_IN := "111";
           noutput_select := '1';
@@ -386,7 +389,8 @@ begin
             output => READ_WAIT_INC
           );
   read_wait <= '0' when (READ_WAIT_VALUE = READ_WAIT_LIMIT) else '1';
-  READ_WAIT_IN <= READ_WAIT_INC when (READ_WAIT_VALUE /= READ_WAIT_LIMIT) else (others => '0');
+  READ_WAIT_IN <= READ_WAIT_INC when (READ_WAIT_VALUE /= READ_WAIT_LIMIT) and CONTROL_IN = "010" else
+                  (others => '0');
   rw: DataRegister
         generic map (data_width => 32)
         port map (

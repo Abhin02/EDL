@@ -1,0 +1,638 @@
+Analysis & Synthesis report for TopLevel
+Thu Mar  9 23:06:35 2017
+Quartus II 32-bit Version 12.0 Build 178 05/31/2012 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |TopLevel|UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerControl:CP|state
+  9. State Machine - |TopLevel|UARTReceiver:uart|UARTReceiverControl:CP|state
+ 10. State Machine - |TopLevel|SMC:ram|SMCControl:cntrl|state
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Parameter Settings for User Entity Instance: SMC:ram|SMCData:data|DataRegister:rw
+ 15. Parameter Settings for User Entity Instance: SMC:ram|SMCData:data|DataRegister:rw_limit0
+ 16. Parameter Settings for User Entity Instance: SMC:ram|SMCData:data|DataRegister:rw_limit1
+ 17. Parameter Settings for User Entity Instance: SMC:ram|SMCData:data|DataRegister:rw_limit2
+ 18. Parameter Settings for User Entity Instance: SMC:ram|SMCData:data|DataRegister:rw_limit3
+ 19. Parameter Settings for User Entity Instance: SMC:ram|SMCData:data|DataRegister:ww
+ 20. Parameter Settings for User Entity Instance: SMC:ram|SMCData:data|DataRegister:addr
+ 21. Parameter Settings for User Entity Instance: SMC:ram|SMCData:data|DataRegister:waddr
+ 22. Parameter Settings for User Entity Instance: SMC:ram|SMCData:data|DataRegister:raddr
+ 23. Parameter Settings for User Entity Instance: SMC:ram|SMCData:data|DataRegisterSp:contrl
+ 24. Parameter Settings for User Entity Instance: SMC:ram|SMCData:data|DataRegister:output
+ 25. Parameter Settings for User Entity Instance: UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg
+ 26. Parameter Settings for User Entity Instance: UARTReceiver:uart|UARTReceiverData:DP|DataRegister:count1
+ 27. Parameter Settings for User Entity Instance: UARTReceiver:uart|UARTReceiverData:DP|DataRegister:shift_r
+ 28. Parameter Settings for User Entity Instance: UARTReceiver:uart|UARTReceiverData:DP|DataRegister:dout
+ 29. Port Connectivity Checks: "UARTReceiver:uart|UARTReceiverData:DP|DataRegister:shift_r"
+ 30. Port Connectivity Checks: "UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg"
+ 31. Port Connectivity Checks: "SMC:ram|SMCData:data|DataRegisterSp:contrl"
+ 32. Port Connectivity Checks: "SMC:ram|SMCData:data|DataRegister:ww"
+ 33. Port Connectivity Checks: "SMC:ram|SMCData:data|DataRegister:rw"
+ 34. Port Connectivity Checks: "ClockDivider:clk_div"
+ 35. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2012 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                           ;
++-----------------------------+------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Thu Mar  9 23:06:35 2017    ;
+; Quartus II 32-bit Version   ; 12.0 Build 178 05/31/2012 SJ Web Edition ;
+; Revision Name               ; TopLevel                                 ;
+; Top-level Entity Name       ; TopLevel                                 ;
+; Family                      ; MAX V                                    ;
+; Total logic elements        ; 347                                      ;
+; Total pins                  ; 55                                       ;
+; Total virtual pins          ; 0                                        ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                            ;
++-----------------------------+------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; 5M1270ZT144C5      ;                    ;
+; Top-level entity name                                                      ; TopLevel           ; TopLevel           ;
+; Family name                                                                ; MAX V              ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                       ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                ; Library ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------+---------+
+; ../UARTTicker.vhd                ; yes             ; User VHDL File  ; /home/kalpesh/Projects/EDL/uart_receiver/UARTTicker.vhd     ;         ;
+; ../UARTReceiver.vhd              ; yes             ; User VHDL File  ; /home/kalpesh/Projects/EDL/uart_receiver/UARTReceiver.vhd   ;         ;
+; ../UARTComponents.vhd            ; yes             ; User VHDL File  ; /home/kalpesh/Projects/EDL/uart_receiver/UARTComponents.vhd ;         ;
+; ../TopLevel.vhd                  ; yes             ; User VHDL File  ; /home/kalpesh/Projects/EDL/uart_receiver/TopLevel.vhd       ;         ;
+; ../SMC.vhd                       ; yes             ; User VHDL File  ; /home/kalpesh/Projects/EDL/uart_receiver/SMC.vhd            ;         ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Total logic elements                        ; 347   ;
+;     -- Combinational with no register       ; 134   ;
+;     -- Register only                        ; 49    ;
+;     -- Combinational with a register        ; 164   ;
+;                                             ;       ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 123   ;
+;     -- 3 input functions                    ; 23    ;
+;     -- 2 input functions                    ; 146   ;
+;     -- 1 input functions                    ; 6     ;
+;     -- 0 input functions                    ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 245   ;
+;     -- arithmetic mode                      ; 102   ;
+;     -- qfbk mode                            ; 0     ;
+;     -- register cascade mode                ; 0     ;
+;     -- synchronous clear/load mode          ; 111   ;
+;     -- asynchronous clear/load mode         ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 213   ;
+; Total logic cells in carry chains           ; 107   ;
+; I/O pins                                    ; 55    ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 213   ;
+; Total fan-out                               ; 1400  ;
+; Average fan-out                             ; 3.48  ;
++---------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                  ;
++-----------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+--------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node              ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                                                                    ; Library Name ;
++-----------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+--------------------------------------------------------------------------------------------------------+--------------+
+; |TopLevel                               ; 347 (0)     ; 213          ; 0          ; 55   ; 0            ; 134 (0)      ; 49 (0)            ; 164 (0)          ; 107 (0)         ; 0 (0)      ; |TopLevel                                                                                              ; work         ;
+;    |SMC:ram|                            ; 189 (0)     ; 135          ; 0          ; 0    ; 0            ; 54 (0)       ; 35 (0)            ; 100 (0)          ; 62 (0)          ; 0 (0)      ; |TopLevel|SMC:ram                                                                                      ; work         ;
+;       |SMCControl:cntrl|                ; 17 (17)     ; 11           ; 0          ; 0    ; 0            ; 6 (6)        ; 0 (0)             ; 11 (11)          ; 0 (0)           ; 0 (0)      ; |TopLevel|SMC:ram|SMCControl:cntrl                                                                     ; work         ;
+;       |SMCData:data|                    ; 172 (24)    ; 124          ; 0          ; 0    ; 0            ; 48 (24)      ; 35 (0)            ; 89 (0)           ; 62 (0)          ; 0 (0)      ; |TopLevel|SMC:ram|SMCData:data                                                                         ; work         ;
+;          |DataRegister:addr|            ; 17 (17)     ; 15           ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 15 (15)          ; 0 (0)           ; 0 (0)      ; |TopLevel|SMC:ram|SMCData:data|DataRegister:addr                                                       ; work         ;
+;          |DataRegister:output|          ; 8 (8)       ; 8            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 8 (8)            ; 0 (0)           ; 0 (0)      ; |TopLevel|SMC:ram|SMCData:data|DataRegister:output                                                     ; work         ;
+;          |DataRegister:raddr|           ; 16 (16)     ; 15           ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 15 (15)          ; 15 (15)         ; 0 (0)      ; |TopLevel|SMC:ram|SMCData:data|DataRegister:raddr                                                      ; work         ;
+;          |DataRegister:rw_limit0|       ; 9 (9)       ; 8            ; 0          ; 0    ; 0            ; 1 (1)        ; 8 (8)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|SMC:ram|SMCData:data|DataRegister:rw_limit0                                                  ; work         ;
+;          |DataRegister:rw_limit1|       ; 9 (9)       ; 8            ; 0          ; 0    ; 0            ; 1 (1)        ; 8 (8)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|SMC:ram|SMCData:data|DataRegister:rw_limit1                                                  ; work         ;
+;          |DataRegister:rw_limit2|       ; 10 (10)     ; 8            ; 0          ; 0    ; 0            ; 2 (2)        ; 8 (8)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|SMC:ram|SMCData:data|DataRegister:rw_limit2                                                  ; work         ;
+;          |DataRegister:rw_limit3|       ; 17 (17)     ; 8            ; 0          ; 0    ; 0            ; 9 (9)        ; 8 (8)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|SMC:ram|SMCData:data|DataRegister:rw_limit3                                                  ; work         ;
+;          |DataRegister:rw|              ; 32 (32)     ; 32           ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 32 (32)          ; 32 (32)         ; 0 (0)      ; |TopLevel|SMC:ram|SMCData:data|DataRegister:rw                                                         ; work         ;
+;          |DataRegister:waddr|           ; 16 (16)     ; 15           ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 15 (15)          ; 15 (15)         ; 0 (0)      ; |TopLevel|SMC:ram|SMCData:data|DataRegister:waddr                                                      ; work         ;
+;          |DataRegister:ww|              ; 4 (4)       ; 4            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |TopLevel|SMC:ram|SMCData:data|DataRegister:ww                                                         ; work         ;
+;          |DataRegisterSp:contrl|        ; 9 (9)       ; 3            ; 0          ; 0    ; 0            ; 6 (6)        ; 3 (3)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|SMC:ram|SMCData:data|DataRegisterSp:contrl                                                   ; work         ;
+;          |Increment4:inc3|              ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|SMC:ram|SMCData:data|Increment4:inc3                                                         ; work         ;
+;    |UARTReceiver:uart|                  ; 158 (0)     ; 78           ; 0          ; 0    ; 0            ; 80 (0)       ; 14 (0)            ; 64 (0)           ; 45 (0)          ; 0 (0)      ; |TopLevel|UARTReceiver:uart                                                                            ; work         ;
+;       |UARTReceiverControl:CP|          ; 90 (90)     ; 39           ; 0          ; 0    ; 0            ; 51 (51)      ; 0 (0)             ; 39 (39)          ; 32 (32)         ; 0 (0)      ; |TopLevel|UARTReceiver:uart|UARTReceiverControl:CP                                                     ; work         ;
+;       |UARTReceiverData:DP|             ; 68 (0)      ; 39           ; 0          ; 0    ; 0            ; 29 (0)       ; 14 (0)            ; 25 (0)           ; 13 (0)          ; 0 (0)      ; |TopLevel|UARTReceiver:uart|UARTReceiverData:DP                                                        ; work         ;
+;          |DataRegister:count1|          ; 4 (4)       ; 4            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |TopLevel|UARTReceiver:uart|UARTReceiverData:DP|DataRegister:count1                                    ; work         ;
+;          |DataRegister:dout|            ; 9 (9)       ; 8            ; 0          ; 0    ; 0            ; 1 (1)        ; 7 (7)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |TopLevel|UARTReceiver:uart|UARTReceiverData:DP|DataRegister:dout                                      ; work         ;
+;          |DataRegister:shift_r|         ; 17 (17)     ; 9            ; 0          ; 0    ; 0            ; 8 (8)        ; 7 (7)             ; 2 (2)            ; 0 (0)           ; 0 (0)      ; |TopLevel|UARTReceiver:uart|UARTReceiverData:DP|DataRegister:shift_r                                   ; work         ;
+;          |Increment4:incr|              ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|UARTReceiver:uart|UARTReceiverData:DP|Increment4:incr                                        ; work         ;
+;          |UARTTicker:tc|                ; 36 (0)      ; 18           ; 0          ; 0    ; 0            ; 18 (0)       ; 0 (0)             ; 18 (0)           ; 13 (0)          ; 0 (0)      ; |TopLevel|UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc                                          ; work         ;
+;             |UARTTickerControl:CP|      ; 12 (12)     ; 5            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 5 (5)            ; 0 (0)           ; 0 (0)      ; |TopLevel|UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerControl:CP                     ; work         ;
+;             |UARTTickerData:DP|         ; 24 (11)     ; 13           ; 0          ; 0    ; 0            ; 11 (11)      ; 0 (0)             ; 13 (0)           ; 13 (0)          ; 0 (0)      ; |TopLevel|UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP                        ; work         ;
+;                |DataRegister:count_reg| ; 13 (13)     ; 13           ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 13 (13)          ; 13 (13)         ; 0 (0)      ; |TopLevel|UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg ; work         ;
++-----------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+--------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------+
+; State Machine - |TopLevel|UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerControl:CP|state ;
++----------+----------+----------+----------+----------+---------------------------------------------------+
+; Name     ; state.S4 ; state.S3 ; state.S2 ; state.S1 ; state.S0                                          ;
++----------+----------+----------+----------+----------+---------------------------------------------------+
+; state.S0 ; 0        ; 0        ; 0        ; 0        ; 0                                                 ;
+; state.S1 ; 0        ; 0        ; 0        ; 1        ; 1                                                 ;
+; state.S2 ; 0        ; 0        ; 1        ; 0        ; 1                                                 ;
+; state.S3 ; 0        ; 1        ; 0        ; 0        ; 1                                                 ;
+; state.S4 ; 1        ; 0        ; 0        ; 0        ; 1                                                 ;
++----------+----------+----------+----------+----------+---------------------------------------------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------+
+; State Machine - |TopLevel|UARTReceiver:uart|UARTReceiverControl:CP|state   ;
++----------+----------+----------+----------+----------+----------+----------+
+; Name     ; state.S5 ; state.S4 ; state.S3 ; state.S2 ; state.S1 ; state.S0 ;
++----------+----------+----------+----------+----------+----------+----------+
+; state.S0 ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ;
+; state.S1 ; 0        ; 0        ; 0        ; 0        ; 1        ; 1        ;
+; state.S2 ; 0        ; 0        ; 0        ; 1        ; 0        ; 1        ;
+; state.S3 ; 0        ; 0        ; 1        ; 0        ; 0        ; 1        ;
+; state.S4 ; 0        ; 1        ; 0        ; 0        ; 0        ; 1        ;
+; state.S5 ; 1        ; 0        ; 0        ; 0        ; 0        ; 1        ;
++----------+----------+----------+----------+----------+----------+----------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------+
+; State Machine - |TopLevel|SMC:ram|SMCControl:cntrl|state                                                    ;
++----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+
+; Name     ; state.S8 ; state.S7 ; state.S6 ; state.S5 ; state.S4 ; state.S3 ; state.S2 ; state.S1 ; state.S0 ;
++----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+
+; state.S0 ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ;
+; state.S1 ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 1        ;
+; state.S2 ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 1        ;
+; state.S3 ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 1        ;
+; state.S4 ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 1        ;
+; state.S5 ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; state.S6 ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; state.S7 ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; state.S8 ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
++----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 213   ;
+; Number of registers using Synchronous Clear  ; 111   ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 110   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------+
+; Inverted Register Statistics                                     ;
++--------------------------------------------------------+---------+
+; Inverted Register                                      ; Fan out ;
++--------------------------------------------------------+---------+
+; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[0]  ; 3       ;
+; UARTReceiver:uart|UARTReceiverControl:CP|count_sig[31] ; 1       ;
+; Total number of inverted registers = 2                 ;         ;
++--------------------------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------------------------------------------------------------------------------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered                                                                               ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------------------------------------------------------------------------------------+----------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; |TopLevel|SMC:ram|SMCData:data|DataRegister:output|Dout[0]                               ;                            ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; |TopLevel|SMC:ram|SMCData:data|DataRegister:rw|Dout[15]                                  ;                            ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; |TopLevel|SMC:ram|SMCData:data|DataRegister:waddr|Dout[9]                                ;                            ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; |TopLevel|SMC:ram|SMCData:data|DataRegister:raddr|Dout[0]                                ;                            ;
+; 3:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; |TopLevel|UARTReceiver:uart|UARTReceiverData:DP|DataRegister:shift_r|Dout[6]             ;                            ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; |TopLevel|SMC:ram|SMCData:data|DataRegister:rw_limit3|Dout[6]                            ;                            ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; |TopLevel|SMC:ram|SMCData:data|DataRegister:rw_limit2|Dout[5]                            ;                            ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; |TopLevel|SMC:ram|SMCData:data|DataRegister:rw_limit1|Dout[5]                            ;                            ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; |TopLevel|SMC:ram|SMCData:data|DataRegister:rw_limit0|Dout[6]                            ;                            ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; |TopLevel|UARTReceiver:uart|UARTReceiverData:DP|DataRegister:count1|Dout[0]              ;                            ;
+; 5:1                ; 15 bits   ; 45 LEs        ; 30 LEs               ; 15 LEs                 ; |TopLevel|SMC:ram|SMCData:data|DataRegister:addr|Dout[8]                                 ;                            ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; |TopLevel|SMC:ram|SMCControl:cntrl|count_sig[1]                                          ;                            ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; |TopLevel|UARTReceiver:uart|UARTReceiverData:DP|DataRegister:dout|Dout[0]                ;                            ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; |TopLevel|SMC:ram|SMCControl:cntrl|state                                                 ;                            ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; |TopLevel|UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerControl:CP|state ;                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------------------------------------------------------------------------------------+----------------------------+
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SMC:ram|SMCData:data|DataRegister:rw ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; data_width     ; 32    ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SMC:ram|SMCData:data|DataRegister:rw_limit0 ;
++----------------+-------+-----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                            ;
++----------------+-------+-----------------------------------------------------------------+
+; data_width     ; 8     ; Signed Integer                                                  ;
++----------------+-------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SMC:ram|SMCData:data|DataRegister:rw_limit1 ;
++----------------+-------+-----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                            ;
++----------------+-------+-----------------------------------------------------------------+
+; data_width     ; 8     ; Signed Integer                                                  ;
++----------------+-------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SMC:ram|SMCData:data|DataRegister:rw_limit2 ;
++----------------+-------+-----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                            ;
++----------------+-------+-----------------------------------------------------------------+
+; data_width     ; 8     ; Signed Integer                                                  ;
++----------------+-------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SMC:ram|SMCData:data|DataRegister:rw_limit3 ;
++----------------+-------+-----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                            ;
++----------------+-------+-----------------------------------------------------------------+
+; data_width     ; 8     ; Signed Integer                                                  ;
++----------------+-------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SMC:ram|SMCData:data|DataRegister:ww ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; data_width     ; 4     ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SMC:ram|SMCData:data|DataRegister:addr ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; data_width     ; 15    ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SMC:ram|SMCData:data|DataRegister:waddr ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; data_width     ; 15    ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SMC:ram|SMCData:data|DataRegister:raddr ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; data_width     ; 15    ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SMC:ram|SMCData:data|DataRegisterSp:contrl ;
++----------------+-------+----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                           ;
++----------------+-------+----------------------------------------------------------------+
+; data_width     ; 3     ; Signed Integer                                                 ;
++----------------+-------+----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SMC:ram|SMCData:data|DataRegister:output ;
++----------------+-------+--------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                         ;
++----------------+-------+--------------------------------------------------------------+
+; data_width     ; 8     ; Signed Integer                                               ;
++----------------+-------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg ;
++----------------+-------+------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                             ;
++----------------+-------+------------------------------------------------------------------------------------------------------------------+
+; data_width     ; 13    ; Signed Integer                                                                                                   ;
++----------------+-------+------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: UARTReceiver:uart|UARTReceiverData:DP|DataRegister:count1 ;
++----------------+-------+-------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                          ;
++----------------+-------+-------------------------------------------------------------------------------+
+; data_width     ; 4     ; Signed Integer                                                                ;
++----------------+-------+-------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: UARTReceiver:uart|UARTReceiverData:DP|DataRegister:shift_r ;
++----------------+-------+--------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                           ;
++----------------+-------+--------------------------------------------------------------------------------+
+; data_width     ; 10    ; Signed Integer                                                                 ;
++----------------+-------+--------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: UARTReceiver:uart|UARTReceiverData:DP|DataRegister:dout ;
++----------------+-------+-----------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                        ;
++----------------+-------+-----------------------------------------------------------------------------+
+; data_width     ; 8     ; Signed Integer                                                              ;
++----------------+-------+-----------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "UARTReceiver:uart|UARTReceiverData:DP|DataRegister:shift_r"                            ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; dout[0] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg" ;
++--------+-------+----------+----------------------------------------------------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                                                                      ;
++--------+-------+----------+----------------------------------------------------------------------------------------------+
+; enable ; Input ; Info     ; Stuck at VCC                                                                                 ;
++--------+-------+----------+----------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------+
+; Port Connectivity Checks: "SMC:ram|SMCData:data|DataRegisterSp:contrl" ;
++--------+-------+----------+--------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                    ;
++--------+-------+----------+--------------------------------------------+
+; enable ; Input ; Info     ; Stuck at VCC                               ;
++--------+-------+----------+--------------------------------------------+
+
+
++------------------------------------------------------------------+
+; Port Connectivity Checks: "SMC:ram|SMCData:data|DataRegister:ww" ;
++--------+-------+----------+--------------------------------------+
+; Port   ; Type  ; Severity ; Details                              ;
++--------+-------+----------+--------------------------------------+
+; enable ; Input ; Info     ; Stuck at VCC                         ;
++--------+-------+----------+--------------------------------------+
+
+
++------------------------------------------------------------------+
+; Port Connectivity Checks: "SMC:ram|SMCData:data|DataRegister:rw" ;
++--------+-------+----------+--------------------------------------+
+; Port   ; Type  ; Severity ; Details                              ;
++--------+-------+----------+--------------------------------------+
+; enable ; Input ; Info     ; Stuck at VCC                         ;
++--------+-------+----------+--------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ClockDivider:clk_div"                                                                   ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; clk_slow ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 32-bit Analysis & Synthesis
+    Info: Version 12.0 Build 178 05/31/2012 SJ Web Edition
+    Info: Processing started: Thu Mar  9 23:06:30 2017
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off TopLevel -c TopLevel
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 6 design units, including 3 entities, in source file /home/kalpesh/Projects/EDL/uart_receiver/UARTTicker.vhd
+    Info (12022): Found design unit 1: UARTTicker-Struct
+    Info (12022): Found design unit 2: UARTTickerControl-Behave
+    Info (12022): Found design unit 3: UARTTickerData-Mixed
+    Info (12023): Found entity 1: UARTTicker
+    Info (12023): Found entity 2: UARTTickerControl
+    Info (12023): Found entity 3: UARTTickerData
+Info (12021): Found 6 design units, including 3 entities, in source file /home/kalpesh/Projects/EDL/uart_receiver/UARTReceiver.vhd
+    Info (12022): Found design unit 1: UARTReceiver-Struct
+    Info (12022): Found design unit 2: UARTReceiverControl-Behave
+    Info (12022): Found design unit 3: UARTReceiverData-Mixed
+    Info (12023): Found entity 1: UARTReceiver
+    Info (12023): Found entity 2: UARTReceiverControl
+    Info (12023): Found entity 3: UARTReceiverData
+Info (12021): Found 15 design units, including 7 entities, in source file /home/kalpesh/Projects/EDL/uart_receiver/UARTComponents.vhd
+    Info (12022): Found design unit 1: UARTComponents
+    Info (12022): Found design unit 2: DataRegister-Behave
+    Info (12022): Found design unit 3: DataRegisterSp-Behave
+    Info (12022): Found design unit 4: Increment13-Behave
+    Info (12022): Found design unit 5: Increment4-Behave
+    Info (12022): Found design unit 6: Increment15-Behave
+    Info (12022): Found design unit 7: Increment32-Behave
+    Info (12022): Found design unit 8: ClockDivider-RTL
+    Info (12023): Found entity 1: DataRegister
+    Info (12023): Found entity 2: DataRegisterSp
+    Info (12023): Found entity 3: Increment13
+    Info (12023): Found entity 4: Increment4
+    Info (12023): Found entity 5: Increment15
+    Info (12023): Found entity 6: Increment32
+    Info (12023): Found entity 7: ClockDivider
+Info (12021): Found 2 design units, including 1 entities, in source file /home/kalpesh/Projects/EDL/uart_receiver/TopLevel.vhd
+    Info (12022): Found design unit 1: TopLevel-Mixed
+    Info (12023): Found entity 1: TopLevel
+Info (12021): Found 6 design units, including 3 entities, in source file /home/kalpesh/Projects/EDL/uart_receiver/SMC.vhd
+    Info (12022): Found design unit 1: SMC-Struct
+    Info (12022): Found design unit 2: SMCControl-Mixed
+    Info (12022): Found design unit 3: SMCData-Mixed
+    Info (12023): Found entity 1: SMC
+    Info (12023): Found entity 2: SMCControl
+    Info (12023): Found entity 3: SMCData
+Info (12127): Elaborating entity "TopLevel" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at TopLevel.vhd(23): object "clk_slow" assigned a value but never read
+Info (12128): Elaborating entity "ClockDivider" for hierarchy "ClockDivider:clk_div"
+Info (12128): Elaborating entity "SMC" for hierarchy "SMC:ram"
+Info (12128): Elaborating entity "SMCControl" for hierarchy "SMC:ram|SMCControl:cntrl"
+Info (12128): Elaborating entity "SMCData" for hierarchy "SMC:ram|SMCData:data"
+Warning (10540): VHDL Signal Declaration warning at SMC.vhd(362): used explicit default value for signal "WAIT_LIMIT" because signal was never assigned a value
+Info (12128): Elaborating entity "Increment32" for hierarchy "SMC:ram|SMCData:data|Increment32:inc4"
+Info (12128): Elaborating entity "DataRegister" for hierarchy "SMC:ram|SMCData:data|DataRegister:rw"
+Info (12128): Elaborating entity "DataRegister" for hierarchy "SMC:ram|SMCData:data|DataRegister:rw_limit0"
+Info (12128): Elaborating entity "Increment4" for hierarchy "SMC:ram|SMCData:data|Increment4:inc3"
+Info (12128): Elaborating entity "DataRegister" for hierarchy "SMC:ram|SMCData:data|DataRegister:ww"
+Info (12128): Elaborating entity "Increment15" for hierarchy "SMC:ram|SMCData:data|Increment15:incr2"
+Info (12128): Elaborating entity "DataRegister" for hierarchy "SMC:ram|SMCData:data|DataRegister:addr"
+Info (12128): Elaborating entity "DataRegisterSp" for hierarchy "SMC:ram|SMCData:data|DataRegisterSp:contrl"
+Info (12128): Elaborating entity "UARTReceiver" for hierarchy "UARTReceiver:uart"
+Info (12128): Elaborating entity "UARTReceiverControl" for hierarchy "UARTReceiver:uart|UARTReceiverControl:CP"
+Info (12128): Elaborating entity "UARTReceiverData" for hierarchy "UARTReceiver:uart|UARTReceiverData:DP"
+Warning (10540): VHDL Signal Declaration warning at UARTReceiver.vhd(237): used explicit default value for signal "CONST_0" because signal was never assigned a value
+Warning (10540): VHDL Signal Declaration warning at UARTReceiver.vhd(239): used explicit default value for signal "LIMIT" because signal was never assigned a value
+Info (12128): Elaborating entity "UARTTicker" for hierarchy "UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc"
+Info (12128): Elaborating entity "UARTTickerControl" for hierarchy "UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerControl:CP"
+Info (12128): Elaborating entity "UARTTickerData" for hierarchy "UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP"
+Warning (10540): VHDL Signal Declaration warning at UARTTicker.vhd(168): used explicit default value for signal "L1" because signal was never assigned a value
+Warning (10540): VHDL Signal Declaration warning at UARTTicker.vhd(169): used explicit default value for signal "L2" because signal was never assigned a value
+Warning (10540): VHDL Signal Declaration warning at UARTTicker.vhd(173): used explicit default value for signal "HALF" because signal was never assigned a value
+Warning (10540): VHDL Signal Declaration warning at UARTTicker.vhd(174): used explicit default value for signal "CONST_0" because signal was never assigned a value
+Info (12128): Elaborating entity "Increment13" for hierarchy "UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|Increment13:incr"
+Info (12128): Elaborating entity "DataRegister" for hierarchy "UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg"
+Info (12128): Elaborating entity "DataRegister" for hierarchy "UARTReceiver:uart|UARTReceiverData:DP|DataRegister:shift_r"
+Info (21057): Implemented 402 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 5 input pins
+    Info (21059): Implemented 42 output pins
+    Info (21060): Implemented 8 bidirectional pins
+    Info (21061): Implemented 347 logic cells
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 9 warnings
+    Info: Peak virtual memory: 358 megabytes
+    Info: Processing ended: Thu Mar  9 23:06:35 2017
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:03
+
+

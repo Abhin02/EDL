@@ -1,0 +1,29 @@
+
+State Machine - |TopLevel|UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerControl:CP|state
+Name state.S4 state.S3 state.S2 state.S1 state.S0 
+state.S0 0 0 0 0 0 
+state.S1 0 0 0 1 1 
+state.S2 0 0 1 0 1 
+state.S3 0 1 0 0 1 
+state.S4 1 0 0 0 1 
+
+State Machine - |TopLevel|UARTReceiver:uart|UARTReceiverControl:CP|state
+Name state.S5 state.S4 state.S3 state.S2 state.S1 state.S0 
+state.S0 0 0 0 0 0 0 
+state.S1 0 0 0 0 1 1 
+state.S2 0 0 0 1 0 1 
+state.S3 0 0 1 0 0 1 
+state.S4 0 1 0 0 0 1 
+state.S5 1 0 0 0 0 1 
+
+State Machine - |TopLevel|SMC:ram|SMCControl:cntrl|state
+Name state.S8 state.S7 state.S6 state.S5 state.S4 state.S3 state.S2 state.S1 state.S0 
+state.S0 0 0 0 0 0 0 0 0 0 
+state.S1 0 0 0 0 0 0 0 1 1 
+state.S2 0 0 0 0 0 0 1 0 1 
+state.S3 0 0 0 0 0 1 0 0 1 
+state.S4 0 0 0 0 1 0 0 0 1 
+state.S5 0 0 0 1 0 0 0 0 1 
+state.S6 0 0 1 0 0 0 0 0 1 
+state.S7 0 1 0 0 0 0 0 0 1 
+state.S8 1 0 0 0 0 0 0 0 1 
