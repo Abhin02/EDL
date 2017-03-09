@@ -93,7 +93,8 @@ package UARTComponents is
     clk, reset: in std_logic;
     shift_in: out std_logic;
     data_ready: out std_logic;
-    tick_reset: out std_logic
+    tick_reset: out std_logic;
+    dout_enable: out std_logic
   );
   end component;
 
@@ -106,7 +107,7 @@ package UARTComponents is
     received: out std_logic;
     clk, reset: in std_logic;
     shift_in: in std_logic;
-    data_ready: in std_logic;
+    dout_enable: in std_logic;
     tick_reset: in std_logic;
     data_out: out std_logic_vector(7 downto 0)
   );
@@ -121,6 +122,7 @@ package UARTComponents is
     address: out std_logic_vector(14 downto 0);
     clk, reset: in std_logic;
     read_data: in std_logic;
+    sample_rate: in std_logic;
     data_ready: in std_logic;
     debug: out std_logic_vector(7 downto 0)
     );
@@ -141,7 +143,9 @@ package UARTComponents is
     CONTROL_IN: in std_logic_vector(2 downto 0);
     addr_select: in std_logic_vector(2 downto 0);
     io_select, output_select, output_enable: in std_logic;
-    write_addr_enable, read_addr_enable: in std_logic
+    write_addr_enable, read_addr_enable: in std_logic;
+    limit_control: in std_logic_vector(3 downto 0);
+    count: in std_logic_vector(1 downto 0)
   );
 end component SMCData;
 
@@ -150,13 +154,16 @@ end component SMCData;
     clk, reset: in std_logic;
     data_ready: in std_logic;
     read_data: in std_logic;
+    sample_rate: in std_logic;
     -- The set of CS/OE/WE control signals in next clock cycle
     CONTROL_IN: out std_logic_vector(2 downto 0);
     write_wait: in std_logic;
     read_wait: in std_logic;
     addr_select: out std_logic_vector(2 downto 0);
     io_select, output_select, output_enable: out std_logic;
-    write_addr_enable, read_addr_enable: out std_logic
+    write_addr_enable, read_addr_enable: out std_logic;
+    limit_control: out std_logic_vector(3 downto 0);
+    count: out std_logic_vector(1 downto 0)
   );
   end component SMCControl;
 

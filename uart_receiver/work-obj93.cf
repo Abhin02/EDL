@@ -1,47 +1,47 @@
 v 3
-file . "Testbench.vhd" "20170309090739.000" "20170309162614.302":
-  entity testbench at 1( 0) + 0 on 5080;
-  architecture behave of testbench at 9( 135) + 0 on 5081;
-file . "SMC.vhd" "20170309105533.000" "20170309162615.069":
-  entity smc at 1( 0) + 0 on 5113;
-  architecture struct of smc at 20( 499) + 0 on 5114;
-  entity smccontrol at 69( 1903) + 0 on 5115;
-  architecture mixed of smccontrol at 89( 2487) + 0 on 5116;
-  entity smcdata at 266( 7558) + 0 on 5117;
-  architecture mixed of smcdata at 290( 8343) + 0 on 5118;
-file . "UARTTicker.vhd" "20170309090944.000" "20170309162614.718":
-  entity uartticker at 1( 0) + 0 on 5105;
-  architecture struct of uartticker at 14( 259) + 0 on 5106;
-  entity uarttickercontrol at 40( 735) + 0 on 5107;
-  architecture behave of uarttickercontrol at 53( 1064) + 0 on 5108;
-  entity uarttickerdata at 153( 3406) + 0 on 5109;
-  architecture mixed of uarttickerdata at 166( 3667) + 0 on 5110;
-file . "UARTComponents.vhd" "20170309105607.000" "20170309162614.573":
-  package uartcomponents at 1( 0) + 0 on 5084;
-  entity dataregister at 186( 5004) + 0 on 5085;
-  architecture behave of dataregister at 194( 5273) + 0 on 5086;
-  entity dataregistersp at 208( 5548) + 0 on 5087;
-  architecture behave of dataregistersp at 216( 5819) + 0 on 5088;
-  entity increment13 at 230( 6096) + 0 on 5089;
-  architecture behave of increment13 at 239( 6308) + 0 on 5090;
-  entity increment4 at 244( 6416) + 0 on 5091;
-  architecture behave of increment4 at 253( 6624) + 0 on 5092;
-  entity increment15 at 258( 6731) + 0 on 5093;
-  architecture behave of increment15 at 267( 6943) + 0 on 5094;
-  entity increment32 at 272( 7051) + 0 on 5095;
-  architecture behave of increment32 at 281( 7263) + 0 on 5096;
-  entity clockdivider at 286( 7371) + 0 on 5097;
-  architecture rtl of clockdivider at 296( 7569) + 0 on 5098;
-file . "UARTReceiver.vhd" "20170309102621.000" "20170309162614.644":
-  entity uartreceiver at 1( 0) + 0 on 5099;
-  architecture struct of uartreceiver at 16( 342) + 0 on 5100;
-  entity uartreceivercontrol at 52( 1125) + 0 on 5101;
-  architecture behave of uartreceivercontrol at 67( 1481) + 0 on 5102;
-  entity uartreceiverdata at 205( 5173) + 0 on 5103;
-  architecture mixed of uartreceiverdata at 223( 5620) + 0 on 5104;
-file . "TopLevel.vhd" "20170309103046.000" "20170309162615.040":
-  entity toplevel at 1( 0) + 0 on 5111;
-  architecture mixed of toplevel at 20( 504) + 0 on 5112;
-file . "Testbench_Complete.vhd" "20170309103352.000" "20170309162614.255":
-  entity testbench2 at 1( 0) + 0 on 5078;
-  architecture behave of testbench2 at 9( 136) + 0 on 5079;
+file . "Testbench.vhd" "20170309090739.000" "20170309191032.111":
+  entity testbench at 1( 0) + 0 on 5792;
+  architecture behave of testbench at 9( 135) + 0 on 5793;
+file . "SMC.vhd" "20170309133720.000" "20170309191032.906":
+  entity smc at 1( 0) + 0 on 5825;
+  architecture struct of smc at 21( 530) + 0 on 5826;
+  entity smccontrol at 74( 2098) + 0 on 5827;
+  architecture mixed of smccontrol at 96( 2766) + 0 on 5828;
+  entity smcdata at 321( 9700) + 0 on 5829;
+  architecture mixed of smcdata at 346( 10537) + 0 on 5830;
+file . "UARTTicker.vhd" "20170309090944.000" "20170309191032.348":
+  entity uartticker at 1( 0) + 0 on 5817;
+  architecture struct of uartticker at 14( 259) + 0 on 5818;
+  entity uarttickercontrol at 40( 735) + 0 on 5819;
+  architecture behave of uarttickercontrol at 53( 1064) + 0 on 5820;
+  entity uarttickerdata at 153( 3406) + 0 on 5821;
+  architecture mixed of uarttickerdata at 166( 3667) + 0 on 5822;
+file . "UARTComponents.vhd" "20170309133749.000" "20170309191032.181":
+  package uartcomponents at 1( 0) + 0 on 5796;
+  entity dataregister at 191( 5204) + 0 on 5797;
+  architecture behave of dataregister at 199( 5473) + 0 on 5798;
+  entity dataregistersp at 213( 5748) + 0 on 5799;
+  architecture behave of dataregistersp at 221( 6019) + 0 on 5800;
+  entity increment13 at 235( 6296) + 0 on 5801;
+  architecture behave of increment13 at 244( 6508) + 0 on 5802;
+  entity increment4 at 249( 6616) + 0 on 5803;
+  architecture behave of increment4 at 258( 6824) + 0 on 5804;
+  entity increment15 at 263( 6931) + 0 on 5805;
+  architecture behave of increment15 at 272( 7143) + 0 on 5806;
+  entity increment32 at 277( 7251) + 0 on 5807;
+  architecture behave of increment32 at 286( 7463) + 0 on 5808;
+  entity clockdivider at 291( 7571) + 0 on 5809;
+  architecture rtl of clockdivider at 301( 7769) + 0 on 5810;
+file . "UARTReceiver.vhd" "20170309125949.000" "20170309191032.268":
+  entity uartreceiver at 1( 0) + 0 on 5811;
+  architecture struct of uartreceiver at 16( 342) + 0 on 5812;
+  entity uartreceivercontrol at 52( 1104) + 0 on 5813;
+  architecture behave of uartreceivercontrol at 68( 1492) + 0 on 5814;
+  entity uartreceiverdata at 213( 5430) + 0 on 5815;
+  architecture mixed of uartreceiverdata at 231( 5878) + 0 on 5816;
+file . "TopLevel.vhd" "20170309113247.000" "20170309191032.874":
+  entity toplevel at 1( 0) + 0 on 5823;
+  architecture mixed of toplevel at 21( 535) + 0 on 5824;
+file . "Testbench_Complete.vhd" "20170309113814.000" "20170309191032.062":
+  entity testbench2 at 1( 0) + 0 on 5790;
+  architecture behave of testbench2 at 9( 136) + 0 on 5791;

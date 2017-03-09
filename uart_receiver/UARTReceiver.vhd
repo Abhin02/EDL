@@ -15,9 +15,8 @@ end entity UARTReceiver;
 
 architecture Struct of UARTReceiver is
   signal shift_in, tick_reset, tick_half, tick, received: std_logic;
-  signal data_ready_signal: std_logic;
+  signal dout_enable: std_logic;
 begin
-  data_ready <= data_ready_signal;
 
   CP: UARTReceiverControl
   port map (
@@ -27,9 +26,10 @@ begin
     reset => reset,
     clk => clk,
     shift_in => shift_in,
-    data_ready => data_ready_signal,
+    data_ready => data_ready,
     tick_reset => tick_reset,
-    received => received
+    received => received,
+    dout_enable => dout_enable
   );
 
   DP: UARTReceiverData
@@ -40,7 +40,7 @@ begin
     tick => tick,
     clk => clk,
     shift_in => shift_in,
-    data_ready => data_ready_signal,
+    dout_enable => dout_enable,
     tick_reset => tick_reset,
     data_out => data_out,
     data_in => data_in,
@@ -61,6 +61,7 @@ entity UARTReceiverControl is
     clk, reset: in std_logic;
     shift_in: out std_logic;
     data_ready: out std_logic;
+    dout_enable: out std_logic;
     tick_reset: out std_logic
   );
 end entity;
@@ -72,25 +73,25 @@ begin
   -- This process decides the control signals
   process(state, reset, data_in, tick_half, tick, received)
     variable nshift_in: std_logic;
-    variable ndata_ready: std_logic;
     variable ntick_reset: std_logic;
+    variable ndout_enable: std_logic;
   begin
     nshift_in := '0';
-    ndata_ready := '0';
     ntick_reset := '0';
+    ndout_enable := '0';
     case state is
       when S0 =>
         nshift_in := '0';
-        ndata_ready := '0';
         ntick_reset := '1';
+        ndout_enable := '0';
       when S1 =>
         nshift_in := '0';
-        ndata_ready := '0';
         ntick_reset := '1';
+        ndout_enable := '0';
       when S5 =>
         nshift_in := '0';
-        ndata_ready := '0';
         ntick_reset := '1';
+        ndout_enable := '0';
         --if data_in = '1' then
         --  -- Since we want to start the ticker
         --  ntick_reset := '1';
@@ -98,7 +99,7 @@ begin
         --  ntick_reset := '0';
         --end if;
       when S2 =>
-        ndata_ready := '0';
+        ndout_enable := '0';
         if tick_half = '1' then
           nshift_in := '1';
           ntick_reset := '1';
@@ -107,34 +108,31 @@ begin
           ntick_reset := '0';
         end if;
       when S3 =>
+        ndout_enable := '0';
         if received = '1' and tick = '1' then
-          ndata_ready := '0';
           nshift_in := '1';
           ntick_reset := '1';
         elsif received = '0' and tick = '1' then
-          ndata_ready := '0';
           nshift_in := '1';
           ntick_reset := '1';
         else
-          ndata_ready := '0';
           nshift_in := '0';
           ntick_reset := '0';
         end if;
       when S4 =>
-        ndata_ready := '1';
+        ndout_enable := '1';
         nshift_in := '0';
         ntick_reset := '1';
     end case;
-
     if reset = '1' then
       shift_in <= '0';
-      data_ready <= '0';
       -- This has been done since we want to feedforward tick reset
       tick_reset <= '1';
+      dout_enable <= '0';
     else
       shift_in <= nshift_in;
-      data_ready <= ndata_ready;
       tick_reset <= ntick_reset;
+      dout_enable <= ndout_enable;
     end if;
   end process;
 
@@ -142,14 +140,18 @@ begin
   process(state, clk, reset, data_in, tick_half, tick, received, count_sig)
     variable nstate: FsmState;
     variable count_var: Integer := 0;
+    variable ndata_ready: std_logic := '0';
   begin
     nstate := S0;
     count_var := count_sig;
+    ndata_ready := '0';
     case state is
       when S0 =>
+        ndata_ready := '0';
         -- This is the reset state
         nstate := S1;
       when S1 =>
+        ndata_ready := '0';
         -- In this state, the receiver waits for UART
         if data_in = '0' then
           -- Received an input, begin UART sequence
@@ -159,6 +161,7 @@ begin
         end if;
         count_var := 0;
       when S5 =>
+        ndata_ready := '0';
         -- This state confirms that the data_in is actually 0
         -- This is done to correct sampling errors
         count_var := count_var + 1;
@@ -172,6 +175,7 @@ begin
           nstate := S5;
         end if;
       when S2 =>
+        ndata_ready := '0';
         -- In this state, the counter increments till it hits T/2
         -- This is done for clock synchronization
         if tick_half = '1' then
@@ -180,6 +184,7 @@ begin
           nstate := S2;
         end if;
       when S3 =>
+        ndata_ready := '0';
         -- In this state, the counter samples every T seconds
         if tick = '1' and received = '1' then
           nstate := S4;
@@ -187,6 +192,7 @@ begin
           nstate := S3;
         end if;
       when S4 =>
+        ndata_ready := '1';
         nstate := S1;
     end case;
     -- Creating the latch
@@ -194,9 +200,11 @@ begin
       if (reset = '1') then
         state <= S0;
         count_sig <= 0;
+        data_ready <= '0';
       else
         state <= nstate;
         count_sig <= count_var;
+        data_ready <= ndata_ready;
       end if;
     end if;
   end process;
@@ -214,7 +222,7 @@ entity UARTReceiverData is
     received: out std_logic;
     clk, reset: in std_logic;
     shift_in: in std_logic;
-    data_ready: in std_logic;
+    dout_enable: in std_logic;
     tick_reset: in std_logic;
     data_out: out std_logic_vector(7 downto 0)
   );
@@ -264,7 +272,7 @@ begin
         generic map (data_width => 8)
         port map (Din => SHIFT_OUT(8 downto 1),
                   Dout => data_out,
-                  Enable => data_ready,
+                  Enable => dout_enable,
                   reset => reset,
                   clk => clk);
   SHIFT(8 downto 0) <= SHIFT_OUT(9 downto 1);

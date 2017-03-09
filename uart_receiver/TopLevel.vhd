@@ -13,7 +13,8 @@ entity TopLevel is
     address: out std_logic_vector(14 downto 0);
     io: inout std_logic_vector(7 downto 0);
     output_data: out std_logic_vector(7 downto 0);
-    read_data: in std_logic
+    read_data: in std_logic;
+    sample_rate: in std_logic
   );
 end entity TopLevel;
 
@@ -42,7 +43,8 @@ begin
       reset => reset,
       read_data => read_data,
       data_ready => data_ready,
-      debug => debug1
+      debug => debug1,
+      sample_rate => sample_rate
     );
 
     uart: UARTReceiver

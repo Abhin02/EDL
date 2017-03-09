@@ -16,7 +16,8 @@ architecture Behave of Testbench2 is
     address: out std_logic_vector(14 downto 0);
     io: inout std_logic_vector(7 downto 0);
     output_data: out std_logic_vector(7 downto 0);
-    read_data: in std_logic
+    read_data: in std_logic;
+    sample_rate: in std_logic
   );
   end component TopLevel;
 
@@ -27,6 +28,7 @@ architecture Behave of Testbench2 is
   signal WE: std_logic := '1';
   signal OE: std_logic := '1';
   signal read_data: std_logic := '0';
+  signal sample_rate: std_logic := '0';
   signal address: std_logic_vector(14 downto 0) := (others => '0');
   signal io: std_logic_vector(7 downto 0) := (others => 'Z');
   signal output_data: std_logic_vector(7 downto 0) := (others => '0');
@@ -76,16 +78,23 @@ begin
     variable input_vector1: bit_vector (0 downto 0) := "0";
     variable INPUT_LINE: Line;
     variable err_flag : boolean := false;
+    variable count: Integer := 0;
 
   begin
     wait until clk = '1';
     reset <= '0';
     while not endfile(INFILE) loop
       wait until clk2 = '1';
+      if count <= 40 then
+        sample_rate <= '1';
+      else
+        sample_rate <= '0';
+      end if;
       readLine (INFILE, INPUT_LINE);
       read (INPUT_LINE, input_vector1);
       data_in <= to_stdlogicvector(input_vector1)(0);
       wait until clk2 = '0';
+      count := count + 1;
     end loop;
     wait until clk2 = '1';
     wait until clk2 = '0';
@@ -106,6 +115,7 @@ begin
     address => address,
     io => io,
     output_data => output_data,
-    read_data => read_data
+    read_data => read_data,
+    sample_rate => sample_rate
   );
 end Behave;
