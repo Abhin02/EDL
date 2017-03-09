@@ -47,6 +47,16 @@
 # Loading maxv.maxv_lcell_register(vital_le_reg)
 # Loading instances from UARTReceiver_vhd.sdo
 # Loading timing data from UARTReceiver_vhd.sdo
+# ** Error: Unable to lock WLF file "vsim.wlf". Retrying 1 times, errno 11
+# ** Error: Unable to lock WLF file "vsim.wlf". Retrying 2 times, errno 11
+# ** Error: Unable to lock WLF file "vsim.wlf". Retrying 3 times, errno 11
+# ** Error: Cannot lock WLF file: "vsim.wlf"
+#           errno 11: Resource temporarily unavailable.
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by:   Hostname:   ProcessID: 2
+#           Attempting to use alternate WLF file "./wlft84DQ5H".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft84DQ5H
 # ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
 #    Time: 0 ps  Iteration: 0  Instance: /testbench File: /home/kalpesh/Projects/EDL/uart_receiver/Quartus/../Testbench.vhd
 # 
@@ -56,5 +66,23 @@
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
+# ** Warning: */LCELL SETUP  Low VIOLATION ON SCLR WITH RESPECT TO CLK;
+#   Expected := 0.333 ns; Observed := 0.305 ns; At : 52093.699 ns
+#    Time: 52093699 ps  Iteration: 0  Instance: /testbench/dut/\DP|tc|DP|count_reg|Dout[5]\/lereg
+# ** Warning: */LCELL SETUP  Low VIOLATION ON SCLR WITH RESPECT TO CLK;
+#   Expected := 0.333 ns; Observed := 0.305 ns; At : 52093.699 ns
+#    Time: 52093699 ps  Iteration: 0  Instance: /testbench/dut/\DP|tc|DP|count_reg|Dout[4]\/lereg
+# ** Warning: */LCELL SETUP  Low VIOLATION ON SCLR WITH RESPECT TO CLK;
+#   Expected := 0.333 ns; Observed := 0.305 ns; At : 52093.699 ns
+#    Time: 52093699 ps  Iteration: 0  Instance: /testbench/dut/\DP|tc|DP|count_reg|Dout[3]\/lereg
+# ** Warning: */LCELL SETUP  Low VIOLATION ON SCLR WITH RESPECT TO CLK;
+#   Expected := 0.333 ns; Observed := 0.305 ns; At : 52093.699 ns
+#    Time: 52093699 ps  Iteration: 0  Instance: /testbench/dut/\DP|tc|DP|count_reg|Dout[2]\/lereg
+# ** Warning: */LCELL SETUP  Low VIOLATION ON SCLR WITH RESPECT TO CLK;
+#   Expected := 0.333 ns; Observed := 0.305 ns; At : 52093.699 ns
+#    Time: 52093699 ps  Iteration: 0  Instance: /testbench/dut/\DP|tc|DP|count_reg|Dout[1]\/lereg
+# ** Warning: */LCELL SETUP  Low VIOLATION ON SCLR WITH RESPECT TO CLK;
+#   Expected := 0.333 ns; Observed := 0.305 ns; At : 52093.699 ns
+#    Time: 52093699 ps  Iteration: 0  Instance: /testbench/dut/\DP|tc|DP|count_reg|Dout[0]\/lereg
 # Break key hit 
 # Simulation stop requested.

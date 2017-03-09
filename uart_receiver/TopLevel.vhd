@@ -8,6 +8,7 @@ entity TopLevel is
     clk, reset: in std_logic;
     data_in: in std_logic;
     debug: out std_logic_vector(7 downto 0);
+    debug1: out std_logic_vector(7 downto 0);
     CS, WE, OE: out std_logic;
     address: out std_logic_vector(14 downto 0);
     io: inout std_logic_vector(7 downto 0);
@@ -18,8 +19,16 @@ end entity TopLevel;
 
 architecture Mixed of TopLevel is
   signal data_ready: std_logic;
+  signal clk_slow: std_logic := '0';
   signal uart_out: std_logic_vector(7 downto 0);
 begin
+    clk_div: ClockDivider
+    port map (
+      reset => reset,
+      clk => clk,
+      clk_slow => clk_slow
+    );
+
     ram: SMC
     port map (
       io => io,
@@ -32,7 +41,8 @@ begin
       clk => clk,
       reset => reset,
       read_data => read_data,
-      data_ready => data_ready
+      data_ready => data_ready,
+      debug => debug1
     );
 
     uart: UARTReceiver

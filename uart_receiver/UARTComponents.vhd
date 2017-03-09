@@ -11,6 +11,13 @@ package UARTComponents is
         clk, enable, reset: in std_logic);
   end component DataRegister;
 
+  component DataRegisterSp is
+  generic (data_width:integer);
+  port (Din: in std_logic_vector(data_width-1 downto 0);
+        Dout: out std_logic_vector(data_width-1 downto 0);
+        clk, enable, reset: in std_logic);
+  end component DataRegisterSp;
+
   component UARTTicker is
   port (
     clk, reset: in std_logic;
@@ -52,6 +59,13 @@ package UARTComponents is
     output: out std_logic_vector(14 downto 0)
   );
   end component Increment15;
+
+  component Increment32 is
+  port (
+    input: in std_logic_vector(31 downto 0);
+    output: out std_logic_vector(31 downto 0)
+  );
+  end component Increment32;
 
   component Increment4 is
   port (
@@ -98,30 +112,6 @@ package UARTComponents is
   );
   end component;
 
-  component ClockDivider is
-  port (
-    clk, reset: in std_logic;
-    clk_slow: out std_logic
-  );
-  end component ClockDivider;
-
-  component ClockDividerControl is
-  port (
-    T0, T1: out std_logic;
-    S: in std_logic;
-    clk, reset: in std_logic;
-    clk_slow: out std_logic
-  );
-  end component;
-
-  component ClockDividerData is
-  port (
-    T0,T1: in std_logic;
-    S: out std_logic;
-    clk, reset: in std_logic
-  );
-  end component;
-
   component SMC is
   port(
     io: inout std_logic_vector(7 downto 0);
@@ -131,7 +121,8 @@ package UARTComponents is
     address: out std_logic_vector(14 downto 0);
     clk, reset: in std_logic;
     read_data: in std_logic;
-    data_ready: in std_logic
+    data_ready: in std_logic;
+    debug: out std_logic_vector(7 downto 0)
     );
   end component SMC;
 
@@ -141,13 +132,16 @@ package UARTComponents is
     output_data: out std_logic_vector(7 downto 0);
     input_data: in std_logic_vector(7 downto 0);
     OE, WE, CS: out std_logic;
+    debug: out std_logic_vector(7 downto 0);
     write_wait: out std_logic;
+    read_wait: out std_logic;
     address: out std_logic_vector(14 downto 0);
     clk, reset: in std_logic;
     -- The set of CS/OE/WE control signals in next clock cycle
     CONTROL_IN: in std_logic_vector(2 downto 0);
     addr_select: in std_logic_vector(2 downto 0);
-    io_select, output_select, output_enable, addr_enable: in std_logic
+    io_select, output_select, output_enable: in std_logic;
+    write_addr_enable, read_addr_enable: in std_logic
   );
 end component SMCData;
 
@@ -159,8 +153,10 @@ end component SMCData;
     -- The set of CS/OE/WE control signals in next clock cycle
     CONTROL_IN: out std_logic_vector(2 downto 0);
     write_wait: in std_logic;
+    read_wait: in std_logic;
     addr_select: out std_logic_vector(2 downto 0);
-    io_select, output_select, output_enable, addr_enable: out std_logic
+    io_select, output_select, output_enable: out std_logic;
+    write_addr_enable, read_addr_enable: out std_logic
   );
   end component SMCControl;
 
@@ -168,7 +164,7 @@ end component SMCData;
   port (
     clk, reset: in std_logic;
     data_in: in std_logic;
-    debug: out std_logic_vector(7 downto 0);
+    debug, debug1: out std_logic_vector(7 downto 0);
     CS, WE, OE: out std_logic;
     address: out std_logic_vector(14 downto 0);
     io: inout std_logic_vector(7 downto 0);
@@ -176,6 +172,14 @@ end component SMCData;
     read_data: in std_logic
   );
   end component TopLevel;
+
+  component ClockDivider is
+    port (
+        reset: in std_logic;
+        clk: in std_logic;
+        clk_slow: out std_logic
+    );
+  end component ClockDivider;
 
 end package;
 
@@ -194,6 +198,28 @@ begin
     if(clk'event and (clk  = '1')) then
       if (reset = '1') then
         Dout <= (others => '0');
+      elsif(enable = '1') then
+        Dout <= Din;
+      end if;
+    end if;
+  end process;
+end Behave;
+
+library ieee;
+use ieee.std_logic_1164.all;
+entity DataRegisterSp is
+  generic (data_width:integer);
+  port (Din: in std_logic_vector(data_width-1 downto 0);
+        Dout: out std_logic_vector(data_width-1 downto 0);
+        clk, enable, reset: in std_logic);
+end entity;
+architecture Behave of DataRegisterSp is
+begin
+  process(clk)
+  begin
+    if(clk'event and (clk  = '1')) then
+      if (reset = '1') then
+        Dout <= (others => '1');
       elsif(enable = '1') then
         Dout <= Din;
       end if;
@@ -242,3 +268,58 @@ architecture Behave of Increment15 is
 begin
   output <= std_logic_vector(unsigned(input) + 1);
 end Behave;
+
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+entity Increment32 is
+port (
+  input: in std_logic_vector(31 downto 0);
+  output: out std_logic_vector(31 downto 0)
+);
+end entity Increment32;
+architecture Behave of Increment32 is
+begin
+  output <= std_logic_vector(unsigned(input) + 1);
+end Behave;
+
+library ieee;
+use ieee.std_logic_1164.all;
+entity ClockDivider is
+    port (
+        reset: in std_logic;
+        clk: in std_logic;
+        clk_slow: out std_logic
+    );
+end entity ClockDivider;
+
+architecture RTL of ClockDivider is
+  type FsmState is (S0, S1);
+  signal state : FsmState;
+begin
+    process(clk, reset, state)
+      variable nstate: FsmState;
+      variable nclk_slow: std_logic;
+    begin
+      nstate := S0;
+      nclk_slow := '0';
+      case state is
+      when S0 =>
+        nstate := S1;
+        nclk_slow := '1';
+      when S1 =>
+        nstate := S0;
+        nclk_slow := '0';
+      end case;
+
+      clk_slow <= nclk_slow;
+
+      if (clk'event and clk = '1') then
+        if (reset = '1') then
+          state <= S0;
+        else
+          state <= nstate;
+        end if;
+      end if;
+    end process;
+end RTL;

@@ -1,5 +1,5 @@
 Fitter report for UARTReceiver
-Tue Feb 28 23:30:26 2017
+Thu Mar  9 15:57:01 2017
 Quartus II 32-bit Version 12.0 Build 178 05/31/2012 SJ Web Edition
 
 
@@ -55,15 +55,15 @@ applicable agreement for further details.
 +----------------------------------------------------------------------+
 ; Fitter Summary                                                       ;
 +---------------------------+------------------------------------------+
-; Fitter Status             ; Successful - Tue Feb 28 23:30:26 2017    ;
+; Fitter Status             ; Successful - Thu Mar  9 15:57:01 2017    ;
 ; Quartus II 32-bit Version ; 12.0 Build 178 05/31/2012 SJ Web Edition ;
 ; Revision Name             ; UARTReceiver                             ;
 ; Top-level Entity Name     ; UARTReceiver                             ;
 ; Family                    ; MAX V                                    ;
 ; Device                    ; 5M1270ZT144C5                            ;
 ; Timing Models             ; Final                                    ;
-; Total logic elements      ; 70 / 1,270 ( 6 % )                       ;
-; Total pins                ; 19 / 114 ( 17 % )                        ;
+; Total logic elements      ; 150 / 1,270 ( 12 % )                     ;
+; Total pins                ; 20 / 114 ( 18 % )                        ;
 ; Total virtual pins        ; 0                                        ;
 ; UFM blocks                ; 0 / 1 ( 0 % )                            ;
 +---------------------------+------------------------------------------+
@@ -134,52 +134,52 @@ Parallel compilation was disabled, but you have multiple processors available. E
 The pin-out file can be found in /home/kalpesh/Projects/EDL/uart_receiver/Quartus/UARTReceiver.pin.
 
 
-+------------------------------------------------------------------+
-; Fitter Resource Usage Summary                                    ;
-+---------------------------------------------+--------------------+
-; Resource                                    ; Usage              ;
-+---------------------------------------------+--------------------+
-; Total logic elements                        ; 70 / 1,270 ( 6 % ) ;
-;     -- Combinational with no register       ; 26                 ;
-;     -- Register only                        ; 7                  ;
-;     -- Combinational with a register        ; 37                 ;
-;                                             ;                    ;
-; Logic element usage by number of LUT inputs ;                    ;
-;     -- 4 input functions                    ; 24                 ;
-;     -- 3 input functions                    ; 8                  ;
-;     -- 2 input functions                    ; 29                 ;
-;     -- 1 input functions                    ; 2                  ;
-;     -- 0 input functions                    ; 0                  ;
-;                                             ;                    ;
-; Logic elements by mode                      ;                    ;
-;     -- normal mode                          ; 58                 ;
-;     -- arithmetic mode                      ; 12                 ;
-;     -- qfbk mode                            ; 0                  ;
-;     -- register cascade mode                ; 0                  ;
-;     -- synchronous clear/load mode          ; 20                 ;
-;     -- asynchronous clear/load mode         ; 0                  ;
-;                                             ;                    ;
-; Total registers                             ; 44 / 1,270 ( 3 % ) ;
-; Total LABs                                  ; 8 / 127 ( 6 % )    ;
-; Logic elements in carry chains              ; 13                 ;
-; User inserted logic elements                ; 0                  ;
-; Virtual pins                                ; 0                  ;
-; I/O pins                                    ; 19 / 114 ( 17 % )  ;
-;     -- Clock pins                           ; 1 / 4 ( 25 % )     ;
-;                                             ;                    ;
-; Global signals                              ; 1                  ;
-; UFM blocks                                  ; 0 / 1 ( 0 % )      ;
-; Global clocks                               ; 1 / 4 ( 25 % )     ;
-; JTAGs                                       ; 0 / 1 ( 0 % )      ;
-; Average interconnect usage (total/H/V)      ; 1% / 1% / 1%       ;
-; Peak interconnect usage (total/H/V)         ; 2% / 2% / 2%       ;
-; Maximum fan-out node                        ; clk                ;
-; Maximum fan-out                             ; 44                 ;
-; Highest non-global fan-out signal           ; reset              ;
-; Highest non-global fan-out                  ; 25                 ;
-; Total fan-out                               ; 293                ;
-; Average fan-out                             ; 3.29               ;
-+---------------------------------------------+--------------------+
++--------------------------------------------------------------------+
+; Fitter Resource Usage Summary                                      ;
++---------------------------------------------+----------------------+
+; Resource                                    ; Usage                ;
++---------------------------------------------+----------------------+
+; Total logic elements                        ; 150 / 1,270 ( 12 % ) ;
+;     -- Combinational with no register       ; 73                   ;
+;     -- Register only                        ; 7                    ;
+;     -- Combinational with a register        ; 70                   ;
+;                                             ;                      ;
+; Logic element usage by number of LUT inputs ;                      ;
+;     -- 4 input functions                    ; 66                   ;
+;     -- 3 input functions                    ; 9                    ;
+;     -- 2 input functions                    ; 65                   ;
+;     -- 1 input functions                    ; 3                    ;
+;     -- 0 input functions                    ; 0                    ;
+;                                             ;                      ;
+; Logic elements by mode                      ;                      ;
+;     -- normal mode                          ; 107                  ;
+;     -- arithmetic mode                      ; 43                   ;
+;     -- qfbk mode                            ; 0                    ;
+;     -- register cascade mode                ; 0                    ;
+;     -- synchronous clear/load mode          ; 51                   ;
+;     -- asynchronous clear/load mode         ; 0                    ;
+;                                             ;                      ;
+; Total registers                             ; 77 / 1,270 ( 6 % )   ;
+; Total LABs                                  ; 16 / 127 ( 13 % )    ;
+; Logic elements in carry chains              ; 45                   ;
+; User inserted logic elements                ; 0                    ;
+; Virtual pins                                ; 0                    ;
+; I/O pins                                    ; 20 / 114 ( 18 % )    ;
+;     -- Clock pins                           ; 1 / 4 ( 25 % )       ;
+;                                             ;                      ;
+; Global signals                              ; 1                    ;
+; UFM blocks                                  ; 0 / 1 ( 0 % )        ;
+; Global clocks                               ; 1 / 4 ( 25 % )       ;
+; JTAGs                                       ; 0 / 1 ( 0 % )        ;
+; Average interconnect usage (total/H/V)      ; 3% / 4% / 3%         ;
+; Peak interconnect usage (total/H/V)         ; 5% / 5% / 4%         ;
+; Maximum fan-out node                        ; clk                  ;
+; Maximum fan-out                             ; 77                   ;
+; Highest non-global fan-out signal           ; reset                ;
+; Highest non-global fan-out                  ; 60                   ;
+; Total fan-out                               ; 628                  ;
+; Average fan-out                             ; 3.69                 ;
++---------------------------------------------+----------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -187,9 +187,9 @@ The pin-out file can be found in /home/kalpesh/Projects/EDL/uart_receiver/Quartu
 +---------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+-----------------+----------+--------------+--------------+----------------------+
 ; Name    ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Combinational Fan-Out ; Registered Fan-Out ; Global ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Location assigned by ;
 +---------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+-----------------+----------+--------------+--------------+----------------------+
-; clk     ; 89    ; 3        ; 17           ; 5            ; 1           ; 44                    ; 0                  ; yes    ; no              ; no       ; Off          ; 3.3-V LVTTL  ; User                 ;
+; clk     ; 89    ; 3        ; 17           ; 5            ; 1           ; 77                    ; 0                  ; yes    ; no              ; no       ; Off          ; 3.3-V LVTTL  ; User                 ;
 ; data_in ; 5     ; 1        ; 0            ; 9            ; 2           ; 5                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; User                 ;
-; reset   ; 45    ; 4        ; 6            ; 3            ; 0           ; 25                    ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; User                 ;
+; reset   ; 45    ; 4        ; 6            ; 3            ; 0           ; 60                    ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; User                 ;
 +---------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+-----------------+----------+--------------+--------------+----------------------+
 
 
@@ -200,20 +200,21 @@ The pin-out file can be found in /home/kalpesh/Projects/EDL/uart_receiver/Quartu
 +-------------+-------+----------+--------------+--------------+-------------+-----------------+----------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+------------------------+----------------------+-------+----------------------+---------------------+
 ; data_out[0] ; 58    ; 4        ; 9            ; 3            ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
 ; data_out[1] ; 57    ; 4        ; 8            ; 3            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
-; data_out[2] ; 55    ; 4        ; 8            ; 3            ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; yes                    ; User                 ; 10 pF ; -                    ; -                   ;
+; data_out[2] ; 55    ; 4        ; 8            ; 3            ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
 ; data_out[3] ; 53    ; 4        ; 8            ; 3            ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
 ; data_out[4] ; 52    ; 4        ; 8            ; 3            ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
-; data_out[5] ; 51    ; 4        ; 7            ; 3            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; yes                    ; User                 ; 10 pF ; -                    ; -                   ;
-; data_out[6] ; 50    ; 4        ; 7            ; 3            ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; yes                    ; User                 ; 10 pF ; -                    ; -                   ;
+; data_out[5] ; 51    ; 4        ; 7            ; 3            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
+; data_out[6] ; 50    ; 4        ; 7            ; 3            ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
 ; data_out[7] ; 49    ; 4        ; 7            ; 3            ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
-; debug[0]    ; 60    ; 4        ; 9            ; 3            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
-; debug[1]    ; 132   ; 2        ; 7            ; 11           ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
-; debug[2]    ; 59    ; 4        ; 9            ; 3            ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
-; debug[3]    ; 134   ; 2        ; 7            ; 11           ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
-; debug[4]    ; 61    ; 4        ; 10           ; 3            ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
-; debug[5]    ; 31    ; 1        ; 0            ; 4            ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
-; debug[6]    ; 48    ; 4        ; 7            ; 3            ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
-; debug[7]    ; 21    ; 1        ; 0            ; 6            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; data_ready  ; 63    ; 4        ; 10           ; 3            ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; debug[0]    ; 85    ; 3        ; 17           ; 5            ; 5           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; debug[1]    ; 62    ; 4        ; 10           ; 3            ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; yes                    ; Fitter               ; 10 pF ; -                    ; -                   ;
+; debug[2]    ; 84    ; 3        ; 17           ; 4            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; debug[3]    ; 81    ; 3        ; 17           ; 4            ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; debug[4]    ; 121   ; 2        ; 10           ; 11           ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; debug[5]    ; 88    ; 3        ; 17           ; 5            ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; debug[6]    ; 43    ; 4        ; 5            ; 3            ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; debug[7]    ; 59    ; 4        ; 9            ; 3            ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
 +-------------+-------+----------+--------------+--------------+-------------+-----------------+----------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+------------------------+----------------------+-------+----------------------+---------------------+
 
 
@@ -222,9 +223,9 @@ The pin-out file can be found in /home/kalpesh/Projects/EDL/uart_receiver/Quartu
 +----------+------------------+---------------+--------------+
 ; I/O Bank ; Usage            ; VCCIO Voltage ; VREF Voltage ;
 +----------+------------------+---------------+--------------+
-; 1        ; 3 / 25 ( 12 % )  ; 3.3V          ; --           ;
-; 2        ; 2 / 30 ( 7 % )   ; 3.3V          ; --           ;
-; 3        ; 1 / 29 ( 3 % )   ; 3.3V          ; --           ;
+; 1        ; 1 / 25 ( 4 % )   ; 3.3V          ; --           ;
+; 2        ; 1 / 30 ( 3 % )   ; 3.3V          ; --           ;
+; 3        ; 5 / 29 ( 17 % )  ; 3.3V          ; --           ;
 ; 4        ; 13 / 30 ( 43 % ) ; 3.3V          ; --           ;
 +----------+------------------+---------------+--------------+
 
@@ -254,7 +255,7 @@ The pin-out file can be found in /home/kalpesh/Projects/EDL/uart_receiver/Quartu
 ; 18       ; 26         ; 1        ; GND*           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; 19       ;            ;          ; VCCINT         ; power  ;              ; 1.8V    ; --         ;                 ; --       ; --           ;
 ; 20       ; 27         ; 1        ; GND*           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; 21       ; 28         ; 1        ; debug[7]       ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; 21       ; 28         ; 1        ; GND*           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; 22       ; 29         ; 1        ; GND*           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; 23       ; 30         ; 1        ; GND*           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; 24       ; 31         ; 1        ; GND*           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -264,7 +265,7 @@ The pin-out file can be found in /home/kalpesh/Projects/EDL/uart_receiver/Quartu
 ; 28       ; 36         ; 1        ; GND*           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; 29       ; 37         ; 1        ; GND*           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; 30       ; 41         ; 1        ; GND*           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; 31       ; 44         ; 1        ; debug[5]       ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; 31       ; 44         ; 1        ; GND*           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; 32       ; 47         ; 1        ; GND*           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; 33       ; 50         ; 1        ; #TMS           ; input  ;              ;         ; --         ;                 ; --       ; --           ;
 ; 34       ; 51         ; 1        ; #TDI           ; input  ;              ;         ; --         ;                 ; --       ; --           ;
@@ -276,12 +277,12 @@ The pin-out file can be found in /home/kalpesh/Projects/EDL/uart_receiver/Quartu
 ; 40       ; 62         ; 4        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; 41       ; 63         ; 4        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; 42       ; 67         ; 4        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; 43       ; 68         ; 4        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 43       ; 68         ; 4        ; debug[6]       ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; 44       ; 69         ; 4        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; 45       ; 74         ; 4        ; reset          ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; 46       ;            ; 4        ; VCCIO4         ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; 47       ;            ;          ; GNDIO          ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; 48       ; 75         ; 4        ; debug[6]       ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; 48       ; 75         ; 4        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; 49       ; 76         ; 4        ; data_out[7]    ; output ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; 50       ; 77         ; 4        ; data_out[6]    ; output ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; 51       ; 78         ; 4        ; data_out[5]    ; output ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
@@ -292,11 +293,11 @@ The pin-out file can be found in /home/kalpesh/Projects/EDL/uart_receiver/Quartu
 ; 56       ;            ;          ; VCCINT         ; power  ;              ; 1.8V    ; --         ;                 ; --       ; --           ;
 ; 57       ; 82         ; 4        ; data_out[1]    ; output ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; 58       ; 83         ; 4        ; data_out[0]    ; output ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
-; 59       ; 84         ; 4        ; debug[2]       ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; 60       ; 85         ; 4        ; debug[0]       ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; 61       ; 86         ; 4        ; debug[4]       ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; 62       ; 87         ; 4        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; 63       ; 88         ; 4        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 59       ; 84         ; 4        ; debug[7]       ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; 60       ; 85         ; 4        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 61       ; 86         ; 4        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 62       ; 87         ; 4        ; debug[1]       ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; 63       ; 88         ; 4        ; data_ready     ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; 64       ;            ; 4        ; VCCIO4         ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; 65       ;            ;          ; GNDIO          ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; 66       ; 91         ; 4        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -314,14 +315,14 @@ The pin-out file can be found in /home/kalpesh/Projects/EDL/uart_receiver/Quartu
 ; 78       ;            ;          ; GNDIO          ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; 79       ; 123        ; 3        ; GND*           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; 80       ; 124        ; 3        ; GND*           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; 81       ; 127        ; 3        ; GND*           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 81       ; 127        ; 3        ; debug[3]       ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; 82       ;            ; 3        ; VCCIO3         ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; 83       ;            ;          ; GNDIO          ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; 84       ; 129        ; 3        ; GND*           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; 85       ; 130        ; 3        ; GND*           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 84       ; 129        ; 3        ; debug[2]       ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; 85       ; 130        ; 3        ; debug[0]       ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; 86       ; 131        ; 3        ; GND*           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; 87       ; 132        ; 3        ; GND*           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; 88       ; 133        ; 3        ; GND*           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 88       ; 133        ; 3        ; debug[5]       ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; 89       ; 134        ; 3        ; clk            ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; 90       ;            ;          ; VCCINT         ; power  ;              ; 1.8V    ; --         ;                 ; --       ; --           ;
 ; 91       ; 135        ; 3        ; GND*           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -354,7 +355,7 @@ The pin-out file can be found in /home/kalpesh/Projects/EDL/uart_receiver/Quartu
 ; 118      ; 181        ; 2        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; 119      ; 182        ; 2        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; 120      ; 183        ; 2        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; 121      ; 184        ; 2        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 121      ; 184        ; 2        ; debug[4]       ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; 122      ; 185        ; 2        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; 123      ; 186        ; 2        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; 124      ; 187        ; 2        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -365,9 +366,9 @@ The pin-out file can be found in /home/kalpesh/Projects/EDL/uart_receiver/Quartu
 ; 129      ; 190        ; 2        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; 130      ; 191        ; 2        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; 131      ; 192        ; 2        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; 132      ; 193        ; 2        ; debug[1]       ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; 132      ; 193        ; 2        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; 133      ; 194        ; 2        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; 134      ; 195        ; 2        ; debug[3]       ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; 134      ; 195        ; 2        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; 135      ;            ;          ; GNDIO          ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; 136      ;            ; 2        ; VCCIO2         ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; 137      ; 199        ; 2        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -407,8 +408,8 @@ Note: User assignments will override these defaults. The user specified values a
 +--------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node           ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                                                      ; Library Name ;
 +--------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------------------------------------------------------------------+--------------+
-; |UARTReceiver                        ; 70 (0)      ; 44           ; 0          ; 19   ; 0            ; 26 (0)       ; 7 (0)             ; 37 (0)           ; 13 (0)          ; 0 (0)      ; |UARTReceiver                                                                            ; work         ;
-;    |UARTReceiverControl:CP|          ; 10 (10)     ; 5            ; 0          ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 5 (5)            ; 0 (0)           ; 0 (0)      ; |UARTReceiver|UARTReceiverControl:CP                                                     ; work         ;
+; |UARTReceiver                        ; 150 (0)     ; 77           ; 0          ; 20   ; 0            ; 73 (0)       ; 7 (0)             ; 70 (0)           ; 45 (0)          ; 0 (0)      ; |UARTReceiver                                                                            ; work         ;
+;    |UARTReceiverControl:CP|          ; 90 (90)     ; 38           ; 0          ; 0    ; 0            ; 52 (52)      ; 0 (0)             ; 38 (38)          ; 32 (32)         ; 0 (0)      ; |UARTReceiver|UARTReceiverControl:CP                                                     ; work         ;
 ;    |UARTReceiverData:DP|             ; 60 (0)      ; 39           ; 0          ; 0    ; 0            ; 21 (0)       ; 7 (0)             ; 32 (0)           ; 13 (0)          ; 0 (0)      ; |UARTReceiver|UARTReceiverData:DP                                                        ; work         ;
 ;       |DataRegister:count1|          ; 4 (4)       ; 4            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |UARTReceiver|UARTReceiverData:DP|DataRegister:count1                                    ; work         ;
 ;       |DataRegister:dout|            ; 9 (9)       ; 8            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 8 (8)            ; 0 (0)           ; 0 (0)      ; |UARTReceiver|UARTReceiverData:DP|DataRegister:dout                                      ; work         ;
@@ -446,20 +447,22 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; debug[5]    ; Output   ; --            ;
 ; debug[6]    ; Output   ; --            ;
 ; debug[7]    ; Output   ; --            ;
+; data_ready  ; Output   ; --            ;
 +-------------+----------+---------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Control Signals                                                                                                                                              ;
-+--------------------------------------------------------------------+-------------+---------+--------------+--------+----------------------+------------------+
-; Name                                                               ; Location    ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ;
-+--------------------------------------------------------------------+-------------+---------+--------------+--------+----------------------+------------------+
-; UARTReceiverData:DP|DataRegister:dout|Dout~1                       ; LC_X8_Y4_N8 ; 8       ; Clock enable ; no     ; --                   ; --               ;
-; UARTReceiverData:DP|DataRegister:shift_r|Dout~0                    ; LC_X7_Y5_N0 ; 13      ; Clock enable ; no     ; --                   ; --               ;
-; UARTReceiverData:DP|UARTTicker:tc|UARTTickerControl:CP|increment~3 ; LC_X6_Y5_N8 ; 13      ; Sync. clear  ; no     ; --                   ; --               ;
-; clk                                                                ; PIN_89      ; 44      ; Clock        ; yes    ; Global Clock         ; GCLK2            ;
-; reset                                                              ; PIN_45      ; 25      ; Sync. clear  ; no     ; --                   ; --               ;
-+--------------------------------------------------------------------+-------------+---------+--------------+--------+----------------------+------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                                                                               ;
++--------------------------------------------------------------------+--------------+---------+--------------+--------+----------------------+------------------+
+; Name                                                               ; Location     ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ;
++--------------------------------------------------------------------+--------------+---------+--------------+--------+----------------------+------------------+
+; UARTReceiverControl:CP|count_sig~1                                 ; LC_X5_Y6_N9  ; 2       ; Clock enable ; no     ; --                   ; --               ;
+; UARTReceiverData:DP|DataRegister:dout|Dout~1                       ; LC_X10_Y5_N5 ; 8       ; Clock enable ; no     ; --                   ; --               ;
+; UARTReceiverData:DP|DataRegister:shift_r|Dout~0                    ; LC_X9_Y4_N5  ; 13      ; Clock enable ; no     ; --                   ; --               ;
+; UARTReceiverData:DP|UARTTicker:tc|UARTTickerControl:CP|increment~3 ; LC_X9_Y7_N8  ; 13      ; Sync. clear  ; no     ; --                   ; --               ;
+; clk                                                                ; PIN_89       ; 77      ; Clock        ; yes    ; Global Clock         ; GCLK2            ;
+; reset                                                              ; PIN_45       ; 60      ; Sync. clear  ; no     ; --                   ; --               ;
++--------------------------------------------------------------------+--------------+---------+--------------+--------+----------------------+------------------+
 
 
 +---------------------------------------------------------------------+
@@ -467,7 +470,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------+----------+---------+----------------------+------------------+
 ; Name ; Location ; Fan-Out ; Global Resource Used ; Global Line Name ;
 +------+----------+---------+----------------------+------------------+
-; clk  ; PIN_89   ; 44      ; Global Clock         ; GCLK2            ;
+; clk  ; PIN_89   ; 77      ; Global Clock         ; GCLK2            ;
 +------+----------+---------+----------------------+------------------+
 
 
@@ -476,33 +479,43 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------------------------------------------------------------------+---------+
 ; Name                                                                                           ; Fan-Out ;
 +------------------------------------------------------------------------------------------------+---------+
-; reset                                                                                          ; 25      ;
+; reset                                                                                          ; 60      ;
+; UARTReceiverControl:CP|state.S5                                                                ; 36      ;
+; UARTReceiverControl:CP|state.S1                                                                ; 33      ;
 ; UARTReceiverData:DP|UARTTicker:tc|UARTTickerControl:CP|increment~3                             ; 13      ;
 ; UARTReceiverData:DP|DataRegister:shift_r|Dout~0                                                ; 13      ;
 ; UARTReceiverData:DP|DataRegister:dout|Dout~1                                                   ; 8       ;
+; UARTReceiverData:DP|UARTTicker:tc|UARTTickerControl:CP|tick~2                                  ; 6       ;
+; UARTReceiverControl:CP|state.S3                                                                ; 6       ;
 ; data_in                                                                                        ; 5       ;
+; UARTReceiverControl:CP|Add0~157                                                                ; 5       ;
+; UARTReceiverControl:CP|Add0~122                                                                ; 5       ;
+; UARTReceiverControl:CP|Add0~97                                                                 ; 5       ;
+; UARTReceiverControl:CP|Add0~72                                                                 ; 5       ;
+; UARTReceiverControl:CP|Add0~47                                                                 ; 5       ;
+; UARTReceiverControl:CP|Add0~22                                                                 ; 5       ;
 ; UARTReceiverControl:CP|process_0~0                                                             ; 5       ;
 ; UARTReceiverData:DP|DataRegister:count1|Dout[0]                                                ; 5       ;
 ; UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|Equal0~4                                   ; 5       ;
 ; UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg|Dout[5]~9           ; 5       ;
 ; UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg|Dout[0]~5           ; 5       ;
 ; UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg|Dout[2]             ; 5       ;
-; UARTReceiverControl:CP|state.S1                                                                ; 4       ;
 ; UARTReceiverData:DP|DataRegister:count1|Dout[1]                                                ; 4       ;
-; UARTReceiverControl:CP|Selector1~0                                                             ; 4       ;
 ; UARTReceiverData:DP|UARTTicker:tc|UARTTickerControl:CP|state.S2                                ; 4       ;
 ; UARTReceiverData:DP|UARTTicker:tc|UARTTickerControl:CP|state.S1                                ; 4       ;
-; UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg|Dout[12]            ; 4       ;
-; UARTReceiverControl:CP|state.S4                                                                ; 4       ;
+; UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|Equal2~3                                   ; 4       ;
+; UARTReceiverControl:CP|state.S2                                                                ; 4       ;
 ; UARTReceiverData:DP|UARTTicker:tc|UARTTickerControl:CP|state~7                                 ; 3       ;
+; UARTReceiverControl:CP|Equal0~10                                                               ; 3       ;
+; UARTReceiverControl:CP|count_sig[0]                                                            ; 3       ;
+; UARTReceiverControl:CP|Selector3~0                                                             ; 3       ;
 ; UARTReceiverData:DP|DataRegister:count1|Dout[2]                                                ; 3       ;
-; UARTReceiverData:DP|UARTTicker:tc|UARTTickerControl:CP|tick~2                                  ; 3       ;
-; UARTReceiverControl:CP|state.S3                                                                ; 3       ;
-; UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|Equal2~3                                   ; 3       ;
+; UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|Equal0~2                                   ; 3       ;
 ; UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg|Dout[10]            ; 3       ;
-; UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg|Dout[11]            ; 3       ;
+; UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg|Dout[12]            ; 3       ;
 ; UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg|Dout[6]             ; 3       ;
 ; UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg|Dout[9]             ; 3       ;
+; UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg|Dout[11]            ; 3       ;
 ; UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg|Dout[4]             ; 3       ;
 ; UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg|Dout[8]             ; 3       ;
 ; UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg|Dout[7]             ; 3       ;
@@ -511,15 +524,73 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg|Dout[1]             ; 3       ;
 ; UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg|Dout[0]             ; 3       ;
 ; UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg|Dout[3]             ; 3       ;
-; UARTReceiverControl:CP|state.S2                                                                ; 3       ;
-; UARTReceiverControl:CP|Selector1~1                                                             ; 2       ;
+; UARTReceiverControl:CP|state.S4                                                                ; 3       ;
+; UARTReceiverControl:CP|count_sig[30]                                                           ; 2       ;
+; UARTReceiverControl:CP|count_sig[29]                                                           ; 2       ;
+; UARTReceiverControl:CP|count_sig[28]                                                           ; 2       ;
+; UARTReceiverControl:CP|count_sig[27]                                                           ; 2       ;
+; UARTReceiverControl:CP|count_sig[26]                                                           ; 2       ;
+; UARTReceiverControl:CP|count_sig[25]                                                           ; 2       ;
+; UARTReceiverControl:CP|count_sig[24]                                                           ; 2       ;
+; UARTReceiverControl:CP|count_sig[23]                                                           ; 2       ;
+; UARTReceiverControl:CP|count_sig[22]                                                           ; 2       ;
+; UARTReceiverControl:CP|count_sig[21]                                                           ; 2       ;
+; UARTReceiverControl:CP|count_sig[20]                                                           ; 2       ;
+; UARTReceiverControl:CP|count_sig[19]                                                           ; 2       ;
+; UARTReceiverControl:CP|count_sig[18]                                                           ; 2       ;
+; UARTReceiverControl:CP|count_sig[17]                                                           ; 2       ;
+; UARTReceiverControl:CP|count_sig[16]                                                           ; 2       ;
+; UARTReceiverControl:CP|count_sig[15]                                                           ; 2       ;
+; UARTReceiverControl:CP|count_sig[14]                                                           ; 2       ;
+; UARTReceiverControl:CP|count_sig[13]                                                           ; 2       ;
+; UARTReceiverControl:CP|count_sig[12]                                                           ; 2       ;
+; UARTReceiverControl:CP|count_sig[11]                                                           ; 2       ;
+; UARTReceiverControl:CP|count_sig[10]                                                           ; 2       ;
+; UARTReceiverControl:CP|count_sig[9]                                                            ; 2       ;
+; UARTReceiverControl:CP|count_sig[8]                                                            ; 2       ;
+; UARTReceiverControl:CP|count_sig[7]                                                            ; 2       ;
+; UARTReceiverControl:CP|count_sig[6]                                                            ; 2       ;
+; UARTReceiverControl:CP|count_sig[5]                                                            ; 2       ;
+; UARTReceiverControl:CP|count_sig[4]                                                            ; 2       ;
+; UARTReceiverControl:CP|count_sig[3]                                                            ; 2       ;
+; UARTReceiverControl:CP|count_sig[2]                                                            ; 2       ;
+; UARTReceiverControl:CP|count_sig[1]                                                            ; 2       ;
+; UARTReceiverControl:CP|count_sig~1                                                             ; 2       ;
 ; UARTReceiverData:DP|UARTTicker:tc|UARTTickerControl:CP|state.S0                                ; 2       ;
 ; UARTReceiverData:DP|UARTTicker:tc|UARTTickerControl:CP|increment~2                             ; 2       ;
+; UARTReceiverControl:CP|Add0~150                                                                ; 2       ;
+; UARTReceiverControl:CP|Add0~145                                                                ; 2       ;
+; UARTReceiverControl:CP|Add0~140                                                                ; 2       ;
+; UARTReceiverControl:CP|Add0~135                                                                ; 2       ;
+; UARTReceiverControl:CP|Add0~130                                                                ; 2       ;
+; UARTReceiverControl:CP|Add0~125                                                                ; 2       ;
+; UARTReceiverControl:CP|Add0~120                                                                ; 2       ;
+; UARTReceiverControl:CP|Add0~115                                                                ; 2       ;
+; UARTReceiverControl:CP|Add0~110                                                                ; 2       ;
+; UARTReceiverControl:CP|Add0~105                                                                ; 2       ;
+; UARTReceiverControl:CP|Add0~100                                                                ; 2       ;
+; UARTReceiverControl:CP|Add0~95                                                                 ; 2       ;
+; UARTReceiverControl:CP|Add0~90                                                                 ; 2       ;
+; UARTReceiverControl:CP|Add0~85                                                                 ; 2       ;
+; UARTReceiverControl:CP|Add0~80                                                                 ; 2       ;
+; UARTReceiverControl:CP|Add0~75                                                                 ; 2       ;
+; UARTReceiverControl:CP|Add0~70                                                                 ; 2       ;
+; UARTReceiverControl:CP|Add0~65                                                                 ; 2       ;
+; UARTReceiverControl:CP|Add0~60                                                                 ; 2       ;
+; UARTReceiverControl:CP|Add0~55                                                                 ; 2       ;
+; UARTReceiverControl:CP|Add0~50                                                                 ; 2       ;
+; UARTReceiverControl:CP|Add0~45                                                                 ; 2       ;
+; UARTReceiverControl:CP|Add0~40                                                                 ; 2       ;
+; UARTReceiverControl:CP|Add0~35                                                                 ; 2       ;
+; UARTReceiverControl:CP|Add0~30                                                                 ; 2       ;
+; UARTReceiverControl:CP|Add0~25                                                                 ; 2       ;
+; UARTReceiverControl:CP|Add0~20                                                                 ; 2       ;
+; UARTReceiverControl:CP|Add0~15                                                                 ; 2       ;
+; UARTReceiverControl:CP|Add0~10                                                                 ; 2       ;
+; UARTReceiverControl:CP|Add0~5                                                                  ; 2       ;
+; UARTReceiverControl:CP|Add0~0                                                                  ; 2       ;
 ; UARTReceiverData:DP|DataRegister:count1|Dout[3]                                                ; 2       ;
 ; UARTReceiverData:DP|UARTTicker:tc|UARTTickerControl:CP|tick~0                                  ; 2       ;
-; UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|Equal0~2                                   ; 2       ;
-; UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|Equal0~1                                   ; 2       ;
-; UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|Equal0~0                                   ; 2       ;
 ; UARTReceiverData:DP|UARTTicker:tc|UARTTickerControl:CP|state.S3                                ; 2       ;
 ; UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg|Dout[10]~25         ; 2       ;
 ; UARTReceiverData:DP|DataRegister:shift_r|Dout[8]                                               ; 2       ;
@@ -531,23 +602,88 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; UARTReceiverData:DP|DataRegister:shift_r|Dout[2]                                               ; 2       ;
 ; UARTReceiverData:DP|DataRegister:shift_r|Dout[1]                                               ; 2       ;
 ; UARTReceiverData:DP|UARTTicker:tc|UARTTickerControl:CP|increment~4                             ; 1       ;
-; UARTReceiverControl:CP|Selector1~2                                                             ; 1       ;
-; UARTReceiverData:DP|UARTTicker:tc|UARTTickerControl:CP|state.S4                                ; 1       ;
+; UARTReceiverControl:CP|Selector2~1                                                             ; 1       ;
+; UARTReceiverControl:CP|Selector2~0                                                             ; 1       ;
 ; UARTReceiverControl:CP|state.S0                                                                ; 1       ;
+; UARTReceiverControl:CP|Selector1~0                                                             ; 1       ;
+; UARTReceiverData:DP|UARTTicker:tc|UARTTickerControl:CP|state.S4                                ; 1       ;
+; UARTReceiverControl:CP|count_sig[31]                                                           ; 1       ;
 ; UARTReceiverData:DP|Increment4:incr|Add0~1                                                     ; 1       ;
 ; UARTReceiverData:DP|Increment4:incr|Add0~0                                                     ; 1       ;
 ; UARTReceiverControl:CP|process_0~1                                                             ; 1       ;
+; UARTReceiverControl:CP|Equal0~9                                                                ; 1       ;
+; UARTReceiverControl:CP|Add0~147                                                                ; 1       ;
+; UARTReceiverControl:CP|Add0~142COUT1_232                                                       ; 1       ;
+; UARTReceiverControl:CP|Add0~142                                                                ; 1       ;
+; UARTReceiverControl:CP|Add0~137COUT1_230                                                       ; 1       ;
+; UARTReceiverControl:CP|Add0~137                                                                ; 1       ;
+; UARTReceiverControl:CP|Equal0~8                                                                ; 1       ;
+; UARTReceiverControl:CP|Add0~132COUT1_228                                                       ; 1       ;
+; UARTReceiverControl:CP|Add0~132                                                                ; 1       ;
+; UARTReceiverControl:CP|Add0~127COUT1_226                                                       ; 1       ;
+; UARTReceiverControl:CP|Add0~127                                                                ; 1       ;
+; UARTReceiverControl:CP|Add0~117COUT1_224                                                       ; 1       ;
+; UARTReceiverControl:CP|Add0~117                                                                ; 1       ;
+; UARTReceiverControl:CP|Equal0~7                                                                ; 1       ;
+; UARTReceiverControl:CP|Add0~112COUT1_222                                                       ; 1       ;
+; UARTReceiverControl:CP|Add0~112                                                                ; 1       ;
+; UARTReceiverControl:CP|Add0~107COUT1_220                                                       ; 1       ;
+; UARTReceiverControl:CP|Add0~107                                                                ; 1       ;
+; UARTReceiverControl:CP|Equal0~6                                                                ; 1       ;
+; UARTReceiverControl:CP|Add0~102COUT1_218                                                       ; 1       ;
+; UARTReceiverControl:CP|Add0~102                                                                ; 1       ;
+; UARTReceiverControl:CP|Equal0~5                                                                ; 1       ;
+; UARTReceiverControl:CP|Add0~92COUT1_216                                                        ; 1       ;
+; UARTReceiverControl:CP|Add0~92                                                                 ; 1       ;
+; UARTReceiverControl:CP|Add0~87COUT1_214                                                        ; 1       ;
+; UARTReceiverControl:CP|Add0~87                                                                 ; 1       ;
+; UARTReceiverControl:CP|Add0~82COUT1_212                                                        ; 1       ;
+; UARTReceiverControl:CP|Add0~82                                                                 ; 1       ;
+; UARTReceiverControl:CP|Add0~77COUT1_210                                                        ; 1       ;
+; UARTReceiverControl:CP|Add0~77                                                                 ; 1       ;
+; UARTReceiverControl:CP|Equal0~4                                                                ; 1       ;
+; UARTReceiverControl:CP|Equal0~3                                                                ; 1       ;
+; UARTReceiverControl:CP|Add0~67COUT1_208                                                        ; 1       ;
+; UARTReceiverControl:CP|Add0~67                                                                 ; 1       ;
+; UARTReceiverControl:CP|Add0~62COUT1_206                                                        ; 1       ;
+; UARTReceiverControl:CP|Add0~62                                                                 ; 1       ;
+; UARTReceiverControl:CP|Add0~57COUT1_204                                                        ; 1       ;
+; UARTReceiverControl:CP|Add0~57                                                                 ; 1       ;
+; UARTReceiverControl:CP|Equal0~2                                                                ; 1       ;
+; UARTReceiverControl:CP|Add0~52COUT1_202                                                        ; 1       ;
+; UARTReceiverControl:CP|Add0~52                                                                 ; 1       ;
+; UARTReceiverControl:CP|Add0~42COUT1_200                                                        ; 1       ;
+; UARTReceiverControl:CP|Add0~42                                                                 ; 1       ;
+; UARTReceiverControl:CP|Add0~37COUT1_198                                                        ; 1       ;
+; UARTReceiverControl:CP|Add0~37                                                                 ; 1       ;
+; UARTReceiverControl:CP|Equal0~1                                                                ; 1       ;
+; UARTReceiverControl:CP|Add0~32COUT1_196                                                        ; 1       ;
+; UARTReceiverControl:CP|Add0~32                                                                 ; 1       ;
+; UARTReceiverControl:CP|Add0~27COUT1_194                                                        ; 1       ;
+; UARTReceiverControl:CP|Add0~27                                                                 ; 1       ;
+; UARTReceiverControl:CP|Add0~17COUT1_192                                                        ; 1       ;
+; UARTReceiverControl:CP|Add0~17                                                                 ; 1       ;
+; UARTReceiverControl:CP|Equal0~0                                                                ; 1       ;
+; UARTReceiverControl:CP|Add0~12COUT1_190                                                        ; 1       ;
+; UARTReceiverControl:CP|Add0~12                                                                 ; 1       ;
+; UARTReceiverControl:CP|Add0~7COUT1_188                                                         ; 1       ;
+; UARTReceiverControl:CP|Add0~7                                                                  ; 1       ;
+; UARTReceiverControl:CP|Add0~2COUT1_186                                                         ; 1       ;
+; UARTReceiverControl:CP|Add0~2                                                                  ; 1       ;
 ; UARTReceiverData:DP|DataRegister:shift_r|Dout[9]                                               ; 1       ;
 ; UARTReceiverData:DP|UARTTicker:tc|UARTTickerControl:CP|tick~1                                  ; 1       ;
 ; UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|Equal0~3                                   ; 1       ;
+; UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|Equal0~1                                   ; 1       ;
+; UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|Equal0~0                                   ; 1       ;
+; UARTReceiverControl:CP|Selector4~0                                                             ; 1       ;
 ; UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|Equal2~2                                   ; 1       ;
-; UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg|Dout[11]~21COUT1_53 ; 1       ;
-; UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg|Dout[11]~21         ; 1       ;
 ; UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|Equal2~1                                   ; 1       ;
-; UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg|Dout[6]~19COUT1_45  ; 1       ;
-; UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg|Dout[6]~19          ; 1       ;
-; UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg|Dout[9]~17COUT1_51  ; 1       ;
-; UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg|Dout[9]~17          ; 1       ;
+; UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg|Dout[6]~21COUT1_45  ; 1       ;
+; UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg|Dout[6]~21          ; 1       ;
+; UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg|Dout[9]~19COUT1_51  ; 1       ;
+; UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg|Dout[9]~19          ; 1       ;
+; UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg|Dout[11]~17COUT1_53 ; 1       ;
+; UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg|Dout[11]~17         ; 1       ;
 ; UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|Equal2~0                                   ; 1       ;
 ; UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg|Dout[4]~15COUT1_43  ; 1       ;
 ; UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg|Dout[4]~15          ; 1       ;
@@ -575,6 +711,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; UARTReceiverData:DP|DataRegister:dout|Dout~3                                                   ; 1       ;
 ; UARTReceiverData:DP|DataRegister:dout|Dout[1]                                                  ; 1       ;
 ; UARTReceiverData:DP|DataRegister:dout|Dout~2                                                   ; 1       ;
+; UARTReceiverControl:CP|data_ready~0                                                            ; 1       ;
 ; UARTReceiverData:DP|DataRegister:dout|Dout[0]                                                  ; 1       ;
 +------------------------------------------------------------------------------------------------+---------+
 
@@ -584,114 +721,116 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------+----------------------+
 ; Interconnect Resource Type ; Usage                ;
 +----------------------------+----------------------+
-; C4s                        ; 37 / 2,870 ( 1 % )   ;
-; Direct links               ; 27 / 3,938 ( < 1 % ) ;
+; C4s                        ; 85 / 2,870 ( 3 % )   ;
+; Direct links               ; 56 / 3,938 ( 1 % )   ;
 ; Global clocks              ; 1 / 4 ( 25 % )       ;
-; LAB clocks                 ; 4 / 72 ( 6 % )       ;
-; LUT chains                 ; 8 / 1,143 ( < 1 % )  ;
-; Local interconnects        ; 81 / 3,938 ( 2 % )   ;
-; R4s                        ; 26 / 2,832 ( < 1 % ) ;
+; LAB clocks                 ; 7 / 72 ( 10 % )      ;
+; LUT chains                 ; 11 / 1,143 ( < 1 % ) ;
+; Local interconnects        ; 199 / 3,938 ( 5 % )  ;
+; R4s                        ; 97 / 2,832 ( 3 % )   ;
 +----------------------------+----------------------+
 
 
-+--------------------------------------------------------------------------+
-; LAB Logic Elements                                                       ;
-+--------------------------------------------+-----------------------------+
-; Number of Logic Elements  (Average = 8.75) ; Number of LABs  (Total = 8) ;
-+--------------------------------------------+-----------------------------+
-; 1                                          ; 0                           ;
-; 2                                          ; 0                           ;
-; 3                                          ; 1                           ;
-; 4                                          ; 0                           ;
-; 5                                          ; 0                           ;
-; 6                                          ; 0                           ;
-; 7                                          ; 1                           ;
-; 8                                          ; 0                           ;
-; 9                                          ; 0                           ;
-; 10                                         ; 6                           ;
-+--------------------------------------------+-----------------------------+
-
-
-+------------------------------------------------------------------+
-; LAB-wide Signals                                                 ;
-+------------------------------------+-----------------------------+
-; LAB-wide Signals  (Average = 1.75) ; Number of LABs  (Total = 8) ;
-+------------------------------------+-----------------------------+
-; 1 Clock                            ; 8                           ;
-; 1 Clock enable                     ; 1                           ;
-; 1 Sync. clear                      ; 3                           ;
-; 2 Clock enables                    ; 2                           ;
-+------------------------------------+-----------------------------+
-
-
 +---------------------------------------------------------------------------+
-; LAB Signals Sourced                                                       ;
-+---------------------------------------------+-----------------------------+
-; Number of Signals Sourced  (Average = 9.62) ; Number of LABs  (Total = 8) ;
-+---------------------------------------------+-----------------------------+
-; 0                                           ; 0                           ;
-; 1                                           ; 0                           ;
-; 2                                           ; 0                           ;
-; 3                                           ; 0                           ;
-; 4                                           ; 1                           ;
-; 5                                           ; 0                           ;
-; 6                                           ; 0                           ;
-; 7                                           ; 0                           ;
-; 8                                           ; 1                           ;
-; 9                                           ; 0                           ;
-; 10                                          ; 5                           ;
-; 11                                          ; 0                           ;
-; 12                                          ; 0                           ;
-; 13                                          ; 0                           ;
-; 14                                          ; 0                           ;
-; 15                                          ; 1                           ;
-+---------------------------------------------+-----------------------------+
+; LAB Logic Elements                                                        ;
++--------------------------------------------+------------------------------+
+; Number of Logic Elements  (Average = 9.38) ; Number of LABs  (Total = 16) ;
++--------------------------------------------+------------------------------+
+; 1                                          ; 0                            ;
+; 2                                          ; 0                            ;
+; 3                                          ; 0                            ;
+; 4                                          ; 0                            ;
+; 5                                          ; 0                            ;
+; 6                                          ; 1                            ;
+; 7                                          ; 1                            ;
+; 8                                          ; 1                            ;
+; 9                                          ; 1                            ;
+; 10                                         ; 12                           ;
++--------------------------------------------+------------------------------+
 
 
-+-------------------------------------------------------------------------------+
-; LAB Signals Sourced Out                                                       ;
-+-------------------------------------------------+-----------------------------+
-; Number of Signals Sourced Out  (Average = 6.00) ; Number of LABs  (Total = 8) ;
-+-------------------------------------------------+-----------------------------+
-; 0                                               ; 0                           ;
-; 1                                               ; 0                           ;
-; 2                                               ; 0                           ;
-; 3                                               ; 0                           ;
-; 4                                               ; 3                           ;
-; 5                                               ; 2                           ;
-; 6                                               ; 0                           ;
-; 7                                               ; 1                           ;
-; 8                                               ; 0                           ;
-; 9                                               ; 1                           ;
-; 10                                              ; 1                           ;
-+-------------------------------------------------+-----------------------------+
++-------------------------------------------------------------------+
+; LAB-wide Signals                                                  ;
++------------------------------------+------------------------------+
+; LAB-wide Signals  (Average = 1.50) ; Number of LABs  (Total = 16) ;
++------------------------------------+------------------------------+
+; 1 Clock                            ; 13                           ;
+; 1 Clock enable                     ; 3                            ;
+; 1 Sync. clear                      ; 7                            ;
+; 2 Clock enables                    ; 1                            ;
++------------------------------------+------------------------------+
 
 
-+---------------------------------------------------------------------------+
-; LAB Distinct Inputs                                                       ;
-+---------------------------------------------+-----------------------------+
-; Number of Distinct Inputs  (Average = 7.88) ; Number of LABs  (Total = 8) ;
-+---------------------------------------------+-----------------------------+
-; 0                                           ; 0                           ;
-; 1                                           ; 0                           ;
-; 2                                           ; 0                           ;
-; 3                                           ; 1                           ;
-; 4                                           ; 0                           ;
-; 5                                           ; 2                           ;
-; 6                                           ; 1                           ;
-; 7                                           ; 1                           ;
-; 8                                           ; 1                           ;
-; 9                                           ; 0                           ;
-; 10                                          ; 0                           ;
-; 11                                          ; 1                           ;
-; 12                                          ; 0                           ;
-; 13                                          ; 0                           ;
-; 14                                          ; 0                           ;
-; 15                                          ; 0                           ;
-; 16                                          ; 0                           ;
-; 17                                          ; 0                           ;
-; 18                                          ; 1                           ;
-+---------------------------------------------+-----------------------------+
++----------------------------------------------------------------------------+
+; LAB Signals Sourced                                                        ;
++---------------------------------------------+------------------------------+
+; Number of Signals Sourced  (Average = 9.75) ; Number of LABs  (Total = 16) ;
++---------------------------------------------+------------------------------+
+; 0                                           ; 0                            ;
+; 1                                           ; 0                            ;
+; 2                                           ; 0                            ;
+; 3                                           ; 0                            ;
+; 4                                           ; 0                            ;
+; 5                                           ; 0                            ;
+; 6                                           ; 1                            ;
+; 7                                           ; 0                            ;
+; 8                                           ; 1                            ;
+; 9                                           ; 2                            ;
+; 10                                          ; 11                           ;
+; 11                                          ; 0                            ;
+; 12                                          ; 0                            ;
+; 13                                          ; 0                            ;
+; 14                                          ; 1                            ;
++---------------------------------------------+------------------------------+
+
+
++--------------------------------------------------------------------------------+
+; LAB Signals Sourced Out                                                        ;
++-------------------------------------------------+------------------------------+
+; Number of Signals Sourced Out  (Average = 7.31) ; Number of LABs  (Total = 16) ;
++-------------------------------------------------+------------------------------+
+; 0                                               ; 0                            ;
+; 1                                               ; 0                            ;
+; 2                                               ; 1                            ;
+; 3                                               ; 0                            ;
+; 4                                               ; 2                            ;
+; 5                                               ; 1                            ;
+; 6                                               ; 3                            ;
+; 7                                               ; 0                            ;
+; 8                                               ; 3                            ;
+; 9                                               ; 0                            ;
+; 10                                              ; 6                            ;
++-------------------------------------------------+------------------------------+
+
+
++-----------------------------------------------------------------------------+
+; LAB Distinct Inputs                                                         ;
++----------------------------------------------+------------------------------+
+; Number of Distinct Inputs  (Average = 10.94) ; Number of LABs  (Total = 16) ;
++----------------------------------------------+------------------------------+
+; 0                                            ; 0                            ;
+; 1                                            ; 0                            ;
+; 2                                            ; 0                            ;
+; 3                                            ; 1                            ;
+; 4                                            ; 1                            ;
+; 5                                            ; 1                            ;
+; 6                                            ; 1                            ;
+; 7                                            ; 0                            ;
+; 8                                            ; 1                            ;
+; 9                                            ; 0                            ;
+; 10                                           ; 1                            ;
+; 11                                           ; 2                            ;
+; 12                                           ; 2                            ;
+; 13                                           ; 2                            ;
+; 14                                           ; 1                            ;
+; 15                                           ; 1                            ;
+; 16                                           ; 0                            ;
+; 17                                           ; 1                            ;
+; 18                                           ; 0                            ;
+; 19                                           ; 0                            ;
+; 20                                           ; 0                            ;
+; 21                                           ; 1                            ;
++----------------------------------------------+------------------------------+
 
 
 +-------------------------------------------------------------------------+
@@ -715,7 +854,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Fitter
     Info: Version 12.0 Build 178 05/31/2012 SJ Web Edition
-    Info: Processing started: Tue Feb 28 23:30:25 2017
+    Info: Processing started: Thu Mar  9 15:56:55 2017
 Info: Command: quartus_fit --read_settings_files=off --write_settings_files=off UARTReceiver -c UARTReceiver
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (119006): Selected device 5M1270ZT144C5 for design "UARTReceiver"
@@ -729,7 +868,7 @@ Info (176444): Device migration not selected. If you intend to use device migrat
     Info (176445): Device 5M570ZT144C5 is compatible
     Info (176445): Device 5M570ZT144I5 is compatible
     Info (176445): Device 5M1270ZT144I5 is compatible
-Critical Warning (169085): No exact pin location assignment(s) for 8 pins of 19 total pins
+Critical Warning (169085): No exact pin location assignment(s) for 9 pins of 20 total pins
     Info (169086): Pin debug[0] not assigned to an exact location on the device
     Info (169086): Pin debug[1] not assigned to an exact location on the device
     Info (169086): Pin debug[2] not assigned to an exact location on the device
@@ -738,6 +877,7 @@ Critical Warning (169085): No exact pin location assignment(s) for 8 pins of 19 
     Info (169086): Pin debug[5] not assigned to an exact location on the device
     Info (169086): Pin debug[6] not assigned to an exact location on the device
     Info (169086): Pin debug[7] not assigned to an exact location on the device
+    Info (169086): Pin data_ready not assigned to an exact location on the device
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'UARTReceiver.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info (332144): No user constrained base clocks found in the design
 Info (332128): Timing requirements not specified -- optimizing circuit to achieve the following default global requirements
@@ -759,7 +899,7 @@ Info (186469): Finished processing fast register assignments
 Extra Info (176245): Finished moving registers into LUTs: elapsed time is 00:00:00
 Info (176235): Finished register packing
 Info (176214): Statistics of I/O pins that need to be placed that use the same VCCIO and VREF, before I/O pin placement
-    Info (176211): Number of I/O pins in group: 8 (unused VREF, 3.3V VCCIO, 0 input, 8 output, 0 bidirectional)
+    Info (176211): Number of I/O pins in group: 9 (unused VREF, 3.3V VCCIO, 0 input, 9 output, 0 bidirectional)
         Info (176212): I/O standards used: 3.3-V LVTTL.
 Info (176215): I/O bank details before I/O pin placement
     Info (176214): Statistics of I/O banks
@@ -767,23 +907,23 @@ Info (176215): I/O bank details before I/O pin placement
         Info (176213): I/O bank number 2 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  30 pins available
         Info (176213): I/O bank number 3 does not use VREF pins and has undetermined VCCIO pins. 1 total pin(s) used --  28 pins available
         Info (176213): I/O bank number 4 does not use VREF pins and has 3.3V VCCIO pins. 9 total pin(s) used --  21 pins available
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:00
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:01
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
-Info (170192): Fitter placement operations ending: elapsed time is 00:00:00
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:01
 Info (170193): Fitter routing operations beginning
-Info (170195): Router estimated average interconnect usage is 0% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 1% of the available device resources in the region that extends from location X0_Y0 to location X8_Y11
+Info (170195): Router estimated average interconnect usage is 2% of the available device resources
+    Info (170196): Router estimated peak interconnect usage is 3% of the available device resources in the region that extends from location X0_Y0 to location X8_Y11
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
 Warning (169174): The Reserve All Unused Pins setting has not been specified, and will default to 'As output driving ground'.
 Info: Quartus II 32-bit Fitter was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 367 megabytes
-    Info: Processing ended: Tue Feb 28 23:30:26 2017
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:02
+    Info: Peak virtual memory: 377 megabytes
+    Info: Processing ended: Thu Mar  9 15:57:02 2017
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:03
 
 

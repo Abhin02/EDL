@@ -167,6 +167,9 @@ architecture Mixed of UARTTickerData is
   -- The values of 50000000/9600 - 1 and 50000000/9600 + 1 - 1
   signal L1: std_logic_vector(12 downto 0) := "1010001010111";
   signal L2: std_logic_vector(12 downto 0) := "1010001011000";
+  --signal L1: std_logic_vector(12 downto 0) := "0101000101011";
+  --signal L2: std_logic_vector(12 downto 0) := "0101000101100";
+  --signal HALF: std_logic_vector(12 downto 0) := "0010100010110";
   signal HALF: std_logic_vector(12 downto 0) := "0101000101100";
   signal CONST_0: std_logic_vector(12 downto 0) := (others => '0');
 

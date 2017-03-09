@@ -16,15 +16,9 @@ end entity UARTReceiver;
 architecture Struct of UARTReceiver is
   signal shift_in, tick_reset, tick_half, tick, received: std_logic;
   signal data_ready_signal: std_logic;
-  signal clk_slow: std_logic;
 begin
   data_ready <= data_ready_signal;
-  cl: ClockDivider
-  port map (
-    clk => clk,
-    reset => reset,
-    clk_slow => clk_slow
-  );
+
   CP: UARTReceiverControl
   port map (
     data_in => data_in,
@@ -71,8 +65,9 @@ entity UARTReceiverControl is
   );
 end entity;
 architecture Behave of UARTReceiverControl is
-  type FsmState is (S0, S1, S2, S3, S4);
+  type FsmState is (S0, S1, S2, S3, S4, S5);
   signal state : FsmState;
+  signal count_sig: Integer;
 begin
   -- This process decides the control signals
   process(state, reset, data_in, tick_half, tick, received)
@@ -87,16 +82,21 @@ begin
       when S0 =>
         nshift_in := '0';
         ndata_ready := '0';
-        ntick_reset := '0';
+        ntick_reset := '1';
       when S1 =>
         nshift_in := '0';
         ndata_ready := '0';
-        if data_in = '1' then
-          -- Since we want to start the ticker
-          ntick_reset := '1';
-        else
-          ntick_reset := '0';
-        end if;
+        ntick_reset := '1';
+      when S5 =>
+        nshift_in := '0';
+        ndata_ready := '0';
+        ntick_reset := '1';
+        --if data_in = '1' then
+        --  -- Since we want to start the ticker
+        --  ntick_reset := '1';
+        --else
+        --  ntick_reset := '0';
+        --end if;
       when S2 =>
         ndata_ready := '0';
         if tick_half = '1' then
@@ -139,10 +139,12 @@ begin
   end process;
 
   -- This process decides the next state of FSM
-  process(state, clk, reset, data_in, tick_half, tick, received)
+  process(state, clk, reset, data_in, tick_half, tick, received, count_sig)
     variable nstate: FsmState;
+    variable count_var: Integer := 0;
   begin
     nstate := S0;
+    count_var := count_sig;
     case state is
       when S0 =>
         -- This is the reset state
@@ -151,9 +153,23 @@ begin
         -- In this state, the receiver waits for UART
         if data_in = '0' then
           -- Received an input, begin UART sequence
-          nstate := S2;
+          nstate := S5;
         else
           nstate := S1;
+        end if;
+        count_var := 0;
+      when S5 =>
+        -- This state confirms that the data_in is actually 0
+        -- This is done to correct sampling errors
+        count_var := count_var + 1;
+        if count_var = 7 then
+          if data_in = '0' then
+            nstate := S2;
+          else
+            nstate := S1;
+          end if;
+        else
+          nstate := S5;
         end if;
       when S2 =>
         -- In this state, the counter increments till it hits T/2
@@ -177,8 +193,10 @@ begin
     if (clk'event and clk = '1') then
       if (reset = '1') then
         state <= S0;
+        count_sig <= 0;
       else
         state <= nstate;
+        count_sig <= count_var;
       end if;
     end if;
   end process;

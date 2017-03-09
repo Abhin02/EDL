@@ -4,24 +4,36 @@ use ieee.numeric_std.all;
 library std;
 use std.textio.all;
 
-entity Testbench is
+entity Testbench2 is
 end entity;
-architecture Behave of Testbench is
-  component UARTReceiver is
+architecture Behave of Testbench2 is
+  component TopLevel is
   port (
     clk, reset: in std_logic;
     data_in: in std_logic;
-    data_out: out std_logic_vector(7 downto 0);
-    debug: out std_logic_vector(7 downto 0);
-    data_ready: out std_logic
+    debug, debug1: out std_logic_vector(7 downto 0);
+    CS, WE, OE: out std_logic;
+    address: out std_logic_vector(14 downto 0);
+    io: inout std_logic_vector(7 downto 0);
+    output_data: out std_logic_vector(7 downto 0);
+    read_data: in std_logic
   );
-  end component;
+  end component TopLevel;
 
   signal clk, clk2: std_logic := '0';
-  signal reset, data_ready: std_logic := '1';
+  signal reset: std_logic := '1';
   signal data_in: std_logic := '1';
+  signal CS: std_logic := '1';
+  signal WE: std_logic := '1';
+  signal OE: std_logic := '1';
+  signal read_data: std_logic := '0';
+  signal address: std_logic_vector(14 downto 0) := (others => '0');
+  signal io: std_logic_vector(7 downto 0) := (others => 'Z');
+  signal output_data: std_logic_vector(7 downto 0) := (others => '0');
+
   signal data_out: std_logic_vector(7 downto 0) := (others => '0');
   signal debug: std_logic_vector(7 downto 0) := (others => '0');
+  signal debug1: std_logic_vector(7 downto 0) := (others => '0');
 
   function to_string(x: string) return string is
       variable ret_val: string(1 to x'length);
@@ -66,24 +78,34 @@ begin
     variable err_flag : boolean := false;
 
   begin
-    wait until clk2 = '1';
+    wait until clk = '1';
     reset <= '0';
-     while not endfile(INFILE) loop
+    while not endfile(INFILE) loop
       wait until clk2 = '1';
       readLine (INFILE, INPUT_LINE);
       read (INPUT_LINE, input_vector1);
       data_in <= to_stdlogicvector(input_vector1)(0);
       wait until clk2 = '0';
     end loop;
+    wait until clk2 = '1';
+    wait until clk2 = '0';
+    read_data <= '1';
+    wait;
   end process;
 
-  dut: UARTReceiver
+  dut: TopLevel
   port map (
     clk => clk,
     reset => reset,
     data_in => data_in,
-    data_out => data_out,
+    CS => CS,
+    OE => OE,
+    WE => WE,
     debug => debug,
-    data_ready => data_ready
+    debug1 => debug1,
+    address => address,
+    io => io,
+    output_data => output_data,
+    read_data => read_data
   );
 end Behave;

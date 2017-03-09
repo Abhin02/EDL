@@ -1,5 +1,5 @@
 Analysis & Synthesis report for UARTReceiver
-Tue Feb 28 23:30:20 2017
+Thu Mar  9 15:56:48 2017
 Quartus II 32-bit Version 12.0 Build 178 05/31/2012 SJ Web Edition
 
 
@@ -16,14 +16,15 @@ Quartus II 32-bit Version 12.0 Build 178 05/31/2012 SJ Web Edition
   8. State Machine - |UARTReceiver|UARTReceiverData:DP|UARTTicker:tc|UARTTickerControl:CP|state
   9. State Machine - |UARTReceiver|UARTReceiverControl:CP|state
  10. General Register Statistics
- 11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Parameter Settings for User Entity Instance: UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg
- 13. Parameter Settings for User Entity Instance: UARTReceiverData:DP|DataRegister:count1
- 14. Parameter Settings for User Entity Instance: UARTReceiverData:DP|DataRegister:shift_r
- 15. Parameter Settings for User Entity Instance: UARTReceiverData:DP|DataRegister:dout
- 16. Port Connectivity Checks: "UARTReceiverData:DP|DataRegister:shift_r"
- 17. Port Connectivity Checks: "UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg"
- 18. Analysis & Synthesis Messages
+ 11. Inverted Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg
+ 14. Parameter Settings for User Entity Instance: UARTReceiverData:DP|DataRegister:count1
+ 15. Parameter Settings for User Entity Instance: UARTReceiverData:DP|DataRegister:shift_r
+ 16. Parameter Settings for User Entity Instance: UARTReceiverData:DP|DataRegister:dout
+ 17. Port Connectivity Checks: "UARTReceiverData:DP|DataRegister:shift_r"
+ 18. Port Connectivity Checks: "UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg"
+ 19. Analysis & Synthesis Messages
 
 
 
@@ -49,13 +50,13 @@ applicable agreement for further details.
 +------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                           ;
 +-----------------------------+------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Tue Feb 28 23:30:20 2017    ;
+; Analysis & Synthesis Status ; Successful - Thu Mar  9 15:56:48 2017    ;
 ; Quartus II 32-bit Version   ; 12.0 Build 178 05/31/2012 SJ Web Edition ;
 ; Revision Name               ; UARTReceiver                             ;
 ; Top-level Entity Name       ; UARTReceiver                             ;
 ; Family                      ; MAX V                                    ;
-; Total logic elements        ; 77                                       ;
-; Total pins                  ; 19                                       ;
+; Total logic elements        ; 157                                      ;
+; Total pins                  ; 20                                       ;
 ; Total virtual pins          ; 0                                        ;
 ; UFM blocks                  ; 0 / 1 ( 0 % )                            ;
 +-----------------------------+------------------------------------------+
@@ -160,33 +161,33 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Total logic elements                        ; 77    ;
-;     -- Combinational with no register       ; 33    ;
+; Total logic elements                        ; 157   ;
+;     -- Combinational with no register       ; 80    ;
 ;     -- Register only                        ; 14    ;
-;     -- Combinational with a register        ; 30    ;
+;     -- Combinational with a register        ; 63    ;
 ;                                             ;       ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 24    ;
-;     -- 3 input functions                    ; 8     ;
-;     -- 2 input functions                    ; 29    ;
-;     -- 1 input functions                    ; 2     ;
+;     -- 4 input functions                    ; 66    ;
+;     -- 3 input functions                    ; 9     ;
+;     -- 2 input functions                    ; 65    ;
+;     -- 1 input functions                    ; 3     ;
 ;     -- 0 input functions                    ; 0     ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 65    ;
-;     -- arithmetic mode                      ; 12    ;
+;     -- normal mode                          ; 114   ;
+;     -- arithmetic mode                      ; 43    ;
 ;     -- qfbk mode                            ; 0     ;
 ;     -- register cascade mode                ; 0     ;
-;     -- synchronous clear/load mode          ; 16    ;
+;     -- synchronous clear/load mode          ; 47    ;
 ;     -- asynchronous clear/load mode         ; 0     ;
 ;                                             ;       ;
-; Total registers                             ; 44    ;
-; Total logic cells in carry chains           ; 13    ;
-; I/O pins                                    ; 19    ;
+; Total registers                             ; 77    ;
+; Total logic cells in carry chains           ; 45    ;
+; I/O pins                                    ; 20    ;
 ; Maximum fan-out node                        ; clk   ;
-; Maximum fan-out                             ; 44    ;
-; Total fan-out                               ; 291   ;
-; Average fan-out                             ; 3.03  ;
+; Maximum fan-out                             ; 77    ;
+; Total fan-out                               ; 602   ;
+; Average fan-out                             ; 3.40  ;
 +---------------------------------------------+-------+
 
 
@@ -195,8 +196,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node           ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                                                      ; Library Name ;
 +--------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------------------------------------------------------------------+--------------+
-; |UARTReceiver                        ; 77 (0)      ; 44           ; 0          ; 19   ; 0            ; 33 (0)       ; 14 (0)            ; 30 (0)           ; 13 (0)          ; 0 (0)      ; |UARTReceiver                                                                            ; work         ;
-;    |UARTReceiverControl:CP|          ; 10 (10)     ; 5            ; 0          ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 5 (5)            ; 0 (0)           ; 0 (0)      ; |UARTReceiver|UARTReceiverControl:CP                                                     ; work         ;
+; |UARTReceiver                        ; 157 (0)     ; 77           ; 0          ; 20   ; 0            ; 80 (0)       ; 14 (0)            ; 63 (0)           ; 45 (0)          ; 0 (0)      ; |UARTReceiver                                                                            ; work         ;
+;    |UARTReceiverControl:CP|          ; 90 (90)     ; 38           ; 0          ; 0    ; 0            ; 52 (52)      ; 0 (0)             ; 38 (38)          ; 32 (32)         ; 0 (0)      ; |UARTReceiver|UARTReceiverControl:CP                                                     ; work         ;
 ;    |UARTReceiverData:DP|             ; 67 (0)      ; 39           ; 0          ; 0    ; 0            ; 28 (0)       ; 14 (0)            ; 25 (0)           ; 13 (0)          ; 0 (0)      ; |UARTReceiver|UARTReceiverData:DP                                                        ; work         ;
 ;       |DataRegister:count1|          ; 4 (4)       ; 4            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |UARTReceiver|UARTReceiverData:DP|DataRegister:count1                                    ; work         ;
 ;       |DataRegister:dout|            ; 16 (16)     ; 8            ; 0          ; 0    ; 0            ; 8 (8)        ; 7 (7)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |UARTReceiver|UARTReceiverData:DP|DataRegister:dout                                      ; work         ;
@@ -225,17 +226,18 @@ Encoding Type:  One-Hot
 
 
 Encoding Type:  One-Hot
-+-----------------------------------------------------------------+
-; State Machine - |UARTReceiver|UARTReceiverControl:CP|state      ;
-+----------+----------+----------+----------+----------+----------+
-; Name     ; state.S4 ; state.S3 ; state.S2 ; state.S1 ; state.S0 ;
-+----------+----------+----------+----------+----------+----------+
-; state.S0 ; 0        ; 0        ; 0        ; 0        ; 0        ;
-; state.S1 ; 0        ; 0        ; 0        ; 1        ; 1        ;
-; state.S2 ; 0        ; 0        ; 1        ; 0        ; 1        ;
-; state.S3 ; 0        ; 1        ; 0        ; 0        ; 1        ;
-; state.S4 ; 1        ; 0        ; 0        ; 0        ; 1        ;
-+----------+----------+----------+----------+----------+----------+
++----------------------------------------------------------------------------+
+; State Machine - |UARTReceiver|UARTReceiverControl:CP|state                 ;
++----------+----------+----------+----------+----------+----------+----------+
+; Name     ; state.S5 ; state.S4 ; state.S3 ; state.S2 ; state.S1 ; state.S0 ;
++----------+----------+----------+----------+----------+----------+----------+
+; state.S0 ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ;
+; state.S1 ; 0        ; 0        ; 0        ; 0        ; 1        ; 1        ;
+; state.S2 ; 0        ; 0        ; 0        ; 1        ; 0        ; 1        ;
+; state.S3 ; 0        ; 0        ; 1        ; 0        ; 0        ; 1        ;
+; state.S4 ; 0        ; 1        ; 0        ; 0        ; 0        ; 1        ;
+; state.S5 ; 1        ; 0        ; 0        ; 0        ; 0        ; 1        ;
++----------+----------+----------+----------+----------+----------+----------+
 
 
 +------------------------------------------------------+
@@ -243,14 +245,25 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 44    ;
-; Number of registers using Synchronous Clear  ; 16    ;
+; Total registers                              ; 77    ;
+; Number of registers using Synchronous Clear  ; 47    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 21    ;
+; Number of registers using Clock Enable       ; 23    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; UARTReceiverControl:CP|count_sig[0]    ; 3       ;
+; UARTReceiverControl:CP|count_sig[31]   ; 1       ;
+; Total number of inverted registers = 2 ;         ;
++----------------------------------------+---------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -259,8 +272,8 @@ Encoding Type:  One-Hot
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered                                                                 ; Example Multiplexer Output ;
 +--------------------+-----------+---------------+----------------------+------------------------+----------------------------------------------------------------------------+----------------------------+
 ; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; |UARTReceiver|UARTReceiverData:DP|DataRegister:dout|Dout[4]                ;                            ;
-; 3:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; |UARTReceiver|UARTReceiverData:DP|DataRegister:shift_r|Dout[1]             ;                            ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; |UARTReceiver|UARTReceiverData:DP|DataRegister:count1|Dout[0]              ;                            ;
+; 3:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; |UARTReceiver|UARTReceiverData:DP|DataRegister:shift_r|Dout[8]             ;                            ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; |UARTReceiver|UARTReceiverData:DP|DataRegister:count1|Dout[1]              ;                            ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; |UARTReceiver|UARTReceiverData:DP|UARTTicker:tc|UARTTickerControl:CP|state ;                            ;
 +--------------------+-----------+---------------+----------------------+------------------------+----------------------------------------------------------------------------+----------------------------+
 
@@ -329,17 +342,25 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 12.0 Build 178 05/31/2012 SJ Web Edition
-    Info: Processing started: Tue Feb 28 23:30:18 2017
+    Info: Processing started: Thu Mar  9 15:56:43 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off UARTReceiver -c UARTReceiver
 Warning (20028): Parallel compilation is not licensed and has been disabled
-Info (12021): Found 7 design units, including 3 entities, in source file /home/kalpesh/Projects/EDL/uart_receiver/UARTComponents.vhd
+Info (12021): Found 15 design units, including 7 entities, in source file /home/kalpesh/Projects/EDL/uart_receiver/UARTComponents.vhd
     Info (12022): Found design unit 1: UARTComponents
     Info (12022): Found design unit 2: DataRegister-Behave
-    Info (12022): Found design unit 3: Increment13-Behave
-    Info (12022): Found design unit 4: Increment4-Behave
+    Info (12022): Found design unit 3: DataRegisterSp-Behave
+    Info (12022): Found design unit 4: Increment13-Behave
+    Info (12022): Found design unit 5: Increment4-Behave
+    Info (12022): Found design unit 6: Increment15-Behave
+    Info (12022): Found design unit 7: Increment31-Behave
+    Info (12022): Found design unit 8: ClockDivider-RTL
     Info (12023): Found entity 1: DataRegister
-    Info (12023): Found entity 2: Increment13
-    Info (12023): Found entity 3: Increment4
+    Info (12023): Found entity 2: DataRegisterSp
+    Info (12023): Found entity 3: Increment13
+    Info (12023): Found entity 4: Increment4
+    Info (12023): Found entity 5: Increment15
+    Info (12023): Found entity 6: Increment31
+    Info (12023): Found entity 7: ClockDivider
 Info (12021): Found 6 design units, including 3 entities, in source file /home/kalpesh/Projects/EDL/uart_receiver/UARTReceiver.vhd
     Info (12022): Found design unit 1: UARTReceiver-Struct
     Info (12022): Found design unit 2: UARTReceiverControl-Behave
@@ -357,29 +378,29 @@ Info (12021): Found 6 design units, including 3 entities, in source file /home/k
 Info (12127): Elaborating entity "UARTReceiver" for the top level hierarchy
 Info (12128): Elaborating entity "UARTReceiverControl" for hierarchy "UARTReceiverControl:CP"
 Info (12128): Elaborating entity "UARTReceiverData" for hierarchy "UARTReceiverData:DP"
-Warning (10540): VHDL Signal Declaration warning at UARTReceiver.vhd(201): used explicit default value for signal "CONST_0" because signal was never assigned a value
-Warning (10540): VHDL Signal Declaration warning at UARTReceiver.vhd(203): used explicit default value for signal "LIMIT" because signal was never assigned a value
+Warning (10540): VHDL Signal Declaration warning at UARTReceiver.vhd(229): used explicit default value for signal "CONST_0" because signal was never assigned a value
+Warning (10540): VHDL Signal Declaration warning at UARTReceiver.vhd(231): used explicit default value for signal "LIMIT" because signal was never assigned a value
 Info (12128): Elaborating entity "UARTTicker" for hierarchy "UARTReceiverData:DP|UARTTicker:tc"
 Info (12128): Elaborating entity "UARTTickerControl" for hierarchy "UARTReceiverData:DP|UARTTicker:tc|UARTTickerControl:CP"
 Info (12128): Elaborating entity "UARTTickerData" for hierarchy "UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP"
 Warning (10540): VHDL Signal Declaration warning at UARTTicker.vhd(168): used explicit default value for signal "L1" because signal was never assigned a value
 Warning (10540): VHDL Signal Declaration warning at UARTTicker.vhd(169): used explicit default value for signal "L2" because signal was never assigned a value
-Warning (10540): VHDL Signal Declaration warning at UARTTicker.vhd(170): used explicit default value for signal "HALF" because signal was never assigned a value
-Warning (10540): VHDL Signal Declaration warning at UARTTicker.vhd(171): used explicit default value for signal "CONST_0" because signal was never assigned a value
+Warning (10540): VHDL Signal Declaration warning at UARTTicker.vhd(173): used explicit default value for signal "HALF" because signal was never assigned a value
+Warning (10540): VHDL Signal Declaration warning at UARTTicker.vhd(174): used explicit default value for signal "CONST_0" because signal was never assigned a value
 Info (12128): Elaborating entity "Increment13" for hierarchy "UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|Increment13:incr"
 Info (12128): Elaborating entity "DataRegister" for hierarchy "UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg"
 Info (12128): Elaborating entity "Increment4" for hierarchy "UARTReceiverData:DP|Increment4:incr"
 Info (12128): Elaborating entity "DataRegister" for hierarchy "UARTReceiverData:DP|DataRegister:count1"
 Info (12128): Elaborating entity "DataRegister" for hierarchy "UARTReceiverData:DP|DataRegister:shift_r"
 Info (12128): Elaborating entity "DataRegister" for hierarchy "UARTReceiverData:DP|DataRegister:dout"
-Info (21057): Implemented 96 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 177 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
-    Info (21059): Implemented 16 output pins
-    Info (21061): Implemented 77 logic cells
+    Info (21059): Implemented 17 output pins
+    Info (21061): Implemented 157 logic cells
 Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 7 warnings
     Info: Peak virtual memory: 358 megabytes
-    Info: Processing ended: Tue Feb 28 23:30:20 2017
-    Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:02
+    Info: Processing ended: Thu Mar  9 15:56:48 2017
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:03
 
 
