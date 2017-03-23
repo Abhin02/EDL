@@ -32,7 +32,7 @@ def square(sample_freq, freq, sample):
 all_ports = serial.tools.list_ports.comports()
 usb_port = ""
 for x in all_ports:
-    if x[2] == 'USB VID:PID=067b:2303':
+    if 'USB VID:PID=067b:2303'.lower() in x[2].lower():
         usb_port = x[0]
 if not len(usb_port):
     print "Please enter USB device"

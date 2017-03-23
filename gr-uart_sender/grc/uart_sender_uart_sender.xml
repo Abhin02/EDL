@@ -4,16 +4,24 @@
   <key>uart_sender_uart_sender</key>
   <category>uart_sender</category>
   <import>import uart_sender</import>
-  <make>uart_sender.uart_sender($multiple)</make>
+  <make>uart_sender.uart_sender($samp_rate, $choice)</make>
+  <callback>set_sampling_freq($samp_rate)</callback>
+  <callback>set_choice($choice)</callback>
   <!-- Make one 'param' node for every Parameter you want settable from the GUI.
        Sub-nodes:
        * name
        * key (makes the value accessible as $keyname, e.g. in the make node)
        * type -->
   <param>
-    <name>...</name>
-    <key>...</key>
-    <type>...</type>
+    <name>Sample Rate</name>
+    <key>samp_rate</key>
+    <type>float</type>
+  </param>
+
+  <param>
+    <name>Choice</name>
+    <key>choice</key>
+    <type>int</type>
   </param>
 
   <!-- Make one 'sink' node per input. Sub-nodes:
@@ -22,17 +30,13 @@
        * vlen
        * optional (set to 1 for optional inputs) -->
   <sink>
-    <name>in</name>
-    <type><!-- e.g. int, float, complex, byte, short, xxx_vector, ...--></type>
+    <name>I</name>
+    <type>float</type>
   </sink>
 
-  <!-- Make one 'source' node per output. Sub-nodes:
-       * name (an identifier for the GUI)
-       * type
-       * vlen
-       * optional (set to 1 for optional inputs) -->
-  <source>
-    <name>out</name>
-    <type><!-- e.g. int, float, complex, byte, short, xxx_vector, ...--></type>
-  </source>
+  <sink>
+    <name>Q</name>
+    <type>float</type>
+  </sink>
+
 </block>
