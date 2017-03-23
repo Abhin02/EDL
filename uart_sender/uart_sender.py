@@ -17,7 +17,7 @@ def sine(sample_freq, freq, sample):
 
 
 def square(sample_freq, freq, sample):
-    """The wrapper genereates."""
+    """The wrapper generates square waves."""
     if sample == 1:
         return 1
     elif sample == 2:
