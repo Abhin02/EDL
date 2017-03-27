@@ -87,7 +87,7 @@ begin
     reset <= '0';
     while not endfile(INFILE) loop
       wait until clk2 = '1';
-      if count <= 40 then
+      if count <= 60 then
         sample_rate <= '1';
       else
         sample_rate <= '0';

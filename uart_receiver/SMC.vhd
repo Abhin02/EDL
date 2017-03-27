@@ -26,8 +26,8 @@ architecture Struct of SMC is
   signal addr_select: std_logic_vector(2 downto 0);
   signal io_select, output_select, output_enable: std_logic;
   signal write_addr_enable, read_addr_enable: std_logic;
-  signal limit_control: std_logic_vector(3 downto 0);
-  signal count: std_logic_vector(1 downto 0);
+  signal limit_control: std_logic_vector(5 downto 0);
+  signal count: std_logic_vector(2 downto 0);
 begin
 
   cntrl: SMCControl
@@ -92,15 +92,15 @@ entity SMCControl is
     addr_select: out std_logic_vector(2 downto 0);
     io_select, output_select, output_enable: out std_logic;
     write_addr_enable, read_addr_enable: out std_logic;
-    limit_control: out std_logic_vector(3 downto 0);
-    count: out std_logic_vector(1 downto 0)
+    limit_control: out std_logic_vector(5 downto 0);
+    count: out std_logic_vector(2 downto 0)
   );
 end entity SMCControl;
 
 architecture Mixed of SMCControl is
   type FsmState is (S0, S1, S2, S3, S4, S5, S6, S7, S8);
   signal state: FsmState;
-  signal count_sig: std_logic_vector(1 downto 0);
+  signal count_sig: std_logic_vector(2 downto 0);
 begin
   count <= count_sig;
   process(state, reset, data_ready, write_wait, read_wait, sample_rate, count_sig)
@@ -109,7 +109,7 @@ begin
     variable naddr_select: std_logic_vector(2 downto 0);
     variable nio_select: std_logic;
     variable noutput_enable, noutput_select: std_logic;
-    variable nlimit_control: std_logic_vector(3 downto 0);
+    variable nlimit_control: std_logic_vector(5 downto 0);
   begin
     nCONTROL_IN := "111";
     naddr_select := "000";
@@ -118,7 +118,7 @@ begin
     nio_select := '0';
     noutput_select := '0';
     noutput_enable := '0';
-    nlimit_control := "0000";
+    nlimit_control := "000000";
     case state is
       when S0 =>
         nCONTROL_IN := "111";
@@ -128,16 +128,20 @@ begin
         nio_select := '0';
         noutput_enable := '0';
         noutput_select := '0';
-        if count_sig = "00" and data_ready = '1' and sample_rate = '1' then
-          nlimit_control := "0001";
-        elsif count_sig = "01" and data_ready = '1' and sample_rate = '1' then
-          nlimit_control := "0010";
-        elsif count_sig = "10" and data_ready = '1' and sample_rate = '1' then
-          nlimit_control := "0100";
-        elsif count_sig = "11" and data_ready = '1' and sample_rate = '1' then
-          nlimit_control := "1000";
+        if count_sig = "000" and data_ready = '1' and sample_rate = '1' then
+          nlimit_control := "000001";
+        elsif count_sig = "001" and data_ready = '1' and sample_rate = '1' then
+          nlimit_control := "000010";
+        elsif count_sig = "010" and data_ready = '1' and sample_rate = '1' then
+          nlimit_control := "000100";
+        elsif count_sig = "011" and data_ready = '1' and sample_rate = '1' then
+          nlimit_control := "001000";
+        elsif count_sig = "100" and data_ready = '1' and sample_rate = '1' then
+          nlimit_control := "010000";
+        elsif count_sig = "101" and data_ready = '1' and sample_rate = '1' then
+          nlimit_control := "100000";
         else
-          nlimit_control := "0000";
+          nlimit_control := "000000";
         end if;
       when S1 =>
         nCONTROL_IN := "011";
@@ -147,7 +151,7 @@ begin
         nio_select := '0';
         noutput_select := '0';
         noutput_enable := '0';
-        nlimit_control := "0000";
+        nlimit_control := "000000";
       when S2 =>
         nCONTROL_IN := "001";
         nwrite_addr_enable := '0';
@@ -156,7 +160,7 @@ begin
         nio_select := '0';
         noutput_select := '0';
         noutput_enable := '0';
-        nlimit_control := "0000";
+        nlimit_control := "000000";
       when S3 =>
         if write_wait = '1' then
           nCONTROL_IN := "001";
@@ -169,7 +173,7 @@ begin
         nio_select := '1';
         noutput_select := '0';
         noutput_enable := '0';
-        nlimit_control := "0000";
+        nlimit_control := "000000";
       when S4 =>
         nCONTROL_IN := "111";
         nwrite_addr_enable := '0';
@@ -178,7 +182,7 @@ begin
         nio_select := '1';
         noutput_select := '0';
         noutput_enable := '0';
-        nlimit_control := "0000";
+        nlimit_control := "000000";
       when S5 =>
         nCONTROL_IN := "011";
         nwrite_addr_enable := '0';
@@ -187,7 +191,7 @@ begin
         nio_select := '0';
         noutput_select := '0';
         noutput_enable := '0';
-        nlimit_control := "0000";
+        nlimit_control := "000000";
       when S6 =>
         nCONTROL_IN := "010";
         nwrite_addr_enable := '0';
@@ -196,7 +200,7 @@ begin
         nio_select := '0';
         noutput_select := '0';
         noutput_enable := '0';
-        nlimit_control := "0000";
+        nlimit_control := "000000";
       when S7 =>
         nwrite_addr_enable := '0';
         nread_addr_enable := '0';
@@ -206,12 +210,12 @@ begin
           nCONTROL_IN := "010";
           noutput_select := '0';
           noutput_enable := '0';
-          nlimit_control := "0000";
+          nlimit_control := "000000";
         else
           nCONTROL_IN := "111";
           noutput_select := '1';
           noutput_enable := '1';
-          nlimit_control := "0000";
+          nlimit_control := "000000";
         end if;
       when S8 =>
         nCONTROL_IN := "111";
@@ -221,7 +225,7 @@ begin
         nio_select := '0';
         noutput_select := '0';
         noutput_enable := '0';
-        nlimit_control := "0000";
+        nlimit_control := "000000";
     end case;
     if reset = '1' then
       CONTROL_IN <= "111";
@@ -231,7 +235,7 @@ begin
       addr_select <= "000";
       output_enable <= '0';
       output_select <= '0';
-      limit_control <= "0000";
+      limit_control <= "000000";
     else
       CONTROL_IN <= nCONTROL_IN;
       write_addr_enable <= nwrite_addr_enable;
@@ -245,7 +249,7 @@ begin
   end process;
   process(state, clk, reset, data_ready, read_data, read_wait, write_wait, sample_rate, count_sig)
     variable nstate: FsmState;
-    variable count_var: std_logic_vector(1 downto 0) := "00";
+    variable count_var: std_logic_vector(2 downto 0) := "000";
   begin
     nstate := S0;
     count_var := count_sig;
@@ -262,14 +266,20 @@ begin
         end if;
         if data_ready = '1' and sample_rate = '1' then
           -- update the count variable
-          if count_sig = "11" then
-            count_var := "00";
-          elsif count_sig = "10" then
-            count_var := "11";
-          elsif count_sig = "01" then
-            count_var := "10";
+          if count_sig = "101" then
+            count_var := "000";
+          elsif count_sig = "100" then
+            count_var := "101";
+          elsif count_sig = "011" then
+            count_var := "100";
+          elsif count_sig = "010" then
+            count_var := "011";
+          elsif count_sig = "001" then
+            count_var := "010";
+          elsif count_sig = "000" then
+            count_var := "001";
           else
-            count_var := "01";
+            count_var := "000";
           end if;
         else
           count_var := count_sig;
@@ -318,7 +328,7 @@ begin
     if (clk'event and clk = '1') then
       if (reset = '1') then
         state <= S0;
-        count_sig <= "00";
+        count_sig <= "000";
       else
         state <= nstate;
         count_sig <= count_var;
@@ -349,8 +359,8 @@ entity SMCData is
     io_select, output_select, output_enable: in std_logic;
     read_addr_enable, write_addr_enable: in std_logic;
     debug: out std_logic_vector(7 downto 0);
-    limit_control: in std_logic_vector(3 downto 0);
-    count: in std_logic_vector(1 downto 0)
+    limit_control: in std_logic_vector(5 downto 0);
+    count: in std_logic_vector(2 downto 0)
   );
 end entity SMCData;
 
@@ -372,6 +382,8 @@ architecture Mixed of SMCData is
   signal READ_ADDRESS: std_logic_vector(14 downto 0);
   signal READ_ADDRESS_INC: std_logic_vector(14 downto 0);
   signal READ_ADDRESS_IN: std_logic_vector(14 downto 0);
+  signal SIGNAL_SIZE: std_logic_vector(15 downto 0);
+  signal SIGNAL_SIZE_IN: std_logic_vector(15 downto 0);
   signal WRITE_ADDRESS: std_logic_vector(14 downto 0);
   signal WRITE_ADDRESS_INC: std_logic_vector(14 downto 0);
   signal WRITE_ADDRESS_IN: std_logic_vector(14 downto 0);
@@ -404,6 +416,8 @@ begin
   READ_WAIT_LIMIT_IN(15 downto 8) <= input_data;
   READ_WAIT_LIMIT_IN(23 downto 16) <= input_data;
   READ_WAIT_LIMIT_IN(31 downto 24) <= input_data;
+  SIGNAL_SIZE_IN(7 downto 0) <= input_data;
+  SIGNAL_SIZE_IN(15 downto 8) <= input_data;
   rw_limit0: DataRegister
         generic map (data_width => 8)
         port map (
@@ -440,6 +454,24 @@ begin
           Dout => READ_WAIT_LIMIT(31 downto 24),
           Enable => limit_control(3)
         );
+  signal_size1: DataRegister
+        generic map (data_width => 8)
+        port map (
+          clk => clk,
+          reset => reset,
+          Din => SIGNAL_SIZE_IN(7 downto 0),
+          Dout => SIGNAL_SIZE(7 downto 0),
+          Enable => limit_control(4)
+        );
+  signal_size2: DataRegister
+        generic map (data_width => 8)
+        port map (
+          clk => clk,
+          reset => reset,
+          Din => SIGNAL_SIZE_IN(15 downto 8),
+          Dout => SIGNAL_SIZE(15 downto 8),
+          Enable => limit_control(5)
+        );
 
   -- Write specifications
   inc3: Increment4
@@ -471,7 +503,8 @@ begin
             output => READ_ADDRESS_INC
           );
 
-  READ_ADDRESS_IN <= READ_ADDRESS_INC;
+  READ_ADDRESS_IN <= (others => '0') when READ_ADDRESS = SIGNAL_SIZE(14 downto 0) else
+                     READ_ADDRESS_INC;
   WRITE_ADDRESS_IN <= WRITE_ADDRESS_INC;
 
   ADDRESS_IN <= WRITE_ADDRESS when addr_select = "001" else

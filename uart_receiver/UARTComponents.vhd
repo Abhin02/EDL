@@ -144,8 +144,8 @@ package UARTComponents is
     addr_select: in std_logic_vector(2 downto 0);
     io_select, output_select, output_enable: in std_logic;
     write_addr_enable, read_addr_enable: in std_logic;
-    limit_control: in std_logic_vector(3 downto 0);
-    count: in std_logic_vector(1 downto 0)
+    limit_control: in std_logic_vector(5 downto 0);
+    count: in std_logic_vector(2 downto 0)
   );
 end component SMCData;
 
@@ -162,8 +162,8 @@ end component SMCData;
     addr_select: out std_logic_vector(2 downto 0);
     io_select, output_select, output_enable: out std_logic;
     write_addr_enable, read_addr_enable: out std_logic;
-    limit_control: out std_logic_vector(3 downto 0);
-    count: out std_logic_vector(1 downto 0)
+    limit_control: out std_logic_vector(5 downto 0);
+    count: out std_logic_vector(2 downto 0)
   );
   end component SMCControl;
 

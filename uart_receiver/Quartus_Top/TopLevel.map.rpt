@@ -1,5 +1,5 @@
 Analysis & Synthesis report for TopLevel
-Fri Mar 10 01:00:04 2017
+Mon Mar 27 15:52:03 2017
 Quartus II 32-bit Version 12.0 Build 178 05/31/2012 SJ Web Edition
 
 
@@ -24,23 +24,26 @@ Quartus II 32-bit Version 12.0 Build 178 05/31/2012 SJ Web Edition
  16. Parameter Settings for User Entity Instance: SMC:ram|SMCData:data|DataRegister:rw_limit1
  17. Parameter Settings for User Entity Instance: SMC:ram|SMCData:data|DataRegister:rw_limit2
  18. Parameter Settings for User Entity Instance: SMC:ram|SMCData:data|DataRegister:rw_limit3
- 19. Parameter Settings for User Entity Instance: SMC:ram|SMCData:data|DataRegister:ww
- 20. Parameter Settings for User Entity Instance: SMC:ram|SMCData:data|DataRegister:addr
- 21. Parameter Settings for User Entity Instance: SMC:ram|SMCData:data|DataRegister:waddr
- 22. Parameter Settings for User Entity Instance: SMC:ram|SMCData:data|DataRegister:raddr
- 23. Parameter Settings for User Entity Instance: SMC:ram|SMCData:data|DataRegisterSp:contrl
- 24. Parameter Settings for User Entity Instance: SMC:ram|SMCData:data|DataRegister:output
- 25. Parameter Settings for User Entity Instance: UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg
- 26. Parameter Settings for User Entity Instance: UARTReceiver:uart|UARTReceiverData:DP|DataRegister:count1
- 27. Parameter Settings for User Entity Instance: UARTReceiver:uart|UARTReceiverData:DP|DataRegister:shift_r
- 28. Parameter Settings for User Entity Instance: UARTReceiver:uart|UARTReceiverData:DP|DataRegister:dout
- 29. Port Connectivity Checks: "UARTReceiver:uart|UARTReceiverData:DP|DataRegister:shift_r"
- 30. Port Connectivity Checks: "UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg"
- 31. Port Connectivity Checks: "SMC:ram|SMCData:data|DataRegisterSp:contrl"
- 32. Port Connectivity Checks: "SMC:ram|SMCData:data|DataRegister:ww"
- 33. Port Connectivity Checks: "SMC:ram|SMCData:data|DataRegister:rw"
- 34. Port Connectivity Checks: "ClockDivider:clk_div"
- 35. Analysis & Synthesis Messages
+ 19. Parameter Settings for User Entity Instance: SMC:ram|SMCData:data|DataRegister:signal_size1
+ 20. Parameter Settings for User Entity Instance: SMC:ram|SMCData:data|DataRegister:signal_size2
+ 21. Parameter Settings for User Entity Instance: SMC:ram|SMCData:data|DataRegister:ww
+ 22. Parameter Settings for User Entity Instance: SMC:ram|SMCData:data|DataRegister:addr
+ 23. Parameter Settings for User Entity Instance: SMC:ram|SMCData:data|DataRegister:waddr
+ 24. Parameter Settings for User Entity Instance: SMC:ram|SMCData:data|DataRegister:raddr
+ 25. Parameter Settings for User Entity Instance: SMC:ram|SMCData:data|DataRegisterSp:contrl
+ 26. Parameter Settings for User Entity Instance: SMC:ram|SMCData:data|DataRegister:output
+ 27. Parameter Settings for User Entity Instance: UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg
+ 28. Parameter Settings for User Entity Instance: UARTReceiver:uart|UARTReceiverData:DP|DataRegister:count1
+ 29. Parameter Settings for User Entity Instance: UARTReceiver:uart|UARTReceiverData:DP|DataRegister:shift_r
+ 30. Parameter Settings for User Entity Instance: UARTReceiver:uart|UARTReceiverData:DP|DataRegister:dout
+ 31. Port Connectivity Checks: "UARTReceiver:uart|UARTReceiverData:DP|DataRegister:shift_r"
+ 32. Port Connectivity Checks: "UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg"
+ 33. Port Connectivity Checks: "SMC:ram|SMCData:data|DataRegisterSp:contrl"
+ 34. Port Connectivity Checks: "SMC:ram|SMCData:data|DataRegister:ww"
+ 35. Port Connectivity Checks: "SMC:ram|SMCData:data|DataRegister:signal_size2"
+ 36. Port Connectivity Checks: "SMC:ram|SMCData:data|DataRegister:rw"
+ 37. Port Connectivity Checks: "ClockDivider:clk_div"
+ 38. Analysis & Synthesis Messages
 
 
 
@@ -66,12 +69,12 @@ applicable agreement for further details.
 +------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                           ;
 +-----------------------------+------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Fri Mar 10 01:00:04 2017    ;
+; Analysis & Synthesis Status ; Successful - Mon Mar 27 15:52:03 2017    ;
 ; Quartus II 32-bit Version   ; 12.0 Build 178 05/31/2012 SJ Web Edition ;
 ; Revision Name               ; TopLevel                                 ;
 ; Top-level Entity Name       ; TopLevel                                 ;
 ; Family                      ; MAX V                                    ;
-; Total logic elements        ; 363                                      ;
+; Total logic elements        ; 395                                      ;
 ; Total pins                  ; 56                                       ;
 ; Total virtual pins          ; 0                                        ;
 ; UFM blocks                  ; 0 / 1 ( 0 % )                            ;
@@ -179,32 +182,32 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Total logic elements                        ; 363   ;
-;     -- Combinational with no register       ; 140   ;
-;     -- Register only                        ; 49    ;
-;     -- Combinational with a register        ; 174   ;
+; Total logic elements                        ; 395   ;
+;     -- Combinational with no register       ; 156   ;
+;     -- Register only                        ; 64    ;
+;     -- Combinational with a register        ; 175   ;
 ;                                             ;       ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 128   ;
-;     -- 3 input functions                    ; 22    ;
-;     -- 2 input functions                    ; 157   ;
+;     -- 4 input functions                    ; 142   ;
+;     -- 3 input functions                    ; 26    ;
+;     -- 2 input functions                    ; 156   ;
 ;     -- 1 input functions                    ; 7     ;
 ;     -- 0 input functions                    ; 0     ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 261   ;
+;     -- normal mode                          ; 293   ;
 ;     -- arithmetic mode                      ; 102   ;
 ;     -- qfbk mode                            ; 0     ;
 ;     -- register cascade mode                ; 0     ;
-;     -- synchronous clear/load mode          ; 111   ;
+;     -- synchronous clear/load mode          ; 114   ;
 ;     -- asynchronous clear/load mode         ; 0     ;
 ;                                             ;       ;
-; Total registers                             ; 223   ;
+; Total registers                             ; 239   ;
 ; Total logic cells in carry chains           ; 107   ;
 ; I/O pins                                    ; 56    ;
 ; Maximum fan-out node                        ; clk   ;
-; Maximum fan-out                             ; 223   ;
-; Total fan-out                               ; 1453  ;
+; Maximum fan-out                             ; 239   ;
+; Total fan-out                               ; 1566  ;
 ; Average fan-out                             ; 3.47  ;
 +---------------------------------------------+-------+
 
@@ -214,18 +217,20 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-----------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+--------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node              ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                                                                    ; Library Name ;
 +-----------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+--------------------------------------------------------------------------------------------------------+--------------+
-; |TopLevel                               ; 363 (16)    ; 223          ; 0          ; 56   ; 0            ; 140 (6)      ; 49 (0)            ; 174 (10)         ; 107 (0)         ; 0 (0)      ; |TopLevel                                                                                              ; work         ;
-;    |SMC:ram|                            ; 189 (0)     ; 135          ; 0          ; 0    ; 0            ; 54 (0)       ; 35 (0)            ; 100 (0)          ; 62 (0)          ; 0 (0)      ; |TopLevel|SMC:ram                                                                                      ; work         ;
-;       |SMCControl:cntrl|                ; 17 (17)     ; 11           ; 0          ; 0    ; 0            ; 6 (6)        ; 0 (0)             ; 11 (11)          ; 0 (0)           ; 0 (0)      ; |TopLevel|SMC:ram|SMCControl:cntrl                                                                     ; work         ;
-;       |SMCData:data|                    ; 172 (24)    ; 124          ; 0          ; 0    ; 0            ; 48 (24)      ; 35 (0)            ; 89 (0)           ; 62 (0)          ; 0 (0)      ; |TopLevel|SMC:ram|SMCData:data                                                                         ; work         ;
+; |TopLevel                               ; 395 (16)    ; 239          ; 0          ; 56   ; 0            ; 156 (6)      ; 64 (0)            ; 175 (10)         ; 107 (0)         ; 0 (0)      ; |TopLevel                                                                                              ; work         ;
+;    |SMC:ram|                            ; 221 (0)     ; 151          ; 0          ; 0    ; 0            ; 70 (0)       ; 50 (0)            ; 101 (0)          ; 62 (0)          ; 0 (0)      ; |TopLevel|SMC:ram                                                                                      ; work         ;
+;       |SMCControl:cntrl|                ; 23 (23)     ; 12           ; 0          ; 0    ; 0            ; 11 (11)      ; 0 (0)             ; 12 (12)          ; 0 (0)           ; 0 (0)      ; |TopLevel|SMC:ram|SMCControl:cntrl                                                                     ; work         ;
+;       |SMCData:data|                    ; 198 (31)    ; 139          ; 0          ; 0    ; 0            ; 59 (31)      ; 50 (0)            ; 89 (0)           ; 62 (0)          ; 0 (0)      ; |TopLevel|SMC:ram|SMCData:data                                                                         ; work         ;
 ;          |DataRegister:addr|            ; 17 (17)     ; 15           ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 15 (15)          ; 0 (0)           ; 0 (0)      ; |TopLevel|SMC:ram|SMCData:data|DataRegister:addr                                                       ; work         ;
 ;          |DataRegister:output|          ; 8 (8)       ; 8            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 8 (8)            ; 0 (0)           ; 0 (0)      ; |TopLevel|SMC:ram|SMCData:data|DataRegister:output                                                     ; work         ;
-;          |DataRegister:raddr|           ; 16 (16)     ; 15           ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 15 (15)          ; 15 (15)         ; 0 (0)      ; |TopLevel|SMC:ram|SMCData:data|DataRegister:raddr                                                      ; work         ;
+;          |DataRegister:raddr|           ; 19 (19)     ; 15           ; 0          ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 15 (15)          ; 15 (15)         ; 0 (0)      ; |TopLevel|SMC:ram|SMCData:data|DataRegister:raddr                                                      ; work         ;
 ;          |DataRegister:rw_limit0|       ; 9 (9)       ; 8            ; 0          ; 0    ; 0            ; 1 (1)        ; 8 (8)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|SMC:ram|SMCData:data|DataRegister:rw_limit0                                                  ; work         ;
 ;          |DataRegister:rw_limit1|       ; 9 (9)       ; 8            ; 0          ; 0    ; 0            ; 1 (1)        ; 8 (8)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|SMC:ram|SMCData:data|DataRegister:rw_limit1                                                  ; work         ;
-;          |DataRegister:rw_limit2|       ; 10 (10)     ; 8            ; 0          ; 0    ; 0            ; 2 (2)        ; 8 (8)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|SMC:ram|SMCData:data|DataRegister:rw_limit2                                                  ; work         ;
+;          |DataRegister:rw_limit2|       ; 9 (9)       ; 8            ; 0          ; 0    ; 0            ; 1 (1)        ; 8 (8)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|SMC:ram|SMCData:data|DataRegister:rw_limit2                                                  ; work         ;
 ;          |DataRegister:rw_limit3|       ; 17 (17)     ; 8            ; 0          ; 0    ; 0            ; 9 (9)        ; 8 (8)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|SMC:ram|SMCData:data|DataRegister:rw_limit3                                                  ; work         ;
 ;          |DataRegister:rw|              ; 32 (32)     ; 32           ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 32 (32)          ; 32 (32)         ; 0 (0)      ; |TopLevel|SMC:ram|SMCData:data|DataRegister:rw                                                         ; work         ;
+;          |DataRegister:signal_size1|    ; 9 (9)       ; 8            ; 0          ; 0    ; 0            ; 1 (1)        ; 8 (8)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|SMC:ram|SMCData:data|DataRegister:signal_size1                                               ; work         ;
+;          |DataRegister:signal_size2|    ; 8 (8)       ; 7            ; 0          ; 0    ; 0            ; 1 (1)        ; 7 (7)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|SMC:ram|SMCData:data|DataRegister:signal_size2                                               ; work         ;
 ;          |DataRegister:waddr|           ; 16 (16)     ; 15           ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 15 (15)          ; 15 (15)         ; 0 (0)      ; |TopLevel|SMC:ram|SMCData:data|DataRegister:waddr                                                      ; work         ;
 ;          |DataRegister:ww|              ; 4 (4)       ; 4            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |TopLevel|SMC:ram|SMCData:data|DataRegister:ww                                                         ; work         ;
 ;          |DataRegisterSp:contrl|        ; 9 (9)       ; 3            ; 0          ; 0    ; 0            ; 6 (6)        ; 3 (3)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|SMC:ram|SMCData:data|DataRegisterSp:contrl                                                   ; work         ;
@@ -233,10 +238,10 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;    |UARTReceiver:uart|                  ; 158 (0)     ; 78           ; 0          ; 0    ; 0            ; 80 (0)       ; 14 (0)            ; 64 (0)           ; 45 (0)          ; 0 (0)      ; |TopLevel|UARTReceiver:uart                                                                            ; work         ;
 ;       |UARTReceiverControl:CP|          ; 90 (90)     ; 39           ; 0          ; 0    ; 0            ; 51 (51)      ; 0 (0)             ; 39 (39)          ; 32 (32)         ; 0 (0)      ; |TopLevel|UARTReceiver:uart|UARTReceiverControl:CP                                                     ; work         ;
 ;       |UARTReceiverData:DP|             ; 68 (0)      ; 39           ; 0          ; 0    ; 0            ; 29 (0)       ; 14 (0)            ; 25 (0)           ; 13 (0)          ; 0 (0)      ; |TopLevel|UARTReceiver:uart|UARTReceiverData:DP                                                        ; work         ;
-;          |DataRegister:count1|          ; 5 (5)       ; 4            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |TopLevel|UARTReceiver:uart|UARTReceiverData:DP|DataRegister:count1                                    ; work         ;
+;          |DataRegister:count1|          ; 4 (4)       ; 4            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |TopLevel|UARTReceiver:uart|UARTReceiverData:DP|DataRegister:count1                                    ; work         ;
 ;          |DataRegister:dout|            ; 9 (9)       ; 8            ; 0          ; 0    ; 0            ; 1 (1)        ; 7 (7)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |TopLevel|UARTReceiver:uart|UARTReceiverData:DP|DataRegister:dout                                      ; work         ;
 ;          |DataRegister:shift_r|         ; 17 (17)     ; 9            ; 0          ; 0    ; 0            ; 8 (8)        ; 7 (7)             ; 2 (2)            ; 0 (0)           ; 0 (0)      ; |TopLevel|UARTReceiver:uart|UARTReceiverData:DP|DataRegister:shift_r                                   ; work         ;
-;          |Increment4:incr|              ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|UARTReceiver:uart|UARTReceiverData:DP|Increment4:incr                                        ; work         ;
+;          |Increment4:incr|              ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|UARTReceiver:uart|UARTReceiverData:DP|Increment4:incr                                        ; work         ;
 ;          |UARTTicker:tc|                ; 36 (0)      ; 18           ; 0          ; 0    ; 0            ; 18 (0)       ; 0 (0)             ; 18 (0)           ; 13 (0)          ; 0 (0)      ; |TopLevel|UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc                                          ; work         ;
 ;             |UARTTickerControl:CP|      ; 12 (12)     ; 5            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 5 (5)            ; 0 (0)           ; 0 (0)      ; |TopLevel|UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerControl:CP                     ; work         ;
 ;             |UARTTickerData:DP|         ; 24 (11)     ; 13           ; 0          ; 0    ; 0            ; 11 (11)      ; 0 (0)             ; 13 (0)           ; 13 (0)          ; 0 (0)      ; |TopLevel|UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP                        ; work         ;
@@ -297,12 +302,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 223   ;
-; Number of registers using Synchronous Clear  ; 111   ;
+; Total registers                              ; 239   ;
+; Number of registers using Synchronous Clear  ; 114   ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 112   ;
+; Number of registers using Clock Enable       ; 125   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -323,20 +328,21 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------------------------------------------------------------------------------------+----------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered                                                                               ; Example Multiplexer Output ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------------------------------------------------------------------------------------+----------------------------+
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; |TopLevel|SMC:ram|SMCData:data|DataRegister:output|Dout[7]                               ;                            ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; |TopLevel|SMC:ram|SMCData:data|DataRegister:rw|Dout[28]                                  ;                            ;
-; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; |TopLevel|SMC:ram|SMCData:data|DataRegister:waddr|Dout[0]                                ;                            ;
-; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; |TopLevel|SMC:ram|SMCData:data|DataRegister:raddr|Dout[4]                                ;                            ;
-; 3:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; |TopLevel|UARTReceiver:uart|UARTReceiverData:DP|DataRegister:shift_r|Dout[4]             ;                            ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; |TopLevel|SMC:ram|SMCData:data|DataRegister:output|Dout[2]                               ;                            ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; |TopLevel|SMC:ram|SMCData:data|DataRegister:rw|Dout[31]                                  ;                            ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; |TopLevel|SMC:ram|SMCData:data|DataRegister:waddr|Dout[3]                                ;                            ;
+; 3:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; |TopLevel|UARTReceiver:uart|UARTReceiverData:DP|DataRegister:shift_r|Dout[9]             ;                            ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; |TopLevel|SMC:ram|SMCData:data|DataRegister:rw_limit3|Dout[1]                            ;                            ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; |TopLevel|SMC:ram|SMCData:data|DataRegister:rw_limit2|Dout[3]                            ;                            ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; |TopLevel|SMC:ram|SMCData:data|DataRegister:rw_limit1|Dout[4]                            ;                            ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; |TopLevel|SMC:ram|SMCData:data|DataRegister:rw_limit0|Dout[4]                            ;                            ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; |TopLevel|UARTReceiver:uart|UARTReceiverData:DP|DataRegister:count1|Dout[1]              ;                            ;
-; 5:1                ; 15 bits   ; 45 LEs        ; 30 LEs               ; 15 LEs                 ; |TopLevel|SMC:ram|SMCData:data|DataRegister:addr|Dout[0]                                 ;                            ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; |TopLevel|SMC:ram|SMCControl:cntrl|count_sig[1]                                          ;                            ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; |TopLevel|UARTReceiver:uart|UARTReceiverData:DP|DataRegister:dout|Dout[7]                ;                            ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; |TopLevel|SMC:ram|SMCControl:cntrl|limit_control[0]                                      ;                            ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; |TopLevel|SMC:ram|SMCData:data|DataRegister:rw_limit2|Dout[0]                            ;                            ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; |TopLevel|SMC:ram|SMCData:data|DataRegister:rw_limit1|Dout[7]                            ;                            ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; |TopLevel|SMC:ram|SMCData:data|DataRegister:rw_limit0|Dout[2]                            ;                            ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; |TopLevel|SMC:ram|SMCData:data|DataRegister:signal_size2|Dout[4]                         ;                            ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; |TopLevel|SMC:ram|SMCData:data|DataRegister:signal_size1|Dout[7]                         ;                            ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; |TopLevel|UARTReceiver:uart|UARTReceiverData:DP|DataRegister:count1|Dout[3]              ;                            ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; |TopLevel|SMC:ram|SMCData:data|DataRegister:raddr|Dout[1]                                ;                            ;
+; 5:1                ; 15 bits   ; 45 LEs        ; 30 LEs               ; 15 LEs                 ; |TopLevel|SMC:ram|SMCData:data|DataRegister:addr|Dout[3]                                 ;                            ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; |TopLevel|UARTReceiver:uart|UARTReceiverData:DP|DataRegister:dout|Dout[1]                ;                            ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; |TopLevel|SMC:ram|SMCControl:cntrl|state                                                 ;                            ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; |TopLevel|UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerControl:CP|state ;                            ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------------------------------------------------------------------------------------+----------------------------+
 
@@ -388,6 +394,26 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+-----------------------------------------------------------------+
 ; data_width     ; 8     ; Signed Integer                                                  ;
 +----------------+-------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SMC:ram|SMCData:data|DataRegister:signal_size1 ;
++----------------+-------+--------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                               ;
++----------------+-------+--------------------------------------------------------------------+
+; data_width     ; 8     ; Signed Integer                                                     ;
++----------------+-------+--------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SMC:ram|SMCData:data|DataRegister:signal_size2 ;
++----------------+-------+--------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                               ;
++----------------+-------+--------------------------------------------------------------------+
+; data_width     ; 8     ; Signed Integer                                                     ;
++----------------+-------+--------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -527,6 +553,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 +--------+-------+----------+--------------------------------------+
 
 
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "SMC:ram|SMCData:data|DataRegister:signal_size2"                                        ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; dout[7] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +------------------------------------------------------------------+
 ; Port Connectivity Checks: "SMC:ram|SMCData:data|DataRegister:rw" ;
 +--------+-------+----------+--------------------------------------+
@@ -551,7 +586,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 12.0 Build 178 05/31/2012 SJ Web Edition
-    Info: Processing started: Fri Mar 10 01:00:00 2017
+    Info: Processing started: Mon Mar 27 15:52:01 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off TopLevel -c TopLevel
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 6 design units, including 3 entities, in source file /home/kalpesh/Projects/EDL/uart_receiver/UARTTicker.vhd
@@ -601,7 +636,7 @@ Info (12128): Elaborating entity "ClockDivider" for hierarchy "ClockDivider:clk_
 Info (12128): Elaborating entity "SMC" for hierarchy "SMC:ram"
 Info (12128): Elaborating entity "SMCControl" for hierarchy "SMC:ram|SMCControl:cntrl"
 Info (12128): Elaborating entity "SMCData" for hierarchy "SMC:ram|SMCData:data"
-Warning (10540): VHDL Signal Declaration warning at SMC.vhd(362): used explicit default value for signal "WAIT_LIMIT" because signal was never assigned a value
+Warning (10540): VHDL Signal Declaration warning at SMC.vhd(372): used explicit default value for signal "WAIT_LIMIT" because signal was never assigned a value
 Info (12128): Elaborating entity "Increment32" for hierarchy "SMC:ram|SMCData:data|Increment32:inc4"
 Info (12128): Elaborating entity "DataRegister" for hierarchy "SMC:ram|SMCData:data|DataRegister:rw"
 Info (12128): Elaborating entity "DataRegister" for hierarchy "SMC:ram|SMCData:data|DataRegister:rw_limit0"
@@ -625,15 +660,15 @@ Warning (10540): VHDL Signal Declaration warning at UARTTicker.vhd(174): used ex
 Info (12128): Elaborating entity "Increment13" for hierarchy "UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|Increment13:incr"
 Info (12128): Elaborating entity "DataRegister" for hierarchy "UARTReceiver:uart|UARTReceiverData:DP|UARTTicker:tc|UARTTickerData:DP|DataRegister:count_reg"
 Info (12128): Elaborating entity "DataRegister" for hierarchy "UARTReceiver:uart|UARTReceiverData:DP|DataRegister:shift_r"
-Info (21057): Implemented 419 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 451 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 5 input pins
     Info (21059): Implemented 43 output pins
     Info (21060): Implemented 8 bidirectional pins
-    Info (21061): Implemented 363 logic cells
+    Info (21061): Implemented 395 logic cells
 Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 10 warnings
     Info: Peak virtual memory: 358 megabytes
-    Info: Processing ended: Fri Mar 10 01:00:04 2017
-    Info: Elapsed time: 00:00:04
+    Info: Processing ended: Mon Mar 27 15:52:03 2017
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 
 

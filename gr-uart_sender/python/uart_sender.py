@@ -27,7 +27,7 @@ from gnuradio import gr
 class uart_sender(gr.sync_block):
     """docstring for block uart_sender."""
 
-    def __init__(self, sample_rate, choice):
+    def __init__(self, sample_rate, frequency, choice):
         """__init__ function."""
         gr.sync_block.__init__(
             self,
@@ -37,6 +37,7 @@ class uart_sender(gr.sync_block):
         )
         self.sample_rate = sample_rate
         self.choice = choice
+        self.frequency = frequency
 
     def set_choice(self, choice):
         """Callback to set value for choice."""
@@ -45,6 +46,10 @@ class uart_sender(gr.sync_block):
     def set_sampling_freq(self, samp_rate):
         """Callback to set value for choice."""
         self.samp_rate = samp_rate
+
+    def set_frequency(self, frequency):
+        """Callback to set value for choice."""
+        self.frequency = frequency
 
     def work(self, input_items, output_items):
         """Outline basic workflow in GNURadio block."""
