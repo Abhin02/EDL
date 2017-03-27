@@ -8,8 +8,6 @@ import time
 
 def sine(sample_freq, freq, sample):
     """The wrapper generates a sine wave of given frequency."""
-    if sample == 0:
-        return 34
     # elif sample == 2:
     #     return 2
     value = np.sin(2 * np.pi * freq * sample * (1.0 / sample_freq))
@@ -46,7 +44,7 @@ frequency = input("Enter frequency of wave :- ")
 
 samp_counts = max(int(50000000.0 / samp_frequency) - 4, 1)
 
-sig_size = max(int(samp_frequency / float(frequency)), 1) + 1
+sig_size = max(int(samp_frequency / float(frequency)), 1) - 1
 sig_size2 = sig_size
 
 dummy = raw_input("Ensure S4 is ON and S1 is OFF. Type anything to continue ")
@@ -64,9 +62,10 @@ for i in range(2):
 
 dummy = raw_input("Ensure S4 is OFF and S1 is OFF. Type anything to continue ")
 
-for i in range(0, sig_size2):
+for i in range(0, sig_size2 + 1):
     value = sine(samp_frequency, frequency, i)
+    print value
     ser.write(chr(value))
 
-time.sleep(5)
+time.sleep(1)
 print "Data has been input. Press S1 to view it on LEDs and Headers."
