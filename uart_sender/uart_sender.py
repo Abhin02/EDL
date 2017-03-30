@@ -64,7 +64,6 @@ dummy = raw_input("Ensure S4 is OFF and S1 is OFF. Type anything to continue ")
 
 for i in range(0, sig_size2 + 1):
     value = sine(samp_frequency, frequency, i)
-    print value
     ser.write(chr(value))
 
 time.sleep(1)
