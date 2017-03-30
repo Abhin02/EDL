@@ -248,7 +248,13 @@ begin
         tick_reset => tick_reset
       );
 
-  incr: Increment4 port map (input => COUNT, output => INC_OUT);
+  incr: IncrementBlock
+        generic map (data_width => 4)
+        port map (
+          input => COUNT,
+          output => INC_OUT
+        );
+
   COUNT_in <= CONST_0 when (COUNT = LIMIT) else INC_OUT;
 
   received <= '1' when (COUNT = LIMIT) else '0';

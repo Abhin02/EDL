@@ -4,6 +4,9 @@ use ieee.std_logic_1164.all;
 
 package UARTComponents is
 
+  -- Most documentation for components have been given with the
+  -- entity specification.
+
   component DataRegister is
   generic (data_width:integer);
   port (Din: in std_logic_vector(data_width-1 downto 0);
@@ -46,33 +49,13 @@ package UARTComponents is
     );
   end component;
 
-  component Increment13 is
+  component IncrementBlock is
+  generic (data_width:integer);
   port (
-    input: in std_logic_vector(12 downto 0);
-    output: out std_logic_vector(12 downto 0)
+    input: in std_logic_vector(data_width-1 downto 0);
+    output: out std_logic_vector(data_width-1 downto 0)
   );
-  end component Increment13;
-
-  component Increment15 is
-  port (
-    input: in std_logic_vector(14 downto 0);
-    output: out std_logic_vector(14 downto 0)
-  );
-  end component Increment15;
-
-  component Increment32 is
-  port (
-    input: in std_logic_vector(31 downto 0);
-    output: out std_logic_vector(31 downto 0)
-  );
-  end component Increment32;
-
-  component Increment4 is
-  port (
-    input: in std_logic_vector(3 downto 0);
-    output: out std_logic_vector(3 downto 0)
-  );
-  end component Increment4;
+  end component IncrementBlock;
 
   component UARTReceiver is
   port (
@@ -239,55 +222,14 @@ end Behave;
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
-entity Increment13 is
+entity IncrementBlock is
+generic (data_width:integer);
 port (
-  input: in std_logic_vector(12 downto 0);
-  output: out std_logic_vector(12 downto 0)
+  input: in std_logic_vector(data_width-1 downto 0);
+  output: out std_logic_vector(data_width-1 downto 0)
 );
-end entity Increment13;
-architecture Behave of Increment13 is
-begin
-  output <= std_logic_vector(unsigned(input) + 1);
-end Behave;
-
-library ieee;
-use ieee.std_logic_1164.all;
-use ieee.numeric_std.all;
-entity Increment4 is
-port (
-  input: in std_logic_vector(3 downto 0);
-  output: out std_logic_vector(3 downto 0)
-);
-end entity Increment4;
-architecture Behave of Increment4 is
-begin
-  output <= std_logic_vector(unsigned(input) + 1);
-end Behave;
-
-library ieee;
-use ieee.std_logic_1164.all;
-use ieee.numeric_std.all;
-entity Increment15 is
-port (
-  input: in std_logic_vector(14 downto 0);
-  output: out std_logic_vector(14 downto 0)
-);
-end entity Increment15;
-architecture Behave of Increment15 is
-begin
-  output <= std_logic_vector(unsigned(input) + 1);
-end Behave;
-
-library ieee;
-use ieee.std_logic_1164.all;
-use ieee.numeric_std.all;
-entity Increment32 is
-port (
-  input: in std_logic_vector(31 downto 0);
-  output: out std_logic_vector(31 downto 0)
-);
-end entity Increment32;
-architecture Behave of Increment32 is
+end entity IncrementBlock;
+architecture Behave of IncrementBlock is
 begin
   output <= std_logic_vector(unsigned(input) + 1);
 end Behave;

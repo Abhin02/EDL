@@ -395,7 +395,8 @@ begin
   io <= input_data when io_select = '1' else (others => 'Z');
 
   -- Read specifications
-  inc4: Increment32
+  inc4: IncrementBlock
+          generic map (data_width => 32)
           port map (
             input => READ_WAIT_VALUE,
             output => READ_WAIT_INC
@@ -474,7 +475,8 @@ begin
         );
 
   -- Write specifications
-  inc3: Increment4
+  inc3: IncrementBlock
+          generic map (data_width => 4)
           port map (
             input => WAIT_VALUE,
             output => WRITE_WAIT_INC
@@ -492,12 +494,14 @@ begin
         );
 
   -- Address specifications
-  incr2: Increment15
+  incr2: IncrementBlock
+          generic map (data_width => 15)
           port map (
             input => WRITE_ADDRESS,
             output => WRITE_ADDRESS_INC
           );
-  incr5: Increment15
+  incr5: IncrementBlock
+          generic map (data_width => 15)
           port map (
             input => READ_ADDRESS,
             output => READ_ADDRESS_INC

@@ -184,7 +184,12 @@ begin
   limit2 <= '1' when (COUNT = L2) else '0';
   tick_half <= '1' when (COUNT = HALF) else '0';
 
-  incr: Increment13 port map (input => COUNT, output => INC_OUT);
+  incr: IncrementBlock
+        generic map (data_width => 13)
+        port map (
+          input => COUNT,
+          output => INC_OUT
+        );
 
   count_enable <= '1';
   COUNT_in <= INC_OUT when increment = '1' else CONST_0;
