@@ -60,24 +60,37 @@ package UARTComponents is
   component UARTReceiver is
   port (
     clk, reset: in std_logic;
+    -- This is a single bit input, the UART wave
     data_in: in std_logic;
+    -- After decoding 10 bits, a byte is output on this port
     data_out: out std_logic_vector(7 downto 0);
+    -- This port is for solely debugging purposes
     debug: out std_logic_vector(7 downto 0);
+    -- A flag indicating a change in `data_out`
     data_ready: out std_logic
   );
   end component UARTReceiver;
 
   component UARTReceiverControl is
   port (
+    -- This is a single bit input, the UART wave
     data_in: in std_logic;
+    -- Takes in pulses from UARTTicker at half the baud period
     tick_half: in std_logic;
+    -- Takes in pulses from UARTTicker at bad
     tick: in std_logic;
+    -- Flag indicating that all 10 bits have been received
     received: in std_logic;
     clk, reset: in std_logic;
+    -- Signals the Datapath to shift in another input
+    -- It works like a shift register
     shift_in: out std_logic;
+    -- A flag indicating a change in `data_out`
     data_ready: out std_logic;
-    tick_reset: out std_logic;
-    dout_enable: out std_logic
+    -- Signal to move shift register's bits to output port
+    dout_enable: out std_logic;
+    -- Signal to reset the UARTTicker back to 0
+    tick_reset: out std_logic
   );
   end component;
 
@@ -175,18 +188,23 @@ end component SMCData;
 
 end package;
 
+-- The vanilla data register
+-- When `reset` it high, it pushes all zeros to output
 library ieee;
 use ieee.std_logic_1164.all;
 entity DataRegister is
   generic (data_width:integer);
-  port (Din: in std_logic_vector(data_width-1 downto 0);
-        Dout: out std_logic_vector(data_width-1 downto 0);
-        clk, enable, reset: in std_logic);
+  port (
+    Din: in std_logic_vector(data_width-1 downto 0);
+    Dout: out std_logic_vector(data_width-1 downto 0);
+    clk, enable, reset: in std_logic
+  );
 end entity;
 architecture Behave of DataRegister is
 begin
   process(clk)
   begin
+    -- This creates a latch
     if(clk'event and (clk  = '1')) then
       if (reset = '1') then
         Dout <= (others => '0');
@@ -197,13 +215,17 @@ begin
   end process;
 end Behave;
 
+-- A special data register
+-- When `reset` it high, it pushes all ones to output
 library ieee;
 use ieee.std_logic_1164.all;
 entity DataRegisterSp is
   generic (data_width:integer);
-  port (Din: in std_logic_vector(data_width-1 downto 0);
-        Dout: out std_logic_vector(data_width-1 downto 0);
-        clk, enable, reset: in std_logic);
+  port (
+    Din: in std_logic_vector(data_width-1 downto 0);
+    Dout: out std_logic_vector(data_width-1 downto 0);
+    clk, enable, reset: in std_logic
+  );
 end entity;
 architecture Behave of DataRegisterSp is
 begin
@@ -219,6 +241,8 @@ begin
   end process;
 end Behave;
 
+-- A generic increment block that adds 1
+-- It treats inputs as unsigned
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
@@ -234,6 +258,7 @@ begin
   output <= std_logic_vector(unsigned(input) + 1);
 end Behave;
 
+-- This is a clock divider that divides input clock by 2
 library ieee;
 use ieee.std_logic_1164.all;
 entity ClockDivider is
@@ -243,8 +268,11 @@ entity ClockDivider is
         clk_slow: out std_logic
     );
 end entity ClockDivider;
-
 architecture RTL of ClockDivider is
+  -- Two states are needed for this FSM
+  -- States are alternated after every clock cycle
+  -- S0 denotes current `clk_slow` value is 0
+  -- S1 denotes current `clk_slow` value is 1
   type FsmState is (S0, S1);
   signal state : FsmState;
 begin

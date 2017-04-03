@@ -3,12 +3,18 @@ library ieee;
 use ieee.std_logic_1164.all;
 library work;
 use work.UARTComponents.all;
+-- This receiver assumes 10 bits per sequence
+-- There is no parity bit
 entity UARTReceiver is
   port (
     clk, reset: in std_logic;
+    -- This is a single bit input, the UART wave
     data_in: in std_logic;
+    -- After decoding 10 bits, a byte is output on this port
     data_out: out std_logic_vector(7 downto 0);
+    -- This port is for solely debugging purposes
     debug: out std_logic_vector(7 downto 0);
+    -- A flag indicating a change in `data_out`
     data_ready: out std_logic
   );
 end entity UARTReceiver;
@@ -18,6 +24,7 @@ architecture Struct of UARTReceiver is
   signal dout_enable: std_logic;
 begin
 
+  -- Control Path
   CP: UARTReceiverControl
   port map (
     data_in => data_in,
@@ -32,6 +39,7 @@ begin
     dout_enable => dout_enable
   );
 
+  -- Data Path
   DP: UARTReceiverData
   port map (
     reset => reset,
@@ -54,14 +62,23 @@ use ieee.std_logic_1164.all;
 use work.UARTComponents.all;
 entity UARTReceiverControl is
   port (
+    -- This is a single bit input, the UART wave
     data_in: in std_logic;
+    -- Takes in pulses from UARTTicker at half the baud period
     tick_half: in std_logic;
+    -- Takes in pulses from UARTTicker at bad
     tick: in std_logic;
+    -- Flag indicating that all 10 bits have been received
     received: in std_logic;
     clk, reset: in std_logic;
+    -- Signals the Datapath to shift in another input
+    -- It works like a shift register
     shift_in: out std_logic;
+    -- A flag indicating a change in `data_out`
     data_ready: out std_logic;
+    -- Signal to move shift register's bits to output port
     dout_enable: out std_logic;
+    -- Signal to reset the UARTTicker back to 0
     tick_reset: out std_logic
   );
 end entity;
@@ -71,6 +88,7 @@ architecture Behave of UARTReceiverControl is
   signal count_sig: Integer;
 begin
   -- This process decides the control signals
+  -- See next-state process for details on decisions
   process(state, reset, data_in, tick_half, tick, received)
     variable nshift_in: std_logic;
     variable ntick_reset: std_logic;
@@ -81,23 +99,22 @@ begin
     ndout_enable := '0';
     case state is
       when S0 =>
+        -- This is the reset state
+        -- We want to reset the ticker here
         nshift_in := '0';
         ntick_reset := '1';
         ndout_enable := '0';
       when S1 =>
+        -- This is the wait state
+        -- Keep the UARTTicker at 0
         nshift_in := '0';
         ntick_reset := '1';
         ndout_enable := '0';
       when S5 =>
+        -- This is the debouncing delay state
         nshift_in := '0';
         ntick_reset := '1';
         ndout_enable := '0';
-        --if data_in = '1' then
-        --  -- Since we want to start the ticker
-        --  ntick_reset := '1';
-        --else
-        --  ntick_reset := '0';
-        --end if;
       when S2 =>
         ndout_enable := '0';
         if tick_half = '1' then
@@ -139,7 +156,10 @@ begin
   -- This process decides the next state of FSM
   process(state, clk, reset, data_in, tick_half, tick, received, count_sig)
     variable nstate: FsmState;
+    -- Used for debouncing logic in this process
     variable count_var: Integer := 0;
+    -- This process also decides the next `data_ready`
+    -- This is placed in this process due to its synchronous nature
     variable ndata_ready: std_logic := '0';
   begin
     nstate := S0;
@@ -147,24 +167,30 @@ begin
     ndata_ready := '0';
     case state is
       when S0 =>
-        ndata_ready := '0';
         -- This is the reset state
+        -- It only stays in this state for one cycle
+        -- Unless the `reset` pin is HIGH
         nstate := S1;
-      when S1 =>
         ndata_ready := '0';
+      when S1 =>
         -- In this state, the receiver waits for UART
+        ndata_ready := '0';
         if data_in = '0' then
           -- Received an input, begin UART sequence
+          -- Start off with a debouncing to confirm input
           nstate := S5;
         else
           nstate := S1;
         end if;
         count_var := 0;
       when S5 =>
-        ndata_ready := '0';
+        -- This is the debouncing stage
         -- This state confirms that the data_in is actually 0
         -- This is done to correct sampling errors
+        ndata_ready := '0';
+        -- `count_var` is the delay variable
         count_var := count_var + 1;
+        -- Arbitrarily chosen debouncing delay of 7 cycles
         if count_var = 7 then
           if data_in = '0' then
             nstate := S2;

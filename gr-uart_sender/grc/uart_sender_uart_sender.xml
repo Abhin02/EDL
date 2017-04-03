@@ -4,9 +4,11 @@
   <key>uart_sender_uart_sender</key>
   <category>uart_sender</category>
   <import>import uart_sender</import>
-  <make>uart_sender.uart_sender($samp_rate, $choice)</make>
+  <make>uart_sender.uart_sender($samp_rate, $signal_size, $choice, $mode)</make>
   <callback>set_sampling_freq($samp_rate)</callback>
   <callback>set_choice($choice)</callback>
+  <callback>set_mode($mode)</callback>
+  <callback>set_signal_size($signal_size)</callback>
   <!-- Make one 'param' node for every Parameter you want settable from the GUI.
        Sub-nodes:
        * name
@@ -19,8 +21,20 @@
   </param>
 
   <param>
+    <name>Signal Size</name>
+    <key>signal_size</key>
+    <type>int</type>
+  </param>
+
+  <param>
     <name>Choice</name>
     <key>choice</key>
+    <type>int</type>
+  </param>
+
+    <param>
+    <name>Mode</name>
+    <key>mode</key>
     <type>int</type>
   </param>
 
