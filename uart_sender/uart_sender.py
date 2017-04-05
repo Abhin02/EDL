@@ -10,7 +10,8 @@ def sine(sample_freq, freq, sample):
     """The wrapper generates a sine wave of given frequency."""
     # elif sample == 2:
     #     return 2
-    value = np.sin(2 * np.pi * freq * sample * (1.0 / sample_freq))
+    value = (np.sin(2 * np.pi * freq * sample * (1.0 / sample_freq)) +
+             np.sin(4 * np.pi * freq * sample * (1.0 / sample_freq))) / 2
     return int(min(value * 128 + 128, 255))
 
 

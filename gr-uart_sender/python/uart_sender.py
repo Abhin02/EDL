@@ -131,6 +131,7 @@ class uart_sender(gr.sync_block):
             else:
                 for i in range(0, self.signal_size + 1):
                     value = self.i_channel[i]
+                    print value
                     self.ser.write(chr(value))
             self.data_sent = True
 

@@ -14,7 +14,8 @@ entity SMC is
     read_data: in std_logic;
     sample_rate: in std_logic;
     data_ready: in std_logic;
-    debug: out std_logic_vector(7 downto 0)
+    debug: out std_logic_vector(7 downto 0);
+    iq_sample: out std_logic
   );
 end entity SMC;
 
@@ -70,7 +71,8 @@ begin
       read_wait => read_wait,
       debug => debug,
       limit_control => limit_control,
-      count => count
+      count => count,
+      iq_sample => iq_sample
     );
 end Struct;
 
@@ -341,6 +343,7 @@ end Mixed;
 library std;
 library ieee;
 use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
 library work;
 use work.UARTComponents.all;
 entity SMCData is
@@ -351,6 +354,7 @@ entity SMCData is
     OE, WE, CS: out std_logic;
     write_wait: out std_logic;
     read_wait: out std_logic;
+    iq_sample: out std_logic;
     address: out std_logic_vector(14 downto 0);
     clk, reset: in std_logic;
     -- The set of CS/OE/WE control signals in next clock cycle
@@ -377,6 +381,7 @@ architecture Mixed of SMCData is
   signal READ_WAIT_IN: std_logic_vector(31 downto 0);
   signal READ_WAIT_INC: std_logic_vector(31 downto 0);
   signal READ_WAIT_LIMIT: std_logic_vector(31 downto 0) := (25 => '1', others => '0');
+  signal READ_WAIT_LIMIT_BY2: std_logic_vector(31 downto 0) := (others => '0');
   signal READ_WAIT_LIMIT_IN: std_logic_vector(31 downto 0) := (others => '0');
 
   signal READ_ADDRESS: std_logic_vector(14 downto 0);
@@ -393,7 +398,9 @@ architecture Mixed of SMCData is
   signal output_data_sig: std_logic_vector(7 downto 0);
 begin
   io <= input_data when io_select = '1' else (others => 'Z');
-
+  READ_WAIT_LIMIT_BY2(31) <= '0';
+  READ_WAIT_LIMIT_BY2(30 downto 0) <= READ_WAIT_LIMIT(31 downto 1);
+  iq_sample <= '1' when (READ_WAIT_VALUE = READ_WAIT_LIMIT_BY2) else '0';
   -- Read specifications
   inc4: IncrementBlock
           generic map (data_width => 32)

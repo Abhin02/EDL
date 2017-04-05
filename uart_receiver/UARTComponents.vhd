@@ -120,7 +120,8 @@ package UARTComponents is
     read_data: in std_logic;
     sample_rate: in std_logic;
     data_ready: in std_logic;
-    debug: out std_logic_vector(7 downto 0)
+    debug: out std_logic_vector(7 downto 0);
+    iq_sample: out std_logic
     );
   end component SMC;
 
@@ -133,6 +134,7 @@ package UARTComponents is
     debug: out std_logic_vector(7 downto 0);
     write_wait: out std_logic;
     read_wait: out std_logic;
+    iq_sample: out std_logic;
     address: out std_logic_vector(14 downto 0);
     clk, reset: in std_logic;
     -- The set of CS/OE/WE control signals in next clock cycle
@@ -174,7 +176,8 @@ end component SMCData;
     output_data: out std_logic_vector(7 downto 0);
     read_data: in std_logic;
     sample_rate: in std_logic;
-    sync_pulse: out std_logic
+    sync_pulse: out std_logic;
+    dac1, dac2: out std_logic
   );
   end component TopLevel;
 

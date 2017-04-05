@@ -15,7 +15,9 @@ entity TopLevel is
     output_data: out std_logic_vector(7 downto 0);
     read_data: in std_logic;
     sample_rate: in std_logic;
-    sync_pulse: out std_logic
+    sync_pulse: out std_logic;
+    dac1: out std_logic;
+    dac2: out std_logic
   );
 end entity TopLevel;
 
@@ -27,7 +29,13 @@ architecture Mixed of TopLevel is
   signal old_output: std_logic_vector(7 downto 0);
   signal done: std_logic;
   signal sync_pulse_signal: std_logic;
+  signal iq_sample: std_logic;
+  signal dac: std_logic;
+  signal clk_signal: std_logic;
 begin
+    clk_signal <= clk;
+    dac1 <= clk_signal;
+    dac2 <= not clk_signal;
     output_data <= output_signal;
     sync_pulse <= sync_pulse_signal;
     -- The process given below is used to output the synchronization pulse
@@ -69,6 +77,22 @@ begin
       clk_slow => clk_slow
     );
 
+    process(clk, iq_sample, reset, dac)
+      variable n_dac: std_logic := '0';
+    begin
+      n_dac := dac;
+      if (iq_sample = '1') then
+        n_dac := not n_dac;
+      end if;
+      if (clk'event and clk = '1') then
+        if (reset = '1') then
+          dac <= '0';
+        else
+          dac <= n_dac;
+        end if;
+      end if;
+    end process;
+
     ram: SMC
     port map (
       io => io,
@@ -83,7 +107,8 @@ begin
       read_data => read_data,
       data_ready => data_ready,
       debug => debug1,
-      sample_rate => sample_rate
+      sample_rate => sample_rate,
+      iq_sample => iq_sample
     );
 
     uart: UARTReceiver
