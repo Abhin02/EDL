@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<block>
+  <name>pam_receiver</name>
+  <key>pam_receiver_pam_receiver</key>
+  <category>pam_receiver</category>
+  <import>import pam_receiver</import>
+  <make>pam_receiver.pam_receiver($bits_per_symbol, $sample_rate, $filename)</make>
+  <callback>set_sampling_rate($sample_rate)</callback>
+  <callback>set_bits_per_symbol($bits_per_symbol)</callback>
+  <callback>set_filename($filename)</callback>
+  <param>
+    <name>Bits Per Symbol</name>
+    <key>bits_per_symbol</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Sample Rate</name>
+    <key>sample_rate</key>
+    <type>float</type>
+  </param>
+  <param>
+    <name>File Name</name>
+    <key>filename</key>
+    <type>string</type>
+  </param>
+
+  <!-- Make one 'sink' node per input. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+  <sink>
+    <name>I</name>
+    <type>float</type>
+  </sink>
+
+</block>
