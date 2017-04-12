@@ -32,12 +32,13 @@ class pam_receiver(gr.sync_block):
         gr.sync_block.__init__(
             self,
             name="pam_receiver",
-            in_sig=[np.float32],
+            in_sig=[np.complex64],
             out_sig=None
         )
         self.sample_rate = sample_rate
         self.bits_per_symbol = bits_per_symbol
         self.filename = filename
+        self.stored = False
 
     def set_sampling_rate(self, sample_rate):
         """Callback for sample rate."""
@@ -54,5 +55,27 @@ class pam_receiver(gr.sync_block):
     def work(self, input_items, output_items):
         """Decode the signal."""
         in0 = input_items[0]
+        in0 = in0[4::8]
+        real = np.real(in0)
+        imag = np.imag(in0)
+        bits = []
+        for i in range(len(real)):
+            if abs(real[i]) > abs(imag[i]):
+                bit = np.sign(real[i])
+            else:
+                bit = -np.sign(imag[i])
+            bits.append(bit)
+        bits = [max(0, int(i)) for i in bits]
+        bits = bits[self.bits_per_symbol:]
+        bits = [str(i) for i in bits]
+        output = ""
+        for i in range(0, len(bits), 8):
+            bit_pattern = "".join(bits[i:i+8])
+            data = chr(int(bit_pattern, 2))
+            output += bit_pattern
+        if self.stored is False:
+            self.stored = True
+            with open(self.filename, 'w') as f:
+                f.write(output)
         return len(input_items[0])
 
