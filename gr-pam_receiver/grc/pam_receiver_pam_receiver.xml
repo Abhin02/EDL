@@ -31,7 +31,7 @@
        * optional (set to 1 for optional inputs) -->
   <sink>
     <name>I</name>
-    <type>float</type>
+    <type>complex</type>
   </sink>
 
 </block>

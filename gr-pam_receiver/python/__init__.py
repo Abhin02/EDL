@@ -42,7 +42,7 @@ if _RTLD_GLOBAL != 0:
 
 
 # import swig generated symbols into the pam_receiver namespace
-from pam_receiver_swig import *
+#from pam_receiver_swig import *
 
 # import any pure python here
 from pam_receiver import pam_receiver
