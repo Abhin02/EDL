@@ -55,27 +55,38 @@ class pam_receiver(gr.sync_block):
     def work(self, input_items, output_items):
         """Decode the signal."""
         in0 = input_items[0]
-        in0 = in0[4::8]
-        real = np.real(in0)
-        imag = np.imag(in0)
-        bits = []
-        for i in range(len(real)):
-            if abs(real[i]) > abs(imag[i]):
-                bit = np.sign(real[i])
-            else:
-                bit = -np.sign(imag[i])
-            bits.append(bit)
-        bits = [max(0, int(i)) for i in bits]
-        bits = bits[self.bits_per_symbol:]
-        bits = [str(i) for i in bits]
+        real = np.sign(np.real(in0))
+        in0 = real.astype(int)
+        p = np.ones(64, dtype=np.int)
+        n = -1 * np.ones(64, dtype=np.int)
+        positive = np.concatenate((p, n), axis=0)
+        negative = np.concatenate((n, p), axis=0)
+        p1 = None
+        n1 = None
+        try:
+            p1 = in0.tostring().index(positive.tostring()) // in0.itemsize
+        except:
+            pass
+        try:
+            n1 = in0.tostring().index(negative.tostring()) // in0.itemsize
+        except:
+            pass
+        if p1 is not None:
+            active = in0[p1:]
+        else:
+            active = -1 * in0[n1:]
+        active2 = active[128:]
+        p2 = active2.tostring().index(positive.tostring()) // active2.itemsize
+        data = active[128:128 + p2]
+        signal = data[4::8]
+        signal = 0.5 * (signal + 1)
+        signal = signal.astype(int)
         output = ""
-        for i in range(0, len(bits), 8):
-            bit_pattern = "".join(bits[i:i+8])
-            data = chr(int(bit_pattern, 2))
-            output += bit_pattern
-        if self.stored is False:
-            self.stored = True
-            with open(self.filename, 'w') as f:
-                f.write(output)
+        for i in range(0, len(signal), 8):
+            bits = [str(i) for i in signal[i:i + 8]]
+            bits = "".join(bits)
+            bits = bits[::-1]
+            output += chr(int(bits, 2))
+        with open(self.filename, 'w') as f:
+            f.write(output)
         return len(input_items[0])
-
