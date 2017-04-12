@@ -55,6 +55,8 @@ class pam_receiver(gr.sync_block):
     def work(self, input_items, output_items):
         """Decode the signal."""
         in0 = input_items[0]
+        if self.stored is False:
+            return len(input_items[0])
         real = np.sign(np.real(in0))
         in0 = real.astype(int)
         p = np.ones(64, dtype=np.int)
@@ -89,4 +91,5 @@ class pam_receiver(gr.sync_block):
             output += chr(int(bits, 2))
         with open(self.filename, 'w') as f:
             f.write(output)
+        self.stored = True
         return len(input_items[0])
