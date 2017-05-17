@@ -42,7 +42,7 @@ if _RTLD_GLOBAL != 0:
 
 
 # import swig generated symbols into the uart_sender namespace
-from uart_sender_swig import *
+#from uart_sender_swig import *
 
 # import any pure python here
 from uart_sender import uart_sender
